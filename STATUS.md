@@ -35,3 +35,7 @@
 ## Not wired yet
 - Domain cutover to www.texanoai.com
 - Citation lock on economics literature figures
+
+## First-pass UX (2026-08-24)
+Shipped from Claude feedback: mobile hamburger nav, Privacy/Terms stubs, og/Twitter/canonical/JSON-LD, robots+sitemap, custom 404, focus styles, muted contrast bump, logo `.b64` path removed, asset cache + Permissions-Policy + HSTS headers.
+Still open: citation lock, Netlify Forms CTA, dedicated OG card art, CSP, www cutover URL swap in meta/sitemap.
