@@ -3,3 +3,6 @@
 .venv/
 _scratch/
 *.log
+
+.netlify/
+.netlify-wirecheck
