@@ -18,8 +18,22 @@
 - `assets/favicon.svg` / `favicon-32.png` / `logo-primary.svg`
 - `netlify.toml` — static publish + security headers
 
+
+## Preview staging (live 2026-08-24)
+
+| | |
+|--|--|
+| URL | https://texanoai-website-preview.netlify.app |
+| Project | `texanoai-website-preview` |
+| Site id | `179cf08c-59fc-48c0-b5f5-91fa8ba3efca` |
+| First deploy | `6a8cd2a50c7d4a75824f8dd3` (ready) |
+| Production | **untouched** — `texanoai-mmx` / www.texanoai.com |
+
+**Continuous deploy:** link `EveRWright/texanoai-website` in Netlify UI → Project configuration → Build & deploy → Continuous deployment → Link repository.
+
+Deep link: https://app.netlify.com/projects/texanoai-website-preview/configuration/deploys
+
 ## Not wired yet
-- Continuous deploy from this repo → Netlify
-- Staging Netlify project
+- Continuous deploy (GitHub link in Netlify UI — pending Michael)
 - Domain cutover
 - Citation lock on economics literature figures

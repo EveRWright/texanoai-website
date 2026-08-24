@@ -4,6 +4,20 @@ Private build repo for the TexanoAI corporate / product site.
 
 **Live production** (`www.texanoai.com`) still serves the Nov 2025 manual Netlify deploy on `texanoai-mmx` until cutover. This repo is the Order + Q/Q rebuild.
 
+
+## Preview (staging)
+
+| | |
+|--|--|
+| **Preview URL** | https://texanoai-website-preview.netlify.app |
+| Netlify project | `texanoai-website-preview` |
+| Site id | `179cf08c-59fc-48c0-b5f5-91fa8ba3efca` |
+| App | https://app.netlify.com/projects/texanoai-website-preview |
+
+Production `www.texanoai.com` / `texanoai-mmx` is **not** this project.
+
+After GitHub is linked under Continuous deployment, every push to `main` refreshes the preview URL.
+
 ## Local preview
 
 ```bash
