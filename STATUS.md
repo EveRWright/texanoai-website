@@ -37,3 +37,6 @@ Deep link: https://app.netlify.com/projects/texanoai-website-preview/configurati
 - Continuous deploy (GitHub link in Netlify UI — pending Michael)
 - Domain cutover
 - Citation lock on economics literature figures
+
+## Wire check
+- Triggered continuous-deploy probe from Eve after Michael reported GitHub link (2026-08-24).
