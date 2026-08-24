@@ -3,7 +3,7 @@
 ## Confirmed
 
 ### GitHub
-- Authenticated as **EveRWright**
+- Authenticated as **EveRWright** (MCP + `gh` CLI after device login)
 - Build repo: **EveRWright/texanoai-website** (private)
 - Other Eve repo: **EveRWright/justice-pulse** (separate)
 
@@ -11,10 +11,12 @@
 - Authenticated as **tio@texanoai.com** · Owner on team **TexanoAI** (`tio-sof1vug`)
 - Production: **texanoai-mmx** → https://www.texanoai.com (manual deploy 2025-11-11) — **leave alone until go**
 
-## This commit
-- First real homepage from Hub `01_Site/mockups/homepage-qq-v2.html`
-- Order visual system (Cinzel / navy / gold)
-- Wings mark as `.b64` sidecar + hydrate script; SVG favicon + primary logo
+## First site build (this repo)
+- `index.html` — Order + Q/Q homepage from Hub mockup
+- `assets/site.css` — Order visual system
+- `assets/logo-wings.jpg` — winged wordmark (+ `.b64` sidecar)
+- `assets/favicon.svg` / `favicon-32.png` / `logo-primary.svg`
+- `netlify.toml` — static publish + security headers
 
 ## Not wired yet
 - Continuous deploy from this repo → Netlify
