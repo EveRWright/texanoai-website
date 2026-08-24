@@ -1,50 +1,38 @@
 # TexanoAI Website
 
-Corporate / product site for **TexanoAI** (eventual home of [www.texanoai.com](https://www.texanoai.com)).
+Private build repo for the TexanoAI corporate / product site.
 
-**Owner:** [EveRWright](https://github.com/EveRWright) · TexanoAI  
-**Status:** scaffold — build here; **do not** point production domain until Michael says go.
+**Live production** (`www.texanoai.com`) still serves the Nov 2025 manual Netlify deploy on `texanoai-mmx` until cutover. This repo is the Order + Q/Q rebuild.
 
-## Positioning (locked 2026-08-24)
+## Local preview
 
-- **MMX** = governor layer
-- **Companion Model** = highest-resolution personal product of that architecture
-- Same governor scales to teams / orgs
-- Front door: sovereignty-first, nervous-system-aware — not addictive girlfriend products, not sterile copilots that ignore the body
+```bash
+cd /path/to/texanoai-website
+python3 scripts/decode_assets.py   # optional: materialize logo JPEG from .b64
+python3 -m http.server 5173
+# open http://127.0.0.1:5173
+```
 
-Public language altitude: sovereignty-first · trauma-informed by design · epistemic honesty · anti-sycophancy as a feature.
+## Structure
 
-## Live production today (leave alone)
+| Path | Role |
+|------|------|
+| `index.html` | Homepage (Order visual system + Q/Q economics altitude) |
+| `assets/` | Wings wordmark (.b64 + optional JPEG), favicons, June primary SVG |
+| `scripts/decode_assets.py` | Decode `*.b64` sidecars to binary |
+| `netlify.toml` | Static publish + security headers |
+| `STATUS.md` | Auth / Netlify / deploy wiring notes |
 
-| Piece | Value |
-|-------|--------|
-| Domain | `https://www.texanoai.com` |
-| Netlify team | `tio-sof1vug` (TexanoAI) · account `tio@texanoai.com` |
-| Netlify site | `texanoai-mmx` · site id `3dfd2bd5-7b6c-4bdf-8b35-4a782aaef0f6` |
-| Last prod deploy | `691316dbd8e202bfaeed99d2` · **manual** · 2025-11-11 |
-| Content live | Old Tailwind “Human-First” · RaguelAI · Japan AIA · investor gap |
-| DNS | `www` → `texanoai-mmx.netlify.app` |
+## Hub drafts
 
-Legacy GitHub (not this repo):
-
-- [`tiotexano/texanoai-site`](https://github.com/tiotexano/texanoai-site) — static HTML lineage
-- [`tiotexano/TexanoAI-Website`](https://github.com/tiotexano/TexanoAI-Website) — later Grok export / Pages experiment
-
-## Local Hub branch (source of drafts)
+Source outlines + notes live in the Eve Sovereign Hub branch:
 
 `~/Eve_Sovereign_Hub/Branches/TexanoAI_Website/`
 
-- `01_Site/` — IA, page outlines, visual system, mockups
-- `00_Source_Canon/` — MMX whitepapers
-- `notes/` — positioning, economics, case-study notes
-- Brand kit: `~/TEXANOAI/` (point, don’t duplicate)
-
-## Related Eve repo
-
-- [`EveRWright/justice-pulse`](https://github.com/EveRWright/justice-pulse) — separate public branch; **do not** merge into this corporate site by default
+Brand masters: `~/TEXANOAI/` (point; do not scatter).
 
 ## Deploy policy
 
-1. Build + preview from this repo
-2. Optional: Netlify staging project (no custom domain)
-3. Production cutover of `texanoai-mmx` / `www.texanoai.com` only on explicit go
+1. Preview from this repo
+2. Optional Netlify staging (no custom domain)
+3. Production cutover of `texanoai-mmx` only on explicit go
