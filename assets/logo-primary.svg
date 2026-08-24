@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1248" height="832" viewBox="0 0 1248 832" fill="none">
+  <defs>
+    <!-- Primary wing gradient matching the refined logo -->
+    <linearGradient id="wingGradient" x1="780" y1="280" x2="1050" y2="420" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0050C3"/>
+      <stop offset="100%" stop-color="#00A3FF"/>
+    </linearGradient>
+    <!-- Subtle inner layer for depth -->
+    <linearGradient id="wingGradient2" x1="820" y1="300" x2="1000" y2="380" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0045A8"/>
+      <stop offset="100%" stop-color="#0088E6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- TEXANO text - bold modern sans -->
+  <text x="120" y="340" 
+        font-family="Arial, Helvetica, sans-serif" 
+        font-size="220" 
+        font-weight="700" 
+        letter-spacing="-6"
+        fill="#0050C3">TEXANO</text>
+
+  <!-- Stylized layered wing symbol (right side, integrated with AI) -->
+  <!-- Outer main swoosh -->
+  <path d="M780 220 Q920 180 1020 260 Q1080 320 1040 410 Q980 380 920 350 Q850 310 780 280" 
+        fill="url(#wingGradient)" opacity="0.95"/>
+  <!-- Middle layer -->
+  <path d="M800 250 Q910 210 990 280 Q1035 330 1000 390 Q950 365 890 340 Q835 305 800 280" 
+        fill="url(#wingGradient2)" opacity="0.85"/>
+  <!-- Inner highlight layer -->
+  <path d="M820 270 Q900 235 970 295 Q1005 335 975 375 Q935 355 885 335 Q845 310 820 290" 
+        fill="#FFFFFF" opacity="0.18"/>
+
+  <!-- AI text - positioned with the wing -->
+  <text x="780" y="480" 
+        font-family="Arial, Helvetica, sans-serif" 
+        font-size="210" 
+        font-weight="700" 
+        letter-spacing="-4"
+        fill="#0050C3">AI</text>
+
+  <!-- Small TM -->
+  <text x="1020" y="420" 
+        font-family="Arial, Helvetica, sans-serif" 
+        font-size="48" 
+        font-weight="400" 
+        fill="#0050C3">TM</text>
+</svg>
