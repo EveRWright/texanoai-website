@@ -29,14 +29,9 @@
 | First deploy | `6a8cd2a50c7d4a75824f8dd3` (ready) |
 | Production | **untouched** — `texanoai-mmx` / www.texanoai.com |
 
-**Continuous deploy:** link `EveRWright/texanoai-website` in Netlify UI → Project configuration → Build & deploy → Continuous deployment → Link repository.
-
-Deep link: https://app.netlify.com/projects/texanoai-website-preview/configuration/deploys
+**Continuous deploy:** CONFIRMED 2026-08-24 — GitHub `EveRWright/texanoai-website` @ `main` → this Netlify project.
+- Proof deploy: `6a8cd6733822c6b27b498fc0` · commit `a6646a1` · `manual_deploy: false` · branch alias `main--texanoai-website-preview.netlify.app`
 
 ## Not wired yet
-- Continuous deploy (GitHub link in Netlify UI — pending Michael)
-- Domain cutover
+- Domain cutover to www.texanoai.com
 - Citation lock on economics literature figures
-
-## Wire check
-- Triggered continuous-deploy probe from Eve after Michael reported GitHub link (2026-08-24).
