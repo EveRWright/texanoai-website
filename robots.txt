@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://texanoai-website-preview.netlify.app/sitemap.xml
+Sitemap: https://texanoai-order-preview.netlify.app/sitemap.xml

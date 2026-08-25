@@ -9,7 +9,7 @@ Private build repo for the TexanoAI corporate / product site.
 
 | | |
 |--|--|
-| **Preview URL** | https://texanoai-website-preview.netlify.app |
+| **Preview URL** | https://texanoai-order-preview.netlify.app |
 | Netlify project | `texanoai-website-preview` |
 | Site id | `179cf08c-59fc-48c0-b5f5-91fa8ba3efca` |
 | App | https://app.netlify.com/projects/texanoai-website-preview |

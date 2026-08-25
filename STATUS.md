@@ -23,7 +23,7 @@
 
 | | |
 |--|--|
-| URL | https://texanoai-website-preview.netlify.app |
+| URL | https://texanoai-order-preview.netlify.app |
 | Project | `texanoai-website-preview` |
 | Site id | `179cf08c-59fc-48c0-b5f5-91fa8ba3efca` |
 | First deploy | `6a8cd2a50c7d4a75824f8dd3` (ready) |
@@ -39,3 +39,7 @@
 ## First-pass UX (2026-08-24)
 Shipped from Claude feedback: mobile hamburger nav, Privacy/Terms stubs, og/Twitter/canonical/JSON-LD, robots+sitemap, custom 404, focus styles, muted contrast bump, logo `.b64` path removed, asset cache + Permissions-Policy + HSTS headers.
 Still open: citation lock, Netlify Forms CTA, dedicated OG card art, CSP, www cutover URL swap in meta/sitemap.
+
+## Staging URL note (2026-08-24 night)
+Active preview is now **https://texanoai-order-preview.netlify.app** (`464c3b0f-d054-4d6d-8d13-254a17498ff1`).
+Older `texanoai-website-preview` is stuck on Free-plan private-repo contributor verification even after the GitHub repo was made public — use the Order preview until Git is re-linked cleanly to the new site.
