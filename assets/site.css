@@ -204,6 +204,19 @@ h2 { font-family: var(--display); font-size: 28px; margin-bottom: 16px; font-wei
 .loop h3 { margin: 8px 0 10px; font-size: 16px; font-family: var(--display); }
 .loop p { font-size: 14px; color: var(--muted); line-height: 1.5; }
 
+.cost-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 28px;
+}
+.cost-grid article {
+  background: var(--raised); border: 1px solid rgba(212,175,55,0.28);
+  padding: 22px; font-family: var(--ui);
+}
+.cost-grid h3 { font-family: var(--display); font-size: 18px; margin-bottom: 10px; color: var(--gold-soft); }
+.cost-grid p { font-size: 15px; color: var(--muted); max-width: none; line-height: 1.55; }
+@media (max-width: 900px) {
+  .cost-grid { grid-template-columns: 1fr; }
+}
+
 .doors { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 28px; }
 .doors article {
   padding: 20px; background: #ebe4d4; font-family: var(--ui); border-left: 3px solid var(--gold);
