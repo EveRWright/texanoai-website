@@ -43,3 +43,9 @@ Still open: citation lock, Netlify Forms CTA, dedicated OG card art, CSP, www cu
 ## Staging URL note (2026-08-24 night)
 Active preview is now **https://texanoai-order-preview.netlify.app** (`464c3b0f-d054-4d6d-8d13-254a17498ff1`).
 Older `texanoai-website-preview` is stuck on Free-plan private-repo contributor verification even after the GitHub repo was made public — use the Order preview until Git is re-linked cleanly to the new site.
+
+## Preliminary Order pass (2026-08-24)
+- Header: transparent gold winged PNG (`logo-wings.png`), Texas stars, stronger hero bloom.
+- Economics $ ladder **removed** from homepage pending citation / ROI lock — qualitative dilemma only.
+- Logo masters: Hub `brand_refs/taxonomy/order_winged_wordmark/` + `~/TEXANOAI/Logos/Order_Winged/`.
+- Preview locally preferred while design carving continues.
