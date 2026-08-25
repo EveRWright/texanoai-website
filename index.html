@@ -22,7 +22,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Source+Sans+3:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/site.css?v=20260825g" />
+  <link rel="stylesheet" href="assets/site.css?v=20260825h" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -231,11 +231,27 @@
     <div class="wrap">
       <div class="eyebrow">Next</div>
       <h2>Start a conversation</h2>
-      <p>One team or one human. Do not boil the ocean. Methodology depth is available to serious pilots — not as an open cookbook.</p>
-      <div class="actions">
-        <a class="btn btn-gold" href="mailto:contact@texanoai.com">Talk to us</a>
-        <a class="btn btn-ghost" href="#sculpt">The sculpture map</a>
-      </div>
+      <p>One team or one human. The form lands in TexanoAI™ mail — no app to open on your machine.</p>
+      <form class="contact-form" action="https://formsubmit.co/contact@texanoai.com" method="POST">
+        <input type="hidden" name="_subject" value="TexanoAI™ site inquiry" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_next" value="https://www.texanoai.com/thanks.html" />
+        <input type="text" name="_honey" class="honey" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        <label>Name
+          <input type="text" name="name" required maxlength="120" autocomplete="name" />
+        </label>
+        <label>Email
+          <input type="email" name="email" required maxlength="160" autocomplete="email" />
+        </label>
+        <label>Organization <span class="opt">(optional)</span>
+          <input type="text" name="organization" maxlength="160" autocomplete="organization" />
+        </label>
+        <label>Message
+          <textarea name="message" required rows="6" maxlength="4000"></textarea>
+        </label>
+        <button class="btn btn-gold" type="submit">Send message</button>
+      </form>
     </div>
   </section>
 

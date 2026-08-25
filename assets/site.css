@@ -306,14 +306,46 @@ footer a:hover { color: var(--gold); }
 
 #contact.contact .wrap {
   text-align: center;
-  padding: 56px 28px 48px;
-  max-width: 720px;
+  padding: 56px 28px 64px;
+  max-width: 640px;
 }
 #contact.contact .eyebrow { justify-content: center; }
 #contact.contact .eyebrow::after { display: none; }
 #contact.contact h2 { margin-left: auto; margin-right: auto; }
-#contact.contact p { margin: 0 auto; max-width: 46ch; color: var(--muted); }
-#contact.contact .actions { justify-content: center; }
+#contact.contact p { margin: 0 auto 28px; max-width: 46ch; color: var(--muted); }
+.contact-form {
+  text-align: left;
+  display: grid;
+  gap: 14px;
+  font-family: var(--ui);
+}
+.contact-form label {
+  display: grid;
+  gap: 6px;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gold-soft);
+}
+.contact-form .opt { text-transform: none; letter-spacing: 0; color: var(--muted); font-size: 12px; }
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  background: var(--raised);
+  border: 1px solid rgba(212,175,55,0.35);
+  color: var(--fg);
+  font: 16px/1.4 var(--ui);
+  padding: 12px 14px;
+  border-radius: 2px;
+}
+.contact-form textarea { resize: vertical; min-height: 140px; }
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 2px solid var(--gold-soft);
+  outline-offset: 2px;
+}
+.contact-form .btn { justify-self: center; margin-top: 8px; border: 0; cursor: pointer; }
+.contact-form .honey { position: absolute; left: -9999px; height: 0; width: 0; opacity: 0; }
 
 .ico {
   display: block;
