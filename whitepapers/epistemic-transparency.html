@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Epistemic Transparency: Facts, Assumptions &amp; Projections – TexanoAI<span class="text-orange-600">™</span></title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+<style>.tm{color:#ea580c;}</style>
+  <link rel="canonical" href="https://www.texanoai.com/whitepapers/epistemic-transparency.html" />
+</head>
+<body class="bg-gray-50 text-gray-800">
+<div style="background:#0E1628;color:#E4C86A;font-family:Georgia,serif;font-size:13px;padding:8px 16px;text-align:center;position:relative;z-index:60;">
+  TexanoAI™ ethics &amp; papers archive · <a href="/" style="color:#F5F7FA;text-decoration:underline;">New front door</a>
+</div>
+
+    <!-- Header -->
+    <header class="fixed top-0 inset-x-0 z-50 bg-white border-b">
+      <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+        <a class='font-extrabold text-xl text-gray-900' href='/'>TexanoAI<span class="text-orange-600">™</span></a>
+        <nav class="hidden md:flex items-center gap-6 text-sm">
+          <a class='hover:opacity-80' href='../index.html#mission'>About</a>
+          <a class='hover:opacity-80' href='../index.html#mmx'>MMX™ &amp; Pulse™</a>
+          <a class='hover:opacity-80' href='../index.html#raguelai'>RaguelAI™</a>
+          <a href="index.html" class="hover:opacity-80 font-bold text-orange-600">White Papers</a>
+          <a href="../blog/index.html" class="hover:opacity-80">Blog</a>
+          <a class='inline-flex items-center px-3 py-1.5 rounded-md bg-orange-600 text-white hover:bg-orange-700' href='../index.html#contact'>Contact</a>
+        </nav>
+        <button id="navOpen" aria-controls="mobileDrawer" aria-expanded="false" aria-label="Open menu"
+                class="md:hidden inline-flex items-center justify-center p-2 rounded border border-gray-300 text-gray-700">☰</button>
+      </div>
+    </header>
+    <div class="h-16 md:h-[68px]"></div>
+    <!-- Mobile Drawer -->
+    <div id="mobileDrawer" aria-hidden="true" class="fixed inset-0 z-50 hidden">
+      <div id="navOverlay" class="absolute inset-0 bg-black/60"></div>
+      <nav class="absolute right-0 top-0 h-full w-72 max-w-[80vw] bg-white shadow-2xl p-4 flex flex-col gap-3 text-base">
+        <div class="flex items-center justify-between pb-2 border-b">
+          <span class="font-extrabold text-lg text-gray-900">TexanoAI<span class="text-orange-600">™</span></span>
+          <button id="navClose" aria-label="Close menu" class="p-2 rounded border border-gray-300">✕</button>
+        </div>
+        <a class='py-2' href='../index.html#mission'>About</a>
+        <a class='py-2' href='../index.html#mmx'>MMX™ &amp; Pulse™</a>
+        <a class='py-2' href='../index.html#raguelai'>RaguelAI™</a>
+        <a href="index.html" class="py-2 font-semibold text-orange-600">White Papers</a>
+        <a href="../blog/index.html" class="py-2">Blog</a>
+        <a class='inline-flex mt-2 items-center justify-center px-3 py-2 rounded-md bg-orange-600 text-white' href='../index.html#contact'>Contact</a>
+      </nav>
+    </div>
+    <!-- Main content -->
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <article class="prose lg:prose-lg max-w-none">
+        <h1 class="font-extrabold text-3xl md:text-4xl mb-6">Epistemic Transparency: Facts, Assumptions &amp; Projections</h1>
+<p class="byline text-sm text-gray-500 mt-1">By TexanoAI<span class="text-orange-600">™</span> • <time>Updated</time></p>
+        <p class="text-gray-700">In the age of generative AI, hallucinations and hidden heuristics erode trust. To restore confidence, our systems adopt <strong>Epistemic Transparency</strong>, a discipline that labels every meaningful claim as a <strong>Fact (F)</strong>, <strong>Assumption (A)</strong> or <strong>Projection (P)</strong>. This simple taxonomy makes it clear what is known, what is inferred and what is speculated—without exposing proprietary models. It’s a way to explain decisions without revealing the secret sauce.</p>
+        <p class="text-gray-700">The roots of Epistemic Transparency lie in global AI governance. The AI auditability principles adopted by Japan and echoed in the EU AI Act emphasise <em>transparency, fairness and accountability</em>. The EU’s risk‑tiered framework even mandates that developers document their data, assumptions and potential impacts. We take these expectations seriously. Instead of performing hand‑wavy risk assessments, we attach F/A/P labels to each step in our reasoning. This allows regulators and stakeholders to audit decisions efficiently, ensuring compliance without an invasive code review.</p>
+        <p class="text-gray-700">Here’s how it works. A <strong>Fact</strong> is verifiable: the user’s location, a legal statute, a court deadline. An <strong>Assumption</strong> fills a gap: perhaps the user’s employment history or the assumption that a witness remains willing to cooperate. A <strong>Projection</strong> is a plausible future outcome, ranked with qualitative confidence. By explicitly labeling information, we avoid conflating guesswork with evidence. This helps users understand the basis of their options and identify which parts need verification. When the system suggests a course of action, it indicates which elements are Facts, which are Assumptions and which are Projections, inviting the user to correct or confirm them.</p>
+        <p class="text-gray-700">The F/A/P framework also enhances the <strong>MMX™</strong> engine. MMX™ measures Motivation, Identity, Context and Time; Epistemic Transparency describes the quality of inputs feeding that measurement. Together they reveal when a user’s vector drifts from ethical norms: is the divergence due to missing data, incorrect assumptions or speculative leaps? The <strong>Ethics Pulse™</strong> then weighs options according to fairness and legality, ensuring the system never prefers a harmful projection over a safer, slower path.</p>
+        <p class="text-gray-700">Transparency doesn’t slow us down. As global regulatory landscapes tighten—with AI legislation surging more than ninefold since 2016—businesses that embrace F/A/P labeling gain a competitive edge. They can demonstrate compliance, reduce bias and avoid the hidden costs of lawsuits or product recalls. Most importantly, they build trust with the people they serve. When users know why an AI suggested a particular legal remedy or job‑application strategy, they’re more likely to follow through and achieve a fair outcome.</p>
+        <h2>Putting F/A/P Into Practice</h2>
+        <p class="text-gray-700">To implement Epistemic Transparency, you don’t need to overhaul your entire stack. Start by identifying the key claims in your application flow and tag them. Use F for data points pulled from verified databases or official documents. Use A when inferring from context (for example, presuming a user’s preferred language based on location). Use P when describing potential future scenarios. The system should expose these labels to the user whenever it proposes an action. Over time, you can integrate these labels into data schemas, logs and user interfaces, making them an integral part of your AI’s audit trail.</p>
+        <h2>Call to Action</h2>
+        <p class="text-gray-700">Epistemic Transparency is not just a technical tweak—it’s a cultural shift. It invites collaboration between developers, product managers, lawyers and users. It aligns with the eight auditability principles—particularly transparency, fairness, accountability and international cooperation. If you’re curious about embedding F/A/P into your workflows or building an audit‑ready system, <a class='text-orange-600' href='../audit-principles.html'>read our guide to the Eight Core Principles</a>. Or contact us directly to explore how the MMX™ engine and Ethics Pulse™ can work with Epistemic Transparency to make your AI both powerful and principled.</p>
+        <p class="text-xs text-gray-600 mt-8"><strong>UPL Notice:</strong> This publication is educational in nature and does not constitute legal advice. Consult a licensed attorney for advice about specific situations.</p>
+      </article>
+    </main>
+    <footer class="bg-gray-800 text-white py-8 mt-8">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p class="text-sm text-gray-400">© 2025 TexanoAI<span class="text-orange-600">™</span>. All rights reserved.</p>
+      </div>
+    </footer>
+    <script>
+    (function(){
+      var d=document,drawer=d.getElementById('mobileDrawer');
+      var openBtn=d.getElementById('navOpen'), closeBtn=d.getElementById('navClose'), overlay=d.getElementById('navOverlay');
+      function open(){ if(!drawer) return; drawer.classList.remove('hidden'); drawer.setAttribute('aria-hidden','false'); openBtn&&openBtn.setAttribute('aria-expanded','true'); closeBtn&&closeBtn.focus(); d.documentElement.style.overflow='hidden'; }
+      function close(){ if(!drawer) return; drawer.classList.add('hidden'); drawer.setAttribute('aria-hidden','true'); openBtn&&openBtn.setAttribute('aria-expanded','false'); d.documentElement.style.overflow=''; openBtn&&openBtn.focus(); }
+      openBtn&&openBtn.addEventListener('click', open, false);
+      closeBtn&&closeBtn.addEventListener('click', close, false);
+      overlay&&overlay.addEventListener('click', close, false);
+      d.addEventListener('keydown', function(e){ if(e.key==='Escape') close(); }, false);
+      drawer&&drawer.addEventListener('click', function(e){ if(e.target && e.target.tagName==='A'){ setTimeout(close,0); } }, false);
+    })();
+    </script>
+
+<section aria-label="Public Ending" class="public-ending" style="margin-top:18px;border-top:1px solid #e5e7eb;padding-top:12px">
+  <p><strong lang="en">Public Notice:</strong> TexanoAI™ is not a law firm; educational self‑help only. We guide procedures—no attorney‑client advice. Consult a licensed attorney.</p>
+  <p><strong lang="es">Aviso Público:</strong> TexanoAI™ no es un bufete de abogados; solo autoayuda educativa. Guiamos procedimientos—no asesoría abogado‑cliente. Consulte a un abogado con licencia.</p>
+</section>
+
+
+<section class="refs" style="max-width:860px;margin:0 auto;margin-top:24px;border-top:1px solid #e5e7eb;padding-top:12px">
+<h2>References</h2>
+<ol>
+  <li>AI Guidelines for Business v1.1 (METI/MIC, 2025).</li>
+  <li>EU AI Act (Regulation (EU) 2024/1689) — high‑risk tiers and documentation.</li>
+  <li>Stanford AI Index 2025 — global policy growth.</li>
+</ol>
+</section>
+</body>
+</html>
