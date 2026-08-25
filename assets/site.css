@@ -15,8 +15,8 @@
   --body: "Source Serif 4", Georgia, serif;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-html, body { background: var(--bg); color: var(--fg); font-family: var(--body); }
+html { scroll-behavior: smooth; overflow-x: clip; }
+html, body { background: var(--bg); color: var(--fg); font-family: var(--body); overflow-x: clip; max-width: 100%; }
 a { color: inherit; text-decoration: none; }
 a:focus-visible,
 button:focus-visible,
@@ -25,7 +25,7 @@ button:focus-visible,
   outline: 2px solid var(--gold-soft);
   outline-offset: 3px;
 }
-.wrap { max-width: 1120px; margin: 0 auto; padding: 0 28px; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 28px; width: 100%; }
 
 /* Heraldic stars */
 .stars {
@@ -104,9 +104,10 @@ nav.site-nav a.gold { color: var(--gold-soft); }
   content: ""; flex: 0 0 48px; height: 1px; background: linear-gradient(90deg, var(--gold), transparent);
 }
 h1 {
-  font-family: var(--display); font-size: clamp(34px, 5.2vw, 58px); font-weight: 600;
-  letter-spacing: -0.02em; line-height: 1.12; max-width: 16ch; position: relative;
+  font-family: var(--display); font-size: clamp(28px, 7vw, 58px); font-weight: 600;
+  letter-spacing: -0.02em; line-height: 1.12; max-width: 18ch; position: relative;
   text-shadow: 0 2px 24px rgba(0,0,0,0.35);
+  overflow-wrap: break-word;
 }
 .hero .lede {
   margin-top: 24px; max-width: 54ch; font-size: 18px; line-height: 1.65;
@@ -136,7 +137,7 @@ h1 {
 .band { background: var(--parchment); color: var(--ink); padding: 72px 0; }
 .band.navy { background: var(--surface); color: var(--fg); }
 .band.deep { background: var(--bg); color: var(--fg); }
-h2 { font-family: var(--display); font-size: 28px; margin-bottom: 16px; font-weight: 600; }
+h2 { font-family: var(--display); font-size: clamp(22px, 5vw, 28px); margin-bottom: 16px; font-weight: 600; overflow-wrap: anywhere; }
 .band p { max-width: 62ch; line-height: 1.65; }
 .dilemma { font-size: 21px; font-weight: 500; max-width: 46ch; line-height: 1.45; font-family: var(--body); }
 .bridge { margin-top: 18px; color: #3d3428; }
@@ -195,14 +196,17 @@ h2 { font-family: var(--display); font-size: 28px; margin-bottom: 16px; font-wei
 }
 .band.navy .fence, .band.deep .fence { color: var(--muted); border-color: rgba(212,175,55,0.35); }
 
-.loop { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 28px; }
+.loop { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-top: 28px; }
 .loop article {
-  background: var(--raised); border: 1px solid rgba(212,175,55,0.28); padding: 18px;
-  font-family: var(--ui); min-height: 150px;
+  background: #243456; border: 1px solid rgba(228,200,106,0.45); padding: 18px;
+  font-family: var(--ui); min-height: 150px; min-width: 0;
 }
-.loop .step { color: var(--gold); font-size: 11px; font-weight: 700; letter-spacing: 0.14em; }
-.loop h3 { margin: 8px 0 10px; font-size: 16px; font-family: var(--display); }
-.loop p { font-size: 14px; color: var(--muted); line-height: 1.5; }
+.loop .step { color: var(--gold-soft); font-size: 11px; font-weight: 700; letter-spacing: 0.14em; }
+.loop h3 { margin: 8px 0 10px; font-size: 16px; font-family: var(--display); color: var(--fg); }
+.loop p { font-size: 15px; color: #E6EAF2; line-height: 1.5; }
+
+.ladder, .vs, .roles, .cost-grid { min-width: 0; }
+.ladder > *, .vs > *, .loop > *, .cost-grid > * { min-width: 0; }
 
 .cost-grid {
   display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 28px;
@@ -235,6 +239,22 @@ footer {
   border-top: 1px solid rgba(212,175,55,0.22);
 }
 footer a { color: var(--gold-soft); }
+
+/* Breakpoints AFTER grid defaults so they actually win (was overridden by .loop 4-col). */
+@media (max-width: 900px) {
+  .wrap { padding: 0 18px; }
+  .ladder, .vs, .roles, .loop, .doors, .cost-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 640px) {
+  .wrap { padding: 0 16px; }
+  .ladder, .vs, .roles, .loop, .doors, .refuse, .cost-grid {
+    grid-template-columns: 1fr;
+  }
+  .band { padding: 48px 0; }
+  .hero { padding: 48px 0 56px; }
+}
 footer a:hover { color: var(--gold); }
 .footer-links { display: inline-flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; }
 .footer-sep { opacity: 0.45; }
