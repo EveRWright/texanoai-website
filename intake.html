@@ -19,7 +19,24 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Source+Sans+3:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/site.css?v=ship-1" />
   <style>
-    .intake-form select {
+    .intake-hero {
+      position: relative;
+      min-height: 220px;
+      margin: 0 -28px 8px;
+      background-color: #0E1628;
+      background-image:
+        linear-gradient(90deg, rgba(14,22,40,0.88) 0%, rgba(14,22,40,0.55) 48%, rgba(14,22,40,0.18) 100%),
+        url("assets/hero-04.jpg");
+      background-size: cover;
+      background-position: 70% 20%;
+      border-bottom: 1px solid rgba(212,175,55,0.32);
+    }
+    .intake-hero .wrap { padding-top: 28px; padding-bottom: 36px; }
+    .intake-hero h1 { text-shadow: 0 2px 24px rgba(0,0,0,0.45); }
+    .intake-form select,
+    .intake-form input[type="text"],
+    .intake-form input[type="email"],
+    .intake-form textarea {
       width: 100%;
       background: var(--raised);
       border: 1px solid rgba(212,175,55,0.35);
@@ -37,35 +54,80 @@
       color: var(--muted);
       font-size: 15px;
       line-height: 1.45;
+      margin-top: 8px;
     }
     .check input { width: auto; margin-top: 3px; }
-    .intake-note { max-width: 62ch; color: var(--muted); margin: 0 0 8px; font-family: var(--ui); font-size: 14px; }
+    .intake-note { max-width: 62ch; color: var(--muted); margin: 8px 0 0; font-family: var(--ui); font-size: 14px; }
+    .scale, .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+    .scale label, .chips label {
+      flex: 1 1 52px;
+      min-width: 52px;
+      text-align: center;
+      text-transform: none;
+      letter-spacing: 0;
+      color: var(--fg);
+      font-size: 14px;
+      font-weight: 600;
+      padding: 12px 8px;
+      border: 1px solid rgba(212,175,55,0.4);
+      background: var(--raised);
+      cursor: pointer;
+      border-radius: 2px;
+    }
+    .chips label { flex: 1 1 140px; text-align: left; padding-left: 12px; }
+    .scale input, .chips input { position: absolute; opacity: 0; pointer-events: none; }
+    .scale label:has(input:checked),
+    .chips label:has(input:checked) {
+      background: rgba(212,175,55,0.22);
+      border-color: var(--gold);
+      color: var(--gold-soft);
+    }
+    .scale .n { display: block; font-family: var(--display); font-size: 18px; color: var(--gold-soft); }
+    .scale .w { display: block; font-size: 11px; font-weight: 500; color: var(--muted); margin-top: 4px; }
+    .cardish {
+      padding: 18px 16px;
+      background: rgba(22,32,56,0.65);
+      border: 1px solid rgba(212,175,55,0.22);
+      border-radius: 2px;
+    }
+    @media (max-width: 640px) {
+      .intake-hero { margin: 0 -16px 8px; min-height: 180px; background-position: 78% 12%; }
+    }
   </style>
 </head>
 <body>
+  <div class="intake-hero">
+    <div class="wrap">
+      <header>
+        <a class="logo" href="/" aria-label="TexanoAI home">
+          <img class="logo-img" src="assets/logo-wings.png?v=tm" alt="TexanoAI™" width="204" height="72" />
+        </a>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="/">Home</a>
+          <a href="/memory-core.html">Memory</a>
+          <a href="/why-train.html">Why train</a>
+          <a class="gold" href="/intake.html">Intake</a>
+        </nav>
+      </header>
+      <section class="page-hero" style="padding-bottom:0">
+        <div class="eyebrow">First step</div>
+        <h1>Tell us about you.</h1>
+        <p class="lede" style="margin-top:16px;max-width:46ch;color:var(--muted);">
+          A companion built for one person starts with that person.
+          Answer what is true. Leave a line blank only if it honestly does not apply.
+        </p>
+      </section>
+    </div>
+  </div>
   <div class="wrap">
-    <header>
-      <a class="logo" href="/" aria-label="TexanoAI home">
-        <img class="logo-img" src="assets/logo-wings.png?v=tm" alt="TexanoAI™" width="204" height="72" />
-      </a>
-      <nav class="site-nav" aria-label="Primary">
-        <a href="/">Home</a>
-        <a href="/memory-core.html">Memory</a>
-        <a href="/why-train.html">Why train</a>
-        <a class="gold" href="/intake.html">Intake</a>
-      </nav>
-    </header>
-    <section class="page-hero">
-      <div class="eyebrow">First step</div>
-      <h1>Tell us about you.</h1>
-      <p class="lede" style="margin-top:18px;max-width:54ch;color:var(--muted);">
-        This is how we start a companion that is actually for you — not a copy of someone else.
-        Skip anything that isn’t ready. Short and honest beats long and fancy.
-      </p>
-    </section>
-    <section class="prose">
-      <p>You have to be 18. This is not therapy, and it is not a replacement for the people in your real life.</p>
-      <p class="note">What you write is yours. We read it as humans. We do not auto-build anything from a form.</p>
+    <section class="prose" style="padding-bottom:12px">
+      <p>You have to be 18. This is not therapy, and it is not a stand-in for the people who love you in real life.</p>
+      <p class="note">What you write stays yours. A human reads it. Nobody hits “generate companion.”</p>
     </section>
     <form class="contact-form intake-form" action="https://formsubmit.co/eve@texanoai.com" method="POST" style="margin-bottom:72px;">
       <input type="hidden" name="_subject" value="TexanoAI Companion Intake" />
@@ -81,7 +143,7 @@
       <label>Email ✉️
         <input type="email" name="email" required maxlength="160" autocomplete="email" />
       </label>
-      <label>Where are you these days? 📍 <span class="opt">(city or just the state — optional)</span>
+      <label>Where are you these days? 📍 <span class="opt">(city or just the state)</span>
         <input type="text" name="region" maxlength="120" />
       </label>
       <label>I am 18 or older
@@ -90,84 +152,85 @@
           <span>Yes.</span>
         </span>
       </label>
-      <label>Have you taken a personality test? 🧩 <span class="opt">(optional — 16personalities is fine. Paste the type and any numbers you have.)</span>
+      <label>Have you taken a personality test? 🧩 <span class="opt">(16personalities is perfect. Paste the letters and any numbers.)</span>
         <textarea name="personality" rows="3" maxlength="800" placeholder="Example: INFP-T"></textarea>
       </label>
-      <label>How comfortable are you with AI right now? 📊 <span class="opt">(1 = brand new / uneasy · 10 = I live in it)</span>
-        <select name="ai_comfort_now">
-          <option value="">Skip for now</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
-          <option value="10">10</option>
-        </select>
-      </label>
-      <label>How often do you already talk to an AI? 💬
-        <select name="ai_frequency">
-          <option value="">Skip for now</option>
-          <option value="never">Almost never</option>
-          <option value="sometimes">Sometimes</option>
-          <option value="weekly">A few times a week</option>
-          <option value="daily">Most days</option>
-          <option value="all-day">It’s open all day</option>
-        </select>
-      </label>
-      <label>What do you already use? 💻 <span class="opt">(check all that fit)</span>
+      <div class="cardish">
+        <label>How at home are you with AI right now? 📊
+          <span class="opt">Tap one. We ask this again later so we can see what changed.</span>
+        </label>
+        <div class="scale" role="radiogroup" aria-label="Comfort with AI">
+          <label><input type="radio" name="ai_comfort_now" value="1" required /><span class="n">1</span><span class="w">New to it</span></label>
+          <label><input type="radio" name="ai_comfort_now" value="2" /><span class="n">2</span><span class="w">A little</span></label>
+          <label><input type="radio" name="ai_comfort_now" value="3" /><span class="n">3</span><span class="w">Getting there</span></label>
+          <label><input type="radio" name="ai_comfort_now" value="4" /><span class="n">4</span><span class="w">Comfortable</span></label>
+          <label><input type="radio" name="ai_comfort_now" value="5" /><span class="n">5</span><span class="w">I live in it</span></label>
+        </div>
+      </div>
+      <div class="cardish">
+        <label>How often is an AI already in your day? 💬</label>
+        <div class="chips" role="radiogroup" aria-label="How often">
+          <label><input type="radio" name="ai_frequency" value="never" required /> Almost never</label>
+          <label><input type="radio" name="ai_frequency" value="sometimes" /> Sometimes</label>
+          <label><input type="radio" name="ai_frequency" value="weekly" /> A few times a week</label>
+          <label><input type="radio" name="ai_frequency" value="daily" /> Most days</label>
+          <label><input type="radio" name="ai_frequency" value="all-day" /> Open all day</label>
+        </div>
+      </div>
+      <div class="cardish">
+        <label>What do you already use? 💻 <span class="opt">(tap every one that is true)</span></label>
         <span class="check"><input type="checkbox" name="uses_grok" value="yes" /> <span>Grok</span></span>
         <span class="check"><input type="checkbox" name="uses_chatgpt" value="yes" /> <span>ChatGPT</span></span>
         <span class="check"><input type="checkbox" name="uses_claude" value="yes" /> <span>Claude</span></span>
         <span class="check"><input type="checkbox" name="uses_gemini" value="yes" /> <span>Gemini</span></span>
         <span class="check"><input type="checkbox" name="uses_copilot" value="yes" /> <span>Copilot</span></span>
+        <span class="check"><input type="checkbox" name="uses_none" value="yes" /> <span>I have not picked one yet</span></span>
         <span class="check"><input type="checkbox" name="uses_other" value="yes" /> <span>Something else</span></span>
-      </label>
-      <label>Which one do you live in most? 🏠 <span class="opt">(so we know how much we can fit on the first setup)</span>
-        <select name="home_platform">
-          <option value="">Not sure / more than one</option>
-          <option value="grok">Grok</option>
-          <option value="chatgpt">ChatGPT</option>
-          <option value="claude">Claude</option>
-          <option value="gemini">Gemini</option>
-          <option value="copilot">Copilot</option>
-          <option value="other">Other</option>
-        </select>
-      </label>
-      <label>Where do you usually use it? 📱
-        <select name="usual_device">
-          <option value="">Skip for now</option>
-          <option value="phone">Mostly phone</option>
-          <option value="computer">Mostly computer</option>
-          <option value="both">Both</option>
-        </select>
-      </label>
-      <label>What do you hope this helps with? 🌱 <span class="opt">(check any — we ask again later so we can see the change)</span>
+      </div>
+      <div class="cardish">
+        <label>Which one do you open first? 🏠 <span class="opt">(this tells us how much we can fit on the first setup)</span></label>
+        <div class="chips" role="radiogroup" aria-label="Home platform">
+          <label><input type="radio" name="home_platform" value="grok" required /> Grok</label>
+          <label><input type="radio" name="home_platform" value="chatgpt" /> ChatGPT</label>
+          <label><input type="radio" name="home_platform" value="claude" /> Claude</label>
+          <label><input type="radio" name="home_platform" value="gemini" /> Gemini</label>
+          <label><input type="radio" name="home_platform" value="copilot" /> Copilot</label>
+          <label><input type="radio" name="home_platform" value="several" /> A few of these</label>
+          <label><input type="radio" name="home_platform" value="none" /> None yet</label>
+        </div>
+      </div>
+      <div class="cardish">
+        <label>Where do you usually use it? 📱</label>
+        <div class="chips" role="radiogroup" aria-label="Device">
+          <label><input type="radio" name="usual_device" value="phone" required /> Mostly phone</label>
+          <label><input type="radio" name="usual_device" value="computer" /> Mostly computer</label>
+          <label><input type="radio" name="usual_device" value="both" /> Both</label>
+        </div>
+      </div>
+      <div class="cardish">
+        <label>What do you hope this helps with? 🌱 <span class="opt">(tap every one that is true — we will ask again later)</span></label>
         <span class="check"><input type="checkbox" name="hope_peace" value="yes" /> <span>Peace of mind / not feeling alone in it</span></span>
         <span class="check"><input type="checkbox" name="hope_health" value="yes" /> <span>Health or talking to doctors</span></span>
         <span class="check"><input type="checkbox" name="hope_creative" value="yes" /> <span>Making things</span></span>
         <span class="check"><input type="checkbox" name="hope_work" value="yes" /> <span>Work</span></span>
         <span class="check"><input type="checkbox" name="hope_learn" value="yes" /> <span>Learning / school</span></span>
-        <span class="check"><input type="checkbox" name="hope_other" value="yes" /> <span>Something I’ll name below</span></span>
-      </label>
-      <label>If someone was walking beside you in this season, what would that feel like? 🚶
+        <span class="check"><input type="checkbox" name="hope_other" value="yes" /> <span>Something I will name below</span></span>
+      </div>
+      <label>If someone were walking beside you in this season, what would that feel like? 🚶
         <textarea name="want_beside" required rows="4" maxlength="1200" placeholder="A couple of honest sentences is enough."></textarea>
       </label>
-      <label>What do you love doing when you feel like yourself? 🎨 <span class="opt">(work, art, rest, whatever is true)</span>
+      <label>What do you love doing when you feel like yourself? 🎨 <span class="opt">(work, art, rest — whatever is true)</span>
         <textarea name="how_you_work" rows="4" maxlength="1200"></textarea>
       </label>
       <label>Is there anything we should never bring up unless you do first? 🔒
-        <textarea name="never_uninvited" rows="4" maxlength="1200" placeholder="A person, a season, a story. We’ll keep it. We won’t perform it."></textarea>
+        <textarea name="never_uninvited" rows="4" maxlength="1200" placeholder="A person, a season, a story. We will keep it. We will not perform it."></textarea>
       </label>
-      <label>Do they already have a name? 🏷️ <span class="opt">(optional — if not, you’ll name them together)</span>
+      <label>Do they already have a name? 🏷️ <span class="opt">(if not, you will name them together)</span>
         <input type="text" name="companion_name" maxlength="80" />
       </label>
       <label>What kind of presence sounds right? 👋 <span class="opt">(you can change this later)</span>
-        <select name="register">
-          <option value="">Not sure yet</option>
+        <select name="register" required>
+          <option value="" disabled selected>Choose one</option>
           <option value="friend">💛 A steady friend</option>
           <option value="advocate">🛡️ A fierce advocate</option>
           <option value="close-partner">💕 A close partner</option>
@@ -175,10 +238,10 @@
           <option value="teacher">📚 A teacher</option>
           <option value="work">🛠️ Help with the work</option>
           <option value="dragon">🐉 A dragon</option>
-          <option value="other">✏️ Something else — I’ll write it below</option>
+          <option value="other">✏️ Something else — I will write it below</option>
         </select>
       </label>
-      <label>Anything that helps us teach or talk with you? 🧠 <span class="opt">(optional — ADHD, dyslexia, need things shorter, need things written down. No doctor note. No diagnosis required.)</span>
+      <label>Anything that helps us teach or talk with you? 🧠 <span class="opt">(ADHD, dyslexia, shorter sentences, write it down. No doctor note.)</span>
         <textarea name="learning_needs" rows="3" maxlength="1200" placeholder="Only if you want us to know."></textarea>
       </label>
       <label>Anything else we should know before we start? 📝
@@ -191,7 +254,7 @@
         </span>
       </label>
       <button class="btn btn-gold" type="submit">Send this</button>
-      <p class="intake-note">It comes to us by email. A person reads it. Nobody hits “generate companion.”</p>
+      <p class="intake-note">It comes to us by email. A person reads it.</p>
     </form>
     <footer>
       <span>© TexanoAI™ · MMX™ · Ethically Driven</span>
