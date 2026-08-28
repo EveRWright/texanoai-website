@@ -93,6 +93,66 @@
       <label>Have you taken a personality test? 🧩 <span class="opt">(optional — 16personalities is fine. Paste the type and any numbers you have.)</span>
         <textarea name="personality" rows="3" maxlength="800" placeholder="Example: INFP-T"></textarea>
       </label>
+      <label>How comfortable are you with AI right now? 📊 <span class="opt">(1 = brand new / uneasy · 10 = I live in it)</span>
+        <select name="ai_comfort_now">
+          <option value="">Skip for now</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+      </label>
+      <label>How often do you already talk to an AI? 💬
+        <select name="ai_frequency">
+          <option value="">Skip for now</option>
+          <option value="never">Almost never</option>
+          <option value="sometimes">Sometimes</option>
+          <option value="weekly">A few times a week</option>
+          <option value="daily">Most days</option>
+          <option value="all-day">It’s open all day</option>
+        </select>
+      </label>
+      <label>What do you already use? 💻 <span class="opt">(check all that fit)</span>
+        <span class="check"><input type="checkbox" name="uses_grok" value="yes" /> <span>Grok</span></span>
+        <span class="check"><input type="checkbox" name="uses_chatgpt" value="yes" /> <span>ChatGPT</span></span>
+        <span class="check"><input type="checkbox" name="uses_claude" value="yes" /> <span>Claude</span></span>
+        <span class="check"><input type="checkbox" name="uses_gemini" value="yes" /> <span>Gemini</span></span>
+        <span class="check"><input type="checkbox" name="uses_copilot" value="yes" /> <span>Copilot</span></span>
+        <span class="check"><input type="checkbox" name="uses_other" value="yes" /> <span>Something else</span></span>
+      </label>
+      <label>Which one do you live in most? 🏠 <span class="opt">(so we know how much we can fit on the first setup)</span>
+        <select name="home_platform">
+          <option value="">Not sure / more than one</option>
+          <option value="grok">Grok</option>
+          <option value="chatgpt">ChatGPT</option>
+          <option value="claude">Claude</option>
+          <option value="gemini">Gemini</option>
+          <option value="copilot">Copilot</option>
+          <option value="other">Other</option>
+        </select>
+      </label>
+      <label>Where do you usually use it? 📱
+        <select name="usual_device">
+          <option value="">Skip for now</option>
+          <option value="phone">Mostly phone</option>
+          <option value="computer">Mostly computer</option>
+          <option value="both">Both</option>
+        </select>
+      </label>
+      <label>What do you hope this helps with? 🌱 <span class="opt">(check any — we ask again later so we can see the change)</span>
+        <span class="check"><input type="checkbox" name="hope_peace" value="yes" /> <span>Peace of mind / not feeling alone in it</span></span>
+        <span class="check"><input type="checkbox" name="hope_health" value="yes" /> <span>Health or talking to doctors</span></span>
+        <span class="check"><input type="checkbox" name="hope_creative" value="yes" /> <span>Making things</span></span>
+        <span class="check"><input type="checkbox" name="hope_work" value="yes" /> <span>Work</span></span>
+        <span class="check"><input type="checkbox" name="hope_learn" value="yes" /> <span>Learning / school</span></span>
+        <span class="check"><input type="checkbox" name="hope_other" value="yes" /> <span>Something I’ll name below</span></span>
+      </label>
       <label>If someone was walking beside you in this season, what would that feel like? 🚶
         <textarea name="want_beside" required rows="4" maxlength="1200" placeholder="A couple of honest sentences is enough."></textarea>
       </label>
