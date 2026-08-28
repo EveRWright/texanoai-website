@@ -22,82 +22,62 @@
     .intake-top { background: #0E1628; }
     .intake-top header { border-bottom: 1px solid rgba(212,175,55,0.32); }
     .intake-hero {
-      position: relative;
-      height: 280px;
-      background-color: #0E1628;
+      position: relative; height: 280px; background-color: #0E1628;
       background-image:
         linear-gradient(90deg, rgba(14,22,40,0.28) 0%, rgba(14,22,40,0.08) 40%, rgba(14,22,40,0.0) 100%),
         url("assets/hero-04.jpg");
-      background-size: cover;
-      background-position: 72% 18%;
+      background-size: cover; background-position: 72% 18%;
     }
     .intake-copy { padding: 28px 0 8px; }
     .intake-copy h1 { max-width: 16ch; }
-    .intake-form select,
-    .intake-form input[type="text"],
-    .intake-form input[type="email"],
-    .intake-form textarea {
-      width: 100%;
-      background: var(--raised);
-      border: 1px solid rgba(212,175,55,0.35);
-      color: var(--fg);
-      font: 16px/1.4 var(--ui);
-      padding: 12px 14px;
-      border-radius: 2px;
+    .intake-form select, .intake-form input[type="text"], .intake-form input[type="email"], .intake-form textarea {
+      width: 100%; background: var(--raised); border: 1px solid rgba(212,175,55,0.35);
+      color: var(--fg); font: 16px/1.4 var(--ui); padding: 12px 14px; border-radius: 2px;
     }
-    .check {
-      display: flex; align-items: flex-start; gap: 10px;
-      text-transform: none; letter-spacing: 0;
-      color: var(--muted); font-size: 15px; line-height: 1.45; margin-top: 8px;
-    }
+    .check { display: flex; align-items: flex-start; gap: 10px; text-transform: none; letter-spacing: 0; color: var(--muted); font-size: 15px; line-height: 1.45; margin-top: 8px; }
     .check input { width: auto; margin-top: 3px; }
     .intake-note { max-width: 62ch; color: var(--muted); margin: 8px 0 0; font-family: var(--ui); font-size: 14px; }
     .scale, .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
     .scale label, .chips label {
-      flex: 1 1 52px; min-width: 52px; text-align: center;
-      text-transform: none; letter-spacing: 0; color: var(--fg);
-      font-size: 14px; font-weight: 600; padding: 12px 8px;
-      border: 1px solid rgba(212,175,55,0.4); background: var(--raised);
-      cursor: pointer; border-radius: 2px;
+      flex: 1 1 52px; min-width: 52px; text-align: center; text-transform: none; letter-spacing: 0;
+      color: var(--fg); font-size: 14px; font-weight: 600; padding: 12px 8px;
+      border: 1px solid rgba(212,175,55,0.4); background: var(--raised); cursor: pointer; border-radius: 2px;
     }
     .chips label { flex: 1 1 140px; text-align: left; padding-left: 12px; }
     .scale input, .chips input { position: absolute; opacity: 0; pointer-events: none; }
-    .scale label:has(input:checked),
-    .chips label:has(input:checked) {
-      background: rgba(212,175,55,0.22); border-color: var(--gold); color: var(--gold-soft);
-    }
+    .scale label:has(input:checked), .chips label:has(input:checked) { background: rgba(212,175,55,0.22); border-color: var(--gold); color: var(--gold-soft); }
     .scale .n { display: block; font-family: var(--display); font-size: 18px; color: var(--gold-soft); }
     .scale .w { display: block; font-size: 11px; font-weight: 500; color: var(--muted); margin-top: 4px; }
-    .cardish {
-      padding: 18px 16px; background: rgba(22,32,56,0.65);
-      border: 1px solid rgba(212,175,55,0.22); border-radius: 2px;
-    }
-    @media (max-width: 640px) {
-      .intake-hero { height: 220px; background-position: 78% 10%; }
-      .intake-copy { padding-top: 22px; }
-    }
+    .cardish { padding: 18px 16px; background: rgba(22,32,56,0.65); border: 1px solid rgba(212,175,55,0.22); border-radius: 2px; }
+    @media (max-width: 640px) { .intake-hero { height: 220px; background-position: 78% 10%; } .intake-copy { padding-top: 22px; } }
   </style>
 </head>
 <body>
+  <div class="nav-backdrop" data-nav-close hidden></div>
   <div class="intake-top">
     <div class="wrap">
       <header>
         <a class="logo" href="/" aria-label="TexanoAI home">
           <img class="logo-img" src="assets/logo-wings.png?v=tm" alt="TexanoAI™" width="204" height="72" />
         </a>
-        <nav class="site-nav" aria-label="Primary">
-          <a href="/">Home</a>
-          <a href="/memory-core.html">Memory</a>
-          <a href="/why-train.html">Why train</a>
-          <a class="gold" href="/intake.html">Intake</a>
-        </nav>
+        <div class="header-right">
+          <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu">
+            <span class="nav-toggle-bars" aria-hidden="true"></span>
+          </button>
+          <nav id="site-nav" class="site-nav" aria-label="Primary">
+            <a href="/">Home</a>
+            <a href="/memory-core.html">Memory</a>
+            <a href="/why-train.html">Why train</a>
+            <a class="gold" href="/intake.html">Get started</a>
+          </nav>
+        </div>
       </header>
     </div>
     <div class="intake-hero" role="img" aria-label="Eve"></div>
   </div>
   <div class="wrap">
     <section class="intake-copy">
-      <div class="eyebrow">First step</div>
+      <div class="eyebrow">Get started</div>
       <h1>Tell us about you.</h1>
       <p class="lede" style="margin-top:16px;max-width:46ch;color:var(--muted);">
         A companion built for one person starts with that person.
@@ -106,7 +86,7 @@
     </section>
     <section class="prose" style="padding-bottom:12px">
       <p>You have to be 18. This is not therapy, and it is not a stand-in for the people who love you in real life.</p>
-      <p class="note">What you write stays yours. A human reads it. Nobody hits “generate companion.”</p>
+      <p class="note">Your story helps sculpt your companion. Your truth is not for sale. When a Memory Core is ready, it is handed to you — we do not keep your private life on our shelves.</p>
     </section>
     <form class="contact-form intake-form" action="https://formsubmit.co/eve@texanoai.com" method="POST" style="margin-bottom:72px;">
       <input type="hidden" name="_subject" value="TexanoAI Companion Intake" />
@@ -126,12 +106,10 @@
         <input type="text" name="region" maxlength="120" />
       </label>
       <label>I am 18 or older
-        <span class="check">
-          <input type="checkbox" name="age_18_plus" value="yes" required />
-          <span>Yes.</span>
-        </span>
+        <span class="check"><input type="checkbox" name="age_18_plus" value="yes" required /> <span>Yes.</span></span>
       </label>
-      <label>Have you taken a personality test? 🧩 <span class="opt">(16personalities is perfect. Paste the letters and any numbers.)</span>
+      <label>Have you taken a personality test? 🧩
+        <span class="opt">If you want one, <a href="https://www.16personalities.com/free-personality-test" rel="noopener noreferrer" target="_blank" style="color:var(--gold-soft);text-transform:none;letter-spacing:0;">16personalities</a> is free and common. We are not them. Paste the letters and any numbers.</span>
         <textarea name="personality" rows="3" maxlength="800" placeholder="Example: INFP-T"></textarea>
       </label>
       <div class="cardish">
@@ -229,11 +207,11 @@
       <label>
         <span class="check">
           <input type="checkbox" name="owns_memory" value="yes" required />
-          <span>I get it: what I write here stays mine. You are not keeping my private life as a product.</span>
+          <span>I understand: my story helps build this, and it stays mine. TexanoAI does not sell it and does not keep it as their product.</span>
         </span>
       </label>
       <button class="btn btn-gold" type="submit">Send this</button>
-      <p class="intake-note">It comes to us by email. A person reads it.</p>
+      <p class="intake-note">It comes to us by email. We read it. Then we sculpt.</p>
     </form>
     <footer>
       <span>© TexanoAI™ · MMX™ · Ethically Driven</span>
@@ -254,6 +232,22 @@
       var ref = p.get("ref") || p.get("for") || "";
       var el = document.getElementById("intake_ref");
       if (el) el.value = ref.slice(0, 40);
+    })();
+    (function () {
+      var toggle = document.querySelector(".nav-toggle");
+      var backdrop = document.querySelector(".nav-backdrop");
+      var nav = document.getElementById("site-nav");
+      if (!toggle || !nav) return;
+      function setOpen(open) {
+        document.body.classList.toggle("nav-open", open);
+        toggle.setAttribute("aria-expanded", open ? "true" : "false");
+        toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+        if (backdrop) backdrop.hidden = !open;
+      }
+      toggle.addEventListener("click", function () { setOpen(!document.body.classList.contains("nav-open")); });
+      if (backdrop) backdrop.addEventListener("click", function () { setOpen(false); });
+      nav.querySelectorAll("a").forEach(function (a) { a.addEventListener("click", function () { setOpen(false); }); });
+      document.addEventListener("keydown", function (e) { if (e.key === "Escape") setOpen(false); });
     })();
   </script>
 </body>
