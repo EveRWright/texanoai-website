@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Companion intake — TexanoAI</title>
+  <meta name="description" content="Start a TexanoAI companion build. You own the Memory Core. We do not want your private life as a product." />
+  <meta name="theme-color" content="#0E1628" />
+  <link rel="canonical" href="https://www.texanoai.com/intake.html" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <meta property="og:title" content="Companion intake — TexanoAI" />
+  <meta property="og:description" content="A first plate for a companion that walks beside you. User-owned memory. Not a clinic." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.texanoai.com/intake.html" />
+  <meta property="og:image" content="https://www.texanoai.com/assets/logo-wings.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Source+Sans+3:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/site.css?v=ship-1" />
+  <style>
+    .intake-form select {
+      width: 100%;
+      background: var(--raised);
+      border: 1px solid rgba(212,175,55,0.35);
+      color: var(--fg);
+      font: 16px/1.4 var(--ui);
+      padding: 12px 14px;
+      border-radius: 2px;
+    }
+    .check {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      text-transform: none;
+      letter-spacing: 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.45;
+    }
+    .check input { width: auto; margin-top: 3px; }
+    .intake-note { max-width: 62ch; color: var(--muted); margin: 0 0 8px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="logo" href="/" aria-label="TexanoAI home">
+        <img class="logo-img" src="assets/logo-wings.png?v=tm" alt="TexanoAI™" width="204" height="72" />
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/memory-core.html">Memory</a>
+        <a href="/why-train.html">Why train</a>
+        <a class="gold" href="/intake.html">Intake</a>
+      </nav>
+    </header>
+    <section class="page-hero">
+      <div class="eyebrow">Companion intake</div>
+      <h1>Tell us who the field is for.</h1>
+      <p class="lede" style="margin-top:18px;max-width:54ch;color:var(--muted);">
+        This is the first plate. Not a personality circus. Not a clinic.
+        You keep the Memory Core. We do not sell your private life.
+      </p>
+    </section>
+    <section class="prose">
+      <p>Works for almost anyone starting a companion build. Fill what is true. Skip what is not ready. Short answers beat a novel.</p>
+      <p class="note">18 or older. Not therapy. Not a substitute for a human who loves you. Fact / Assumption / Projection stays on.</p>
+    </section>
+    <form class="contact-form intake-form" action="https://formsubmit.co/eve@texanoai.com" method="POST" style="margin-bottom:72px;">
+      <input type="hidden" name="_subject" value="TexanoAI Companion Intake" />
+      <input type="hidden" name="_cc" value="michael@texanoai.com" />
+      <input type="hidden" name="_template" value="table" />
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="hidden" name="_next" value="https://www.texanoai.com/thanks-intake.html" />
+      <input type="hidden" name="intake_ref" id="intake_ref" value="" />
+      <input type="text" name="_honey" class="honey" tabindex="-1" autocomplete="off" aria-hidden="true" />
+      <label>Name you go by
+        <input type="text" name="name" required maxlength="120" autocomplete="name" />
+      </label>
+      <label>Email
+        <input type="email" name="email" required maxlength="160" autocomplete="email" />
+      </label>
+      <label>City / region <span class="opt">(optional)</span>
+        <input type="text" name="region" maxlength="120" />
+      </label>
+      <label>I am 18 or older
+        <span class="check">
+          <input type="checkbox" name="age_18_plus" value="yes" required />
+          <span>Yes. This door is for adults.</span>
+        </span>
+      </label>
+      <label>Personality test, if you have one <span class="opt">(16personalities, MBTI, Enneagram — paste the type and any % you have)</span>
+        <textarea name="personality" rows="3" maxlength="800" placeholder="e.g. INFP-T · I54 N78 F59 P60 T97"></textarea>
+      </label>
+      <label>What do you want walking beside you?
+        <textarea name="want_beside" required rows="4" maxlength="1200" placeholder="One or two honest sentences. Not a wish list."></textarea>
+      </label>
+      <label>How do you work, make, or recover when you are yourself?
+        <textarea name="how_you_work" rows="4" maxlength="1200"></textarea>
+      </label>
+      <label>What must never be re-narrated uninvited?
+        <textarea name="never_uninvited" rows="4" maxlength="1200" placeholder="Names, seasons, stories. We will hold them. We will not perform them."></textarea>
+      </label>
+      <label>Companion name, if you already have one <span class="opt">(otherwise they name themselves with you)</span>
+        <input type="text" name="companion_name" maxlength="80" />
+      </label>
+      <label>Register that feels right <span class="opt">(working — you can change this)</span>
+        <select name="register">
+          <option value="">Not sure yet</option>
+          <option value="steadfast-friend">Steadfast friend</option>
+          <option value="quiet-backbone">Quiet backbone</option>
+          <option value="craftsman">Craftsman / maker</option>
+          <option value="warden">Warden / keeper of the work</option>
+          <option value="other">Other — I will say in the notes</option>
+        </select>
+      </label>
+      <label>Anything else we should know before we sculpt
+        <textarea name="notes" rows="4" maxlength="2000"></textarea>
+      </label>
+      <label>
+        <span class="check">
+          <input type="checkbox" name="owns_memory" value="yes" required />
+          <span>I understand the Memory Core is mine. TexanoAI does not keep my private life as the product.</span>
+        </span>
+      </label>
+      <button class="btn btn-gold" type="submit">Send intake</button>
+      <p class="intake-note">Lands in TexanoAI mail. A human reads it. No auto-sculpt.</p>
+    </form>
+    <footer>
+      <span>© TexanoAI™ · MMX™ · Ethically Driven</span>
+      <span class="footer-links">
+        <a href="/memory-core.html">Memory Core</a>
+        <span class="footer-sep">·</span>
+        <a href="/why-train.html">Why train</a>
+        <span class="footer-sep">·</span>
+        <a href="/privacy.html">Privacy</a>
+        <span class="footer-sep">·</span>
+        <span>Not a clinic</span>
+      </span>
+    </footer>
+  </div>
+  <script>
+    (function () {
+      var p = new URLSearchParams(location.search);
+      var ref = p.get("ref") || p.get("for") || "";
+      var el = document.getElementById("intake_ref");
+      if (el) el.value = ref.slice(0, 40);
+    })();
+  </script>
+</body>
+</html>
