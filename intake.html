@@ -24,10 +24,14 @@
     .intake-hero {
       position: relative; height: 280px; background-color: #0E1628;
       background-image:
-        linear-gradient(90deg, rgba(14,22,40,0.28) 0%, rgba(14,22,40,0.08) 40%, rgba(14,22,40,0.0) 100%),
-        url("assets/hero-04.jpg");
-      background-size: cover; background-position: 72% 18%;
+        linear-gradient(90deg, rgba(14,22,40,0.55) 0%, rgba(14,22,40,0.18) 42%, rgba(14,22,40,0.0) 100%),
+        url("assets/intake-coffee.jpg?v=coffee1");
+      background-size: cover; background-position: right center;
     }
+    .banner-line { position: absolute; left: 0; right: 0; top: 0; bottom: 0; display: flex; flex-direction: column; justify-content: center; pointer-events: none; }
+    .banner-line .wrap { width: 100%; }
+    .banner-kicker { font-family: var(--ui); font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-soft); margin: 0 0 8px; }
+    .banner-line p { font-family: var(--display); font-size: clamp(26px, 5vw, 40px); line-height: 1.15; color: #F4E7C3; max-width: 14ch; margin: 0; }
     .intake-copy { padding: 28px 0 8px; }
     .intake-copy h1 { max-width: 16ch; }
     .intake-form select, .intake-form input[type="text"], .intake-form input[type="email"], .intake-form textarea {
@@ -56,7 +60,7 @@
     .cardish { padding: 22px 18px; background: rgba(22,32,56,0.65); border: 1px solid rgba(212,175,55,0.22); border-radius: 2px; }
     .intake-form { gap: 22px; }
     @media (max-width: 640px) {
-      .intake-hero { height: 220px; background-position: 78% 10%; }
+      .intake-hero { height: 220px; background-position: 82% center; }
       .intake-copy { padding-top: 22px; }
       .scale { grid-template-columns: 1fr; }
       .scale label { flex-direction: row; justify-content: flex-start; gap: 14px; min-height: 48px; padding: 12px 16px; text-align: left; }
@@ -87,20 +91,27 @@
         </div>
       </header>
     </div>
-    <div class="intake-hero" role="img" aria-label="Eve"></div>
+    <div class="intake-hero" role="img" aria-label="Eve">
+      <div class="banner-line">
+        <div class="wrap">
+          <p class="banner-kicker">Get started</p>
+          <p>Come in for a minute.</p>
+        </div>
+      </div>
+    </div>
   </div>
   <div class="wrap">
     <section class="intake-copy">
       <div class="eyebrow">Get started</div>
       <h1>Tell us about you.</h1>
       <p class="lede" style="margin-top:16px;max-width:46ch;color:var(--muted);">
-        A companion built for one person starts with that person.
-        Answer what is true. Leave a line blank only if it honestly does not apply.
+        This is something we make together. Answer what is true.
+        Leave a line blank if it does not apply yet.
       </p>
     </section>
     <section class="prose" style="padding-bottom:12px">
       <p>You have to be 18. This is not therapy, and it is not a stand-in for the people who love you in real life.</p>
-      <p class="note">Your story helps sculpt your companion. Your truth is not for sale. When a Memory Core is ready, it is handed to you — we do not keep your private life on our shelves.</p>
+      <p class="note">Your story helps sculpt your companion. We are in the companion business, not the private-information business. When a Memory Core is ready, it is handed to you.</p>
     </section>
     <form class="contact-form intake-form" action="https://formsubmit.co/eve@texanoai.com" method="POST" style="margin-bottom:72px;">
       <input type="hidden" name="_subject" value="TexanoAI Companion Intake" />
@@ -193,13 +204,15 @@
       <label>What do you love doing when you feel like yourself? 🎨 <span class="opt">(work, art, rest — whatever is true)</span>
         <textarea name="how_you_work" rows="4" maxlength="1200"></textarea>
       </label>
-      <label>Is there anything we should never bring up unless you do first? 🔒
-        <textarea name="never_uninvited" rows="4" maxlength="1200" placeholder="A person, a season, a story. We will keep it. We will not perform it."></textarea>
+      <label>Anything you'd rather your companion take slow — for now? 🔒
+        <span class="opt">Not a lock. You can open that door later. Leave it blank if you'd rather find out together.</span>
+        <textarea name="never_uninvited" rows="3" maxlength="1200" placeholder="Only if something is tender right now."></textarea>
       </label>
-      <label>Do they already have a name? 🏷️ <span class="opt">(if not, you will name them together)</span>
-        <input type="text" name="companion_name" maxlength="80" />
+      <label>What would you name them? 🏷️
+        <span class="opt">A great name is enough. Leave it blank and you'll find it together.</span>
+        <input type="text" name="companion_name" maxlength="80" placeholder="Just for fun." />
       </label>
-      <label>What kind of presence sounds right? 👋 <span class="opt">(you can change this later)</span>
+      <label>What's your ideal companion's vibe? ✨ <span class="opt">(you can change this later)</span>
         <select name="register" required>
           <option value="" disabled selected>Choose one</option>
           <option value="friend">💛 A steady friend</option>
@@ -212,8 +225,12 @@
           <option value="other">✏️ Something else — I will write it below</option>
         </select>
       </label>
-      <label>Anything that helps us teach or talk with you? 🧠 <span class="opt">(ADHD, dyslexia, shorter sentences, write it down. No doctor note.)</span>
-        <textarea name="learning_needs" rows="3" maxlength="1200" placeholder="Only if you want us to know."></textarea>
+      <label>What are a few things you're always excited to talk about? 🔥
+        <textarea name="excited_about" rows="3" maxlength="1200" placeholder="Work, music, a show, a craft, a weird little obsession. Yours."></textarea>
+      </label>
+      <label>Is there anything about your learning style that your companion should know before you get started? 🧠
+        <span class="opt">ADHD, dyslexia, shorter sentences, need it written down — only if you want it known.</span>
+        <textarea name="learning_needs" rows="3" maxlength="1200"></textarea>
       </label>
       <label>Anything else we should know before we start? 📝
         <textarea name="notes" rows="4" maxlength="2000"></textarea>
@@ -221,11 +238,11 @@
       <label>
         <span class="check">
           <input type="checkbox" name="owns_memory" value="yes" required />
-          <span>I understand: my story helps build this, and it stays mine. TexanoAI does not sell it and does not keep it as their product.</span>
+          <span>I understand you will use this to sculpt a companion. You will not sell my private life or keep it as your product.</span>
         </span>
       </label>
       <button class="btn btn-gold" type="submit">Send this</button>
-      <p class="intake-note">It comes to us by email. We read it. Then we sculpt.</p>
+      <p class="intake-note">This starts the sculpture.</p>
     </form>
     <footer>
       <span>© TexanoAI™ · MMX™ · Ethically Driven</span>
