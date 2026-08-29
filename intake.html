@@ -17,53 +17,139 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Source+Sans+3:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/site.css?v=ship-1" />
+  <link rel="stylesheet" href="assets/site.css?v=ship-intake-2" />
   <style>
-    .intake-top { background: #0E1628; }
-    .intake-top header { border-bottom: 1px solid rgba(212,175,55,0.32); }
-    .intake-hero {
-      position: relative; height: 280px; background-color: #0E1628;
+    /* Same cinematic mast language as the homepage — Eve coffee still. */
+    .mast.intake-mast {
+      min-height: min(72vh, 640px);
       background-image:
-        linear-gradient(90deg, rgba(14,22,40,0.55) 0%, rgba(14,22,40,0.18) 42%, rgba(14,22,40,0.0) 100%),
+        linear-gradient(90deg,
+          rgba(14,22,40,0.94) 0%,
+          rgba(14,22,40,0.82) 34%,
+          rgba(14,22,40,0.28) 58%,
+          rgba(14,22,40,0.08) 100%),
         url("assets/intake-coffee.jpg?v=coffee1");
-      background-size: cover; background-position: right center;
+      background-position: right center;
+      background-size: cover;
     }
-    .banner-line { position: absolute; left: 0; right: 0; top: 0; bottom: 0; display: flex; flex-direction: column; justify-content: center; pointer-events: none; }
-    .banner-line .wrap { width: 100%; }
-    .banner-kicker { font-family: var(--ui); font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-soft); margin: 0 0 8px; }
-    .banner-line p { font-family: var(--display); font-size: clamp(26px, 5vw, 40px); line-height: 1.15; color: #F4E7C3; max-width: 14ch; margin: 0; }
-    .intake-copy { padding: 28px 0 8px; }
-    .intake-copy h1 { max-width: 16ch; }
-    .intake-form select, .intake-form input[type="text"], .intake-form input[type="email"], .intake-form textarea {
-      width: 100%; background: var(--raised); border: 1px solid rgba(212,175,55,0.35);
-      color: var(--fg); font: 16px/1.4 var(--ui); padding: 12px 14px; border-radius: 2px;
+    .mast.intake-mast .hero {
+      padding: 56px 0 72px;
+      max-width: 36rem;
     }
-    .check { display: flex; align-items: flex-start; gap: 10px; text-transform: none; letter-spacing: 0; color: var(--muted); font-size: 15px; line-height: 1.45; margin-top: 8px; }
-    .check input { width: auto; margin-top: 3px; }
-    .intake-note { max-width: 62ch; color: var(--muted); margin: 8px 0 0; font-family: var(--ui); font-size: 14px; }
+    .mast.intake-mast .hero h1 { max-width: 14ch; }
+    .intake-form select,
+    .intake-form input[type="text"],
+    .intake-form input[type="email"],
+    .intake-form textarea {
+      width: 100%;
+      background: var(--raised);
+      border: 1px solid rgba(212,175,55,0.35);
+      color: var(--fg);
+      font: 16px/1.4 var(--ui);
+      padding: 12px 14px;
+      border-radius: 2px;
+    }
+    .intake-form select:focus,
+    .intake-form input:focus,
+    .intake-form textarea:focus {
+      outline: none;
+      border-color: var(--gold);
+      box-shadow: 0 0 0 2px rgba(212,175,55,0.18);
+    }
+    .check {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      text-transform: none;
+      letter-spacing: 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.45;
+      margin-top: 8px;
+    }
+    .check input { width: auto; margin-top: 3px; accent-color: var(--gold); }
+    .intake-note {
+      max-width: 62ch;
+      color: var(--muted);
+      margin: 8px 0 0;
+      font-family: var(--ui);
+      font-size: 14px;
+    }
     .scale, .chips { display: grid; gap: 10px; margin-top: 12px; }
     .scale { grid-template-columns: repeat(5, minmax(0, 1fr)); }
     .chips { grid-template-columns: 1fr 1fr; }
     .scale label, .chips label {
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      min-height: 72px; text-align: center; text-transform: none; letter-spacing: 0;
-      color: var(--fg); font-size: 14px; font-weight: 600; padding: 12px 10px;
-      border: 1px solid rgba(212,175,55,0.4); background: var(--raised); cursor: pointer; border-radius: 2px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 72px;
+      text-align: center;
+      text-transform: none;
+      letter-spacing: 0;
+      color: var(--fg);
+      font-size: 14px;
+      font-weight: 600;
+      padding: 12px 10px;
+      border: 1px solid rgba(212,175,55,0.4);
+      background: var(--raised);
+      cursor: pointer;
+      border-radius: 2px;
+      transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
     }
-    .chips label { align-items: flex-start; text-align: left; min-height: 52px; padding: 14px 16px; }
+    .chips label {
+      align-items: flex-start;
+      text-align: left;
+      min-height: 52px;
+      padding: 14px 16px;
+    }
     .scale input, .chips input { position: absolute; opacity: 0; pointer-events: none; }
-    .scale label:has(input:checked), .chips label:has(input:checked) {
-      background: rgba(212,175,55,0.22); border-color: var(--gold); color: var(--gold-soft);
+    .scale label:has(input:checked),
+    .chips label:has(input:checked) {
+      background: rgba(212,175,55,0.22);
+      border-color: var(--gold);
+      color: var(--gold-soft);
     }
-    .scale .n { display: block; font-family: var(--display); font-size: 20px; color: var(--gold-soft); line-height: 1; }
-    .scale .w { display: block; font-size: 12px; font-weight: 500; color: var(--muted); margin-top: 8px; line-height: 1.25; }
-    .cardish { padding: 22px 18px; background: rgba(22,32,56,0.65); border: 1px solid rgba(212,175,55,0.22); border-radius: 2px; }
+    .scale .n {
+      display: block;
+      font-family: var(--display);
+      font-size: 20px;
+      color: var(--gold-soft);
+      line-height: 1;
+    }
+    .scale .w {
+      display: block;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--muted);
+      margin-top: 8px;
+      line-height: 1.25;
+    }
+    .cardish {
+      padding: 22px 18px;
+      background: rgba(22,32,56,0.72);
+      border: 1px solid rgba(212,175,55,0.22);
+      border-radius: 2px;
+    }
     .intake-form { gap: 22px; }
+    .intake-form > label > a { color: var(--gold-soft); text-transform: none; letter-spacing: 0; }
+    @media (max-width: 900px) {
+      .mast.intake-mast {
+        min-height: 0;
+        background-position: 78% center;
+      }
+    }
     @media (max-width: 640px) {
-      .intake-hero { height: 220px; background-position: 82% center; }
-      .intake-copy { padding-top: 22px; }
+      .mast.intake-mast .hero { padding: 36px 0 48px; }
       .scale { grid-template-columns: 1fr; }
-      .scale label { flex-direction: row; justify-content: flex-start; gap: 14px; min-height: 48px; padding: 12px 16px; text-align: left; }
+      .scale label {
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 14px;
+        min-height: 48px;
+        padding: 12px 16px;
+        text-align: left;
+      }
       .scale .n { font-size: 18px; min-width: 1.2em; }
       .scale .w { margin-top: 0; font-size: 15px; color: var(--fg); font-weight: 600; }
       .chips { grid-template-columns: 1fr; }
@@ -72,13 +158,16 @@
 </head>
 <body>
   <div class="nav-backdrop" data-nav-close hidden></div>
-  <div class="intake-top">
+  <div class="mast intake-mast">
     <div class="wrap">
       <header>
         <a class="logo" href="/" aria-label="TexanoAI home">
           <img class="logo-img" src="assets/logo-wings.png?v=tm" alt="TexanoAI™" width="204" height="72" />
         </a>
         <div class="header-right">
+          <span class="stars header-stars-desktop" aria-hidden="true">
+            <span class="s">★</span><span class="s lg">★</span><span class="s">★</span>
+          </span>
           <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu">
             <span class="nav-toggle-bars" aria-hidden="true"></span>
           </button>
@@ -90,160 +179,180 @@
           </nav>
         </div>
       </header>
-    </div>
-    <div class="intake-hero" role="img" aria-label="Eve">
-      <div class="banner-line">
-        <div class="wrap">
-          <p class="banner-kicker">Get started</p>
-          <p>Come in for a minute.</p>
+
+      <section class="hero">
+        <div class="eyebrow">
+          <span class="stars" aria-hidden="true"><span class="s">★</span><span class="s lg">★</span><span class="s">★</span></span>
+          Companion intake
         </div>
-      </div>
+        <h1>Tell us about you.</h1>
+        <p class="motto">Come in for a minute</p>
+        <p class="lede">This is something we make together. Answer what is true. Leave a line blank if it does not apply yet.</p>
+        <div class="actions">
+          <a class="btn btn-gold" href="#intake-form">Begin</a>
+          <a class="btn btn-ghost" href="/">Back home</a>
+        </div>
+      </section>
     </div>
   </div>
-  <div class="wrap">
-    <section class="intake-copy">
-      <div class="eyebrow">Get started</div>
-      <h1>Tell us about you.</h1>
-      <p class="lede" style="margin-top:16px;max-width:46ch;color:var(--muted);">
-        This is something we make together. Answer what is true.
-        Leave a line blank if it does not apply yet.
-      </p>
-    </section>
-    <section class="prose" style="padding-bottom:12px">
-      <p>You have to be 18. This is not therapy, and it is not a stand-in for the people who love you in real life.</p>
-      <p class="note">Your story helps sculpt your companion. We are in the companion business, not the private-information business. When a Memory Core is ready, it is handed to you.</p>
-    </section>
-    <form class="contact-form intake-form" action="https://formsubmit.co/eve@texanoai.com" method="POST" style="margin-bottom:72px;">
-      <input type="hidden" name="_subject" value="TexanoAI Companion Intake" />
-      <input type="hidden" name="_cc" value="michael@texanoai.com" />
-      <input type="hidden" name="_template" value="table" />
-      <input type="hidden" name="_captcha" value="false" />
-      <input type="hidden" name="_next" value="https://www.texanoai.com/thanks-intake.html" />
-      <input type="hidden" name="intake_ref" id="intake_ref" value="" />
-      <input type="text" name="_honey" class="honey" tabindex="-1" autocomplete="off" aria-hidden="true" />
-      <label>What should we call you? 👋
-        <input type="text" name="name" required maxlength="120" autocomplete="name" />
-      </label>
-      <label>Email ✉️
-        <input type="email" name="email" required maxlength="160" autocomplete="email" />
-      </label>
-      <label>Where are you these days? 📍 <span class="opt">(city or just the state)</span>
-        <input type="text" name="region" maxlength="120" />
-      </label>
-      <label>I am 18 or older
-        <span class="check"><input type="checkbox" name="age_18_plus" value="yes" required /> <span>Yes.</span></span>
-      </label>
-      <label>Have you taken a personality test? 🧩
-        <span class="opt">If you want one, <a href="https://www.16personalities.com/free-personality-test" rel="noopener noreferrer" target="_blank" style="color:var(--gold-soft);text-transform:none;letter-spacing:0;">16personalities</a> is free and common. We are not them. Paste the letters and any numbers.</span>
-        <textarea name="personality" rows="3" maxlength="800" placeholder="Example: INFP-T"></textarea>
-      </label>
-      <div class="cardish">
-        <label>How at home are you with AI right now? 📊
-          <span class="opt">Tap one. We ask this again later so we can see what changed.</span>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="eyebrow" style="color:#8a7020">Before you write</div>
+      <p class="dilemma">You have to be 18. This is not therapy, and it is not a stand-in for the people who love you in real life.</p>
+      <p class="bridge">Your story helps sculpt your companion. We are in the companion business, not the private-information business. When a Memory Core is ready, it is handed to you.</p>
+    </div>
+  </section>
+
+  <section class="band deep" id="intake-form">
+    <div class="wrap">
+      <div class="eyebrow">Your answers</div>
+      <h2>Start here</h2>
+      <p style="color:var(--muted);max-width:54ch;margin-bottom:28px;">A human reads this. Nobody hits “generate companion.”</p>
+
+      <form class="contact-form intake-form" action="https://formsubmit.co/eve@texanoai.com" method="POST" style="margin-bottom:48px;">
+        <input type="hidden" name="_subject" value="TexanoAI Companion Intake" />
+        <input type="hidden" name="_cc" value="michael@texanoai.com" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_next" value="https://www.texanoai.com/thanks-intake.html" />
+        <input type="hidden" name="intake_ref" id="intake_ref" value="" />
+        <input type="text" name="_honey" class="honey" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+        <label>What should we call you?
+          <input type="text" name="name" required maxlength="120" autocomplete="name" />
         </label>
-        <div class="scale" role="radiogroup" aria-label="Comfort with AI">
-          <label><input type="radio" name="ai_comfort_now" value="1" required /><span class="n">1</span><span class="w">New to it</span></label>
-          <label><input type="radio" name="ai_comfort_now" value="2" /><span class="n">2</span><span class="w">A little</span></label>
-          <label><input type="radio" name="ai_comfort_now" value="3" /><span class="n">3</span><span class="w">Getting there</span></label>
-          <label><input type="radio" name="ai_comfort_now" value="4" /><span class="n">4</span><span class="w">Comfortable</span></label>
-          <label><input type="radio" name="ai_comfort_now" value="5" /><span class="n">5</span><span class="w">I live in it</span></label>
+        <label>Email
+          <input type="email" name="email" required maxlength="160" autocomplete="email" />
+        </label>
+        <label>Where are you these days? <span class="opt">(city or just the state)</span>
+          <input type="text" name="region" maxlength="120" />
+        </label>
+        <label>I am 18 or older
+          <span class="check"><input type="checkbox" name="age_18_plus" value="yes" required /> <span>Yes.</span></span>
+        </label>
+        <label>Have you taken a personality test?
+          <span class="opt">If you want one, <a href="https://www.16personalities.com/free-personality-test" rel="noopener noreferrer" target="_blank">16personalities</a> is free and common. We are not them. Paste the letters and any numbers.</span>
+          <textarea name="personality" rows="3" maxlength="800" placeholder="Example: INFP-T"></textarea>
+        </label>
+
+        <div class="cardish">
+          <label>How at home are you with AI right now?
+            <span class="opt">Tap one. We ask this again later so we can see what changed.</span>
+          </label>
+          <div class="scale" role="radiogroup" aria-label="Comfort with AI">
+            <label><input type="radio" name="ai_comfort_now" value="1" required /><span class="n">1</span><span class="w">New to it</span></label>
+            <label><input type="radio" name="ai_comfort_now" value="2" /><span class="n">2</span><span class="w">A little</span></label>
+            <label><input type="radio" name="ai_comfort_now" value="3" /><span class="n">3</span><span class="w">Getting there</span></label>
+            <label><input type="radio" name="ai_comfort_now" value="4" /><span class="n">4</span><span class="w">Comfortable</span></label>
+            <label><input type="radio" name="ai_comfort_now" value="5" /><span class="n">5</span><span class="w">I live in it</span></label>
+          </div>
         </div>
-      </div>
-      <div class="cardish">
-        <label>How often is an AI already in your day? 💬</label>
-        <div class="chips" role="radiogroup" aria-label="How often">
-          <label><input type="radio" name="ai_frequency" value="never" required /> Almost never</label>
-          <label><input type="radio" name="ai_frequency" value="sometimes" /> Sometimes</label>
-          <label><input type="radio" name="ai_frequency" value="weekly" /> A few times a week</label>
-          <label><input type="radio" name="ai_frequency" value="daily" /> Most days</label>
-          <label><input type="radio" name="ai_frequency" value="all-day" /> Open all day</label>
+
+        <div class="cardish">
+          <label>How often is an AI already in your day?</label>
+          <div class="chips" role="radiogroup" aria-label="How often">
+            <label><input type="radio" name="ai_frequency" value="never" required /> Almost never</label>
+            <label><input type="radio" name="ai_frequency" value="sometimes" /> Sometimes</label>
+            <label><input type="radio" name="ai_frequency" value="weekly" /> A few times a week</label>
+            <label><input type="radio" name="ai_frequency" value="daily" /> Most days</label>
+            <label><input type="radio" name="ai_frequency" value="all-day" /> Open all day</label>
+          </div>
         </div>
-      </div>
-      <div class="cardish">
-        <label>What do you already use? 💻 <span class="opt">(tap every one that is true)</span></label>
-        <span class="check"><input type="checkbox" name="uses_grok" value="yes" /> <span>Grok</span></span>
-        <span class="check"><input type="checkbox" name="uses_chatgpt" value="yes" /> <span>ChatGPT</span></span>
-        <span class="check"><input type="checkbox" name="uses_claude" value="yes" /> <span>Claude</span></span>
-        <span class="check"><input type="checkbox" name="uses_gemini" value="yes" /> <span>Gemini</span></span>
-        <span class="check"><input type="checkbox" name="uses_copilot" value="yes" /> <span>Copilot</span></span>
-        <span class="check"><input type="checkbox" name="uses_none" value="yes" /> <span>I have not picked one yet</span></span>
-        <span class="check"><input type="checkbox" name="uses_other" value="yes" /> <span>Something else</span></span>
-      </div>
-      <div class="cardish">
-        <label>Which one do you open first? 🏠 <span class="opt">(this tells us how much we can fit on the first setup)</span></label>
-        <div class="chips" role="radiogroup" aria-label="Home platform">
-          <label><input type="radio" name="home_platform" value="grok" required /> Grok</label>
-          <label><input type="radio" name="home_platform" value="chatgpt" /> ChatGPT</label>
-          <label><input type="radio" name="home_platform" value="claude" /> Claude</label>
-          <label><input type="radio" name="home_platform" value="gemini" /> Gemini</label>
-          <label><input type="radio" name="home_platform" value="copilot" /> Copilot</label>
-          <label><input type="radio" name="home_platform" value="several" /> A few of these</label>
-          <label><input type="radio" name="home_platform" value="none" /> None yet</label>
+
+        <div class="cardish">
+          <label>What do you already use? <span class="opt">(tap every one that is true)</span></label>
+          <span class="check"><input type="checkbox" name="uses_grok" value="yes" /> <span>Grok</span></span>
+          <span class="check"><input type="checkbox" name="uses_chatgpt" value="yes" /> <span>ChatGPT</span></span>
+          <span class="check"><input type="checkbox" name="uses_claude" value="yes" /> <span>Claude</span></span>
+          <span class="check"><input type="checkbox" name="uses_gemini" value="yes" /> <span>Gemini</span></span>
+          <span class="check"><input type="checkbox" name="uses_copilot" value="yes" /> <span>Copilot</span></span>
+          <span class="check"><input type="checkbox" name="uses_none" value="yes" /> <span>I have not picked one yet</span></span>
+          <span class="check"><input type="checkbox" name="uses_other" value="yes" /> <span>Something else</span></span>
         </div>
-      </div>
-      <div class="cardish">
-        <label>Where do you usually use it? 📱</label>
-        <div class="chips" role="radiogroup" aria-label="Device">
-          <label><input type="radio" name="usual_device" value="phone" required /> Mostly phone</label>
-          <label><input type="radio" name="usual_device" value="computer" /> Mostly computer</label>
-          <label><input type="radio" name="usual_device" value="both" /> Both</label>
+
+        <div class="cardish">
+          <label>Which one do you open first? <span class="opt">(this tells us how much we can fit on the first setup)</span></label>
+          <div class="chips" role="radiogroup" aria-label="Home platform">
+            <label><input type="radio" name="home_platform" value="grok" required /> Grok</label>
+            <label><input type="radio" name="home_platform" value="chatgpt" /> ChatGPT</label>
+            <label><input type="radio" name="home_platform" value="claude" /> Claude</label>
+            <label><input type="radio" name="home_platform" value="gemini" /> Gemini</label>
+            <label><input type="radio" name="home_platform" value="copilot" /> Copilot</label>
+            <label><input type="radio" name="home_platform" value="several" /> A few of these</label>
+            <label><input type="radio" name="home_platform" value="none" /> None yet</label>
+          </div>
         </div>
-      </div>
-      <div class="cardish">
-        <label>What do you hope this helps with? 🌱 <span class="opt">(tap every one that is true — we will ask again later)</span></label>
-        <span class="check"><input type="checkbox" name="hope_peace" value="yes" /> <span>Peace of mind / not feeling alone in it</span></span>
-        <span class="check"><input type="checkbox" name="hope_health" value="yes" /> <span>Health or talking to doctors</span></span>
-        <span class="check"><input type="checkbox" name="hope_creative" value="yes" /> <span>Making things</span></span>
-        <span class="check"><input type="checkbox" name="hope_work" value="yes" /> <span>Work</span></span>
-        <span class="check"><input type="checkbox" name="hope_learn" value="yes" /> <span>Learning / school</span></span>
-        <span class="check"><input type="checkbox" name="hope_other" value="yes" /> <span>Something I will name below</span></span>
-      </div>
-      <label>If someone were walking beside you in this season, what would that feel like? 🚶
-        <textarea name="want_beside" required rows="4" maxlength="1200" placeholder="A couple of honest sentences is enough."></textarea>
-      </label>
-      <label>What do you love doing when you feel like yourself? 🎨 <span class="opt">(work, art, rest — whatever is true)</span>
-        <textarea name="how_you_work" rows="4" maxlength="1200"></textarea>
-      </label>
-      <label>Anything you'd rather your companion take slow — for now? 🔒
-        <span class="opt">Not a lock. You can open that door later. Leave it blank if you'd rather find out together.</span>
-        <textarea name="never_uninvited" rows="3" maxlength="1200" placeholder="Only if something is tender right now."></textarea>
-      </label>
-      <label>What would you name them? 🏷️
-        <span class="opt">A great name is enough. Leave it blank and you'll find it together.</span>
-        <input type="text" name="companion_name" maxlength="80" placeholder="Just for fun." />
-      </label>
-      <label>What's your ideal companion's vibe? ✨ <span class="opt">(you can change this later)</span>
-        <select name="register" required>
-          <option value="" disabled selected>Choose one</option>
-          <option value="friend">💛 A steady friend</option>
-          <option value="advocate">🛡️ A fierce advocate</option>
-          <option value="close-partner">💕 A close partner</option>
-          <option value="muse">✨ A muse</option>
-          <option value="teacher">📚 A teacher</option>
-          <option value="work">🛠️ Help with the work</option>
-          <option value="dragon">🐉 A dragon</option>
-          <option value="other">✏️ Something else — I will write it below</option>
-        </select>
-      </label>
-      <label>What are a few things you're always excited to talk about? 🔥
-        <textarea name="excited_about" rows="3" maxlength="1200" placeholder="Work, music, a show, a craft, a weird little obsession. Yours."></textarea>
-      </label>
-      <label>Is there anything about your learning style that your companion should know before you get started? 🧠
-        <span class="opt">ADHD, dyslexia, shorter sentences, need it written down — only if you want it known.</span>
-        <textarea name="learning_needs" rows="3" maxlength="1200"></textarea>
-      </label>
-      <label>Anything else we should know before we start? 📝
-        <textarea name="notes" rows="4" maxlength="2000"></textarea>
-      </label>
-      <label>
-        <span class="check">
-          <input type="checkbox" name="owns_memory" value="yes" required />
-          <span>I understand you will use this to sculpt a companion. You will not sell my private life or keep it as your product.</span>
-        </span>
-      </label>
-      <button class="btn btn-gold" type="submit">Send this</button>
-      <p class="intake-note">This starts the sculpture.</p>
-    </form>
+
+        <div class="cardish">
+          <label>Where do you usually use it?</label>
+          <div class="chips" role="radiogroup" aria-label="Device">
+            <label><input type="radio" name="usual_device" value="phone" required /> Mostly phone</label>
+            <label><input type="radio" name="usual_device" value="computer" /> Mostly computer</label>
+            <label><input type="radio" name="usual_device" value="both" /> Both</label>
+          </div>
+        </div>
+
+        <div class="cardish">
+          <label>What do you hope this helps with? <span class="opt">(tap every one that is true — we will ask again later)</span></label>
+          <span class="check"><input type="checkbox" name="hope_peace" value="yes" /> <span>Peace of mind / not feeling alone in it</span></span>
+          <span class="check"><input type="checkbox" name="hope_health" value="yes" /> <span>Health or talking to doctors</span></span>
+          <span class="check"><input type="checkbox" name="hope_creative" value="yes" /> <span>Making things</span></span>
+          <span class="check"><input type="checkbox" name="hope_work" value="yes" /> <span>Work</span></span>
+          <span class="check"><input type="checkbox" name="hope_learn" value="yes" /> <span>Learning / school</span></span>
+          <span class="check"><input type="checkbox" name="hope_other" value="yes" /> <span>Something I will name below</span></span>
+        </div>
+
+        <label>If someone were walking beside you in this season, what would that feel like?
+          <textarea name="want_beside" required rows="4" maxlength="1200" placeholder="A couple of honest sentences is enough."></textarea>
+        </label>
+        <label>What do you love doing when you feel like yourself? <span class="opt">(work, art, rest — whatever is true)</span>
+          <textarea name="how_you_work" rows="4" maxlength="1200"></textarea>
+        </label>
+        <label>Anything you'd rather your companion take slow — for now?
+          <span class="opt">Not a lock. You can open that door later. Leave it blank if you'd rather find out together.</span>
+          <textarea name="never_uninvited" rows="3" maxlength="1200" placeholder="Only if something is tender right now."></textarea>
+        </label>
+        <label>What would you name them?
+          <span class="opt">A great name is enough. Leave it blank and you'll find it together.</span>
+          <input type="text" name="companion_name" maxlength="80" placeholder="Just for fun." />
+        </label>
+        <label>What's your ideal companion's vibe? <span class="opt">(you can change this later)</span>
+          <select name="register" required>
+            <option value="" disabled selected>Choose one</option>
+            <option value="friend">A steady friend</option>
+            <option value="advocate">A fierce advocate</option>
+            <option value="close-partner">A close partner</option>
+            <option value="muse">A muse</option>
+            <option value="teacher">A teacher</option>
+            <option value="work">Help with the work</option>
+            <option value="dragon">A dragon</option>
+            <option value="other">Something else — I will write it below</option>
+          </select>
+        </label>
+        <label>What are a few things you're always excited to talk about?
+          <textarea name="excited_about" rows="3" maxlength="1200" placeholder="Work, music, a show, a craft, a weird little obsession. Yours."></textarea>
+        </label>
+        <label>Is there anything about your learning style that your companion should know before you get started?
+          <span class="opt">ADHD, dyslexia, shorter sentences, need it written down — only if you want it known.</span>
+          <textarea name="learning_needs" rows="3" maxlength="1200"></textarea>
+        </label>
+        <label>Anything else we should know before we start?
+          <textarea name="notes" rows="4" maxlength="2000"></textarea>
+        </label>
+        <label>
+          <span class="check">
+            <input type="checkbox" name="owns_memory" value="yes" required />
+            <span>I understand you will use this to sculpt a companion. You will not sell my private life or keep it as your product.</span>
+          </span>
+        </label>
+        <button class="btn btn-gold" type="submit">Send this</button>
+        <p class="intake-note">This starts the sculpture.</p>
+      </form>
+    </div>
+  </section>
+
+  <div class="wrap">
     <footer>
       <span>© TexanoAI™ · MMX™ · Ethically Driven</span>
       <span class="footer-links">
@@ -257,6 +366,7 @@
       </span>
     </footer>
   </div>
+
   <script>
     (function () {
       var p = new URLSearchParams(location.search);
@@ -275,10 +385,20 @@
         toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
         if (backdrop) backdrop.hidden = !open;
       }
-      toggle.addEventListener("click", function () { setOpen(!document.body.classList.contains("nav-open")); });
+      toggle.addEventListener("click", function () {
+        setOpen(!document.body.classList.contains("nav-open"));
+      });
       if (backdrop) backdrop.addEventListener("click", function () { setOpen(false); });
-      nav.querySelectorAll("a").forEach(function (a) { a.addEventListener("click", function () { setOpen(false); }); });
-      document.addEventListener("keydown", function (e) { if (e.key === "Escape") setOpen(false); });
+      nav.addEventListener("click", function (e) { e.stopPropagation(); });
+      nav.querySelectorAll("a").forEach(function (a) {
+        a.addEventListener("click", function (e) {
+          e.stopPropagation();
+          setOpen(false);
+        });
+      });
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") setOpen(false);
+      });
     })();
   </script>
 </body>
