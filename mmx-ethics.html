@@ -1,217 +1,267 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Ethics through MMX™ &amp; Ethics Pulse™ — TexanoAI™</title>
-    <!-- Tailwind CSS via CDN for rapid prototyping -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Inter font family -->
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
-        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
-        /* Reuse chat styles for potential interactive examples */
-        .chat-container { max-height: 70vh; overflow-y: auto; border-radius: 0.75rem; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); -ms-overflow-style: none; scrollbar-width: none; }
-        .chat-container::-webkit-scrollbar { display: none; }
-        .user-message { background-color: #fcd34d; color: #1f2937; border-radius: 1rem 1rem 0.25rem 1rem; }
-        .ai-message { background-color: #111827; color: #ffffff; border-radius: 1rem 1rem 1rem 0.25rem; border-left: 4px solid #f97316; }
-        .ai-message strong { color: #f97316; }
-
-        /* Hero background gradient for dark sections. Without this the hero defaults to white on some pages. */
-        .hero-bg {
-            background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MMX™ &amp; Ethics Pulse™ — TexanoAI</title>
+  <meta name="description" content="How TexanoAI turns fairness, truth, and agency into a governed vector — MMX™, Ethics Pulse™, and Fact / Assumption / Projection." />
+  <meta name="theme-color" content="#0E1628" />
   <link rel="canonical" href="https://www.texanoai.com/mmx-ethics.html" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <meta property="og:title" content="MMX™ &amp; Ethics Pulse™ — TexanoAI" />
+  <meta property="og:description" content="Governed state-space ethics. Care without appeasement. F/A/P honesty under load." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.texanoai.com/mmx-ethics.html" />
+  <meta property="og:image" content="https://www.texanoai.com/assets/logo-wings.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Source+Sans+3:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/site.css?v=ship-ethics-1" />
+  <style>
+    .mast.ethics-mast {
+      min-height: min(68vh, 580px);
+      background-image:
+        linear-gradient(90deg,
+          rgba(14,22,40,0.94) 0%,
+          rgba(14,22,40,0.84) 40%,
+          rgba(14,22,40,0.35) 70%,
+          rgba(14,22,40,0.12) 100%),
+        url("assets/hero-04.jpg");
+      background-position: 72% center;
+      background-size: cover;
+    }
+    .mast.ethics-mast .hero { padding: 48px 0 64px; max-width: 40rem; }
+    .principle-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 28px;
+    }
+    .principle-grid article {
+      padding: 18px 16px;
+      border: 1px solid rgba(212,175,55,0.28);
+      background: rgba(22,32,56,0.55);
+      border-radius: 2px;
+    }
+    .principle-grid h3 {
+      font-family: var(--display);
+      font-size: 16px;
+      color: var(--gold-soft);
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+    .principle-grid p {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.55;
+      max-width: none;
+      margin: 0;
+    }
+    .mode-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 24px;
+    }
+    .mode-row article {
+      padding: 18px 16px;
+      background: rgba(15,27,61,0.05);
+      border-left: 3px solid var(--gold);
+    }
+    .mode-row h3 {
+      font-family: var(--ui);
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #8a7020;
+      margin-bottom: 8px;
+    }
+    .mode-row p { margin: 0; font-size: 15px; line-height: 1.55; color: #3d3428; max-width: none; }
+    .coming-note {
+      margin-top: 28px;
+      padding: 16px 18px;
+      border: 1px dashed rgba(212,175,55,0.45);
+      color: var(--muted);
+      font-family: var(--ui);
+      font-size: 15px;
+      max-width: 62ch;
+    }
+    @media (max-width: 900px) {
+      .principle-grid, .mode-row { grid-template-columns: 1fr; }
+      .mast.ethics-mast { min-height: 0; background-position: 80% center; }
+    }
+  </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
-<div style="background:#0E1628;color:#E4C86A;font-family:Georgia,serif;font-size:13px;padding:8px 16px;text-align:center;position:relative;z-index:60;">
-  TexanoAI™ ethics &amp; papers archive · <a href="/" style="color:#F5F7FA;text-decoration:underline;">New front door</a>
-</div>
-
-
-    <!-- Header Navigation (same as index) -->
-    <header class="fixed top-0 inset-x-0 z-50 bg-white border-b">
-        <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-            <a href="/" class="font-extrabold text-xl text-gray-900">TexanoAI<span class="text-orange-600">™</span></a>
-            <!-- Desktop nav -->
-            <nav class="hidden lg:flex items-center gap-6 text-sm">
-                <a class='hover:opacity-80' href='index.html#mission'>About</a>
-                <a class='hover:opacity-80' href='index.html#mmx'>MMX™ &amp; Pulse™</a>
-                <a class='hover:opacity-80' href='index.html#raguelai'>RaguelAI™</a>
-                <a class='hover:opacity-80 font-semibold text-orange-600' href='mmx-ethics.html'>AI Ethics</a>
-                <a class='hover:opacity-80' href='audit-principles.html'>Audit Principles</a>
-                <a class='hover:opacity-80' href='whitepapers/index.html'>White Papers</a>
-                <a class='hover:opacity-80' href='blog/index.html'>Blog</a>
-                <a class='hover:opacity-80' href='index.html#investors'>Investors</a>
-                <a class='inline-flex items-center px-3 py-1.5 rounded-md bg-orange-600 text-white hover:bg-orange-700' href='index.html#contact'>Contact</a>
-            </nav>
-            <!-- Mobile hamburger -->
-            <button id="navOpen" aria-controls="mobileDrawer" aria-expanded="false" aria-label="Open menu"
-                    class="lg:hidden inline-flex items-center justify-center p-2 rounded border border-gray-300 text-gray-700">☰</button>
+<body>
+  <div class="nav-backdrop" data-nav-close hidden></div>
+  <div class="mast ethics-mast">
+    <div class="wrap">
+      <header>
+        <a class="logo" href="/" aria-label="TexanoAI home">
+          <img class="logo-img" src="assets/logo-wings.png?v=tm" alt="TexanoAI™" width="204" height="72" />
+        </a>
+        <div class="header-right">
+          <span class="stars header-stars-desktop" aria-hidden="true">
+            <span class="s">★</span><span class="s lg">★</span><span class="s">★</span>
+          </span>
+          <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu">
+            <span class="nav-toggle-bars" aria-hidden="true"></span>
+          </button>
+          <nav id="site-nav" class="site-nav" aria-label="Primary">
+            <a href="/">Home</a>
+            <a href="/#mmx">MMX</a>
+            <a href="/memory-core.html">Memory</a>
+            <a href="/why-train.html">Why train</a>
+            <a href="/mmx-ethics.html">Ethics</a>
+            <a class="gold" href="/intake.html">Get started</a>
+          </nav>
         </div>
-    </header>
-    <!-- Spacer for fixed header -->
-    <div class="h-16 lg:h-[68px]"></div>
-    <!-- Mobile Drawer -->
-    <div id="mobileDrawer" aria-hidden="true" class="fixed inset-0 z-50 hidden">
-        <div id="navOverlay" class="absolute inset-0 bg-black/60"></div>
-        <nav class="absolute right-0 top-0 h-full w-72 max-w-[80vw] bg-white shadow-2xl p-4 flex flex-col gap-3 text-base">
-            <div class="flex items-center justify-between pb-2 border-b">
-                <span class="font-extrabold text-lg text-gray-900">TexanoAI<span class="text-orange-600">™</span></span>
-                <button id="navClose" aria-label="Close menu" class="p-2 rounded border border-gray-300">✕</button>
-            </div>
-            <a class='py-2' href='index.html#mission'>About</a>
-            <a class='py-2' href='index.html#mmx'>MMX™ &amp; Pulse™</a>
-            <a class='py-2' href='index.html#raguelai'>RaguelAI™</a>
-            <a class='py-2 text-orange-600 font-semibold' href='mmx-ethics.html'>AI Ethics</a>
-            <a class='py-2' href='audit-principles.html'>Audit Principles</a>
-            <a class='py-2' href='whitepapers/index.html'>White Papers</a>
-            <a class='py-2' href='blog/index.html'>Blog</a>
-            <a class='py-2' href='index.html#investors'>Investors</a>
-            <a class='inline-flex mt-2 items-center justify-center px-3 py-2 rounded-md bg-orange-600 text-white' href='index.html#contact'>Contact</a>
-        </nav>
+      </header>
+
+      <section class="hero">
+        <div class="eyebrow">
+          <span class="stars" aria-hidden="true"><span class="s">★</span><span class="s lg">★</span><span class="s">★</span></span>
+          MMX™ · Ethics Pulse™
+        </div>
+        <h1>Ethics you can steer by.</h1>
+        <p class="motto">Care without appeasement</p>
+        <p class="lede">Most AI is fluent. Few systems can tell you what is known, what is guessed, and what would harm the person if it drifted. MMX™ and Ethics Pulse™ are how TexanoAI keeps the vector honest.</p>
+        <div class="actions">
+          <a class="btn btn-gold" href="/intake.html">Get started</a>
+          <a class="btn btn-ghost" href="/blog/japan-aia.html">Japan’s light-touch model</a>
+          <a class="btn btn-ghost" href="/audit-principles.html">Audit principles</a>
+        </div>
+      </section>
     </div>
+  </div>
 
-    <main>
-        <!-- Hero Section for AI Ethics page -->
-        <section class="hero-bg text-white pt-20 pb-24 lg:pt-32 lg:pb-48">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <div class="max-w-4xl mx-auto">
-                    <div class="flex justify-center mb-6">
-                        <svg class="w-16 h-16 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6m-6 4h6m-6 4h6"></path>
-                        </svg>
-                    </div>
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight mb-6">
-                        Understanding <span class="text-orange-400">MMX™</span> &amp; <span class="text-orange-400">Ethics Pulse™</span>
-                    </h1>
-                    <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-                        Dive deep into the ethical engine that powers TexanoAI™. Here you’ll learn how our governed state-space architecture turns abstract values like fairness and lawfulness into measurable vectors, nudging every interaction toward good while keeping users in control.
-                    </p>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Introduction -->
-        <section class="py-16 lg:py-20 bg-white">
-            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900">Why AI Ethics Matters</h2>
-                <p class="text-lg text-gray-700">
-                    Artificial intelligence can only be truly helpful if it respects human dignity. Without clear ethical direction, AI devolves into either an indifferent rule‑follower or an overzealous guardian, denying assistance when people need it most. The <strong>Motivation × Identity × Context × Time (MMX™)</strong> framework solves this by giving every AI decision a <em>vector</em> toward ethical ends: fairness, truth, lawfulness, and justice. Paired with our <strong>Ethics Pulse™</strong>—an adaptive regularizer that favors non‑harmful, procedurally sound choices—the MMX engine guides users toward outcomes that honor the individual and the community.
-                </p>
-                <p class="text-lg text-gray-700">
-                    At its core, the MMX model separates what we know from what we merely assume or project. Each input is labelled as a <strong>Fact</strong>, <strong>Assumption</strong>, or <strong>Projection (F/A/P)</strong>. This simple discipline makes the system auditable: you can see why a recommendation emerged and which uncertain elements you should double‑check【645689357613495†L60-L68】. Once labelled, the engine computes a range of plausible futures and selects the one that best aligns with our vector of ethical ends. When options are close, the <strong>Ethics Pulse™</strong> resolves ties by preferring choices that maximize fairness, procedural compliance, and peaceful resolution.
-                </p>
-            </div>
-        </section>
+  <section class="band">
+    <div class="wrap">
+      <div class="eyebrow" style="color:#8a7020">Why it matters</div>
+      <p class="dilemma">Artificial intelligence only helps if it respects human dignity and agency. Without a clear ethical direction, it becomes either an indifferent rule-follower or an overzealous guardian — denying help when people need it most.</p>
+      <p class="bridge"><strong>MMX™</strong> — Motivation × Identity × Context × Time — gives every decision a <em>vector</em> toward ends we can name: fairness, truth, lawfulness, and justice. <strong>Ethics Pulse™</strong> is the adaptive regularizer that prefers non-harmful, procedurally sound choices when options are close.</p>
+      <div class="product-line">
+        At the desk we separate <strong>Fact</strong>, <strong>Assumption</strong>, and <strong>Projection</strong>. That discipline is what makes the system auditable — you can see why a recommendation emerged, and which uncertain pieces you should still check.
+      </div>
+    </div>
+  </section>
 
-        <!-- Vector and Divergence Section -->
-        <section class="py-16 lg:py-20 bg-gray-100">
-            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4">Vectors, Deltas &amp; Drift Detection</h2>
-                <p class="text-lg text-gray-700">
-                    Imagine each user’s journey as a vector—a direction defined by their motivation, identity, context, and time constraints. The MMX engine monitors this vector against the ethics‑driven compass of TexanoAI™. When the user’s intentions or actions begin to diverge from ethical norms—say, trying to evade proper service of legal papers or make decisions based on discriminatory criteria—the system detects that <strong>non‑vector delta</strong>. Rather than shutting down abruptly, the engine intervenes gently, explaining why the request is problematic and offering lawful, fair alternatives. This combination of pre‑emptive detection and supportive guidance keeps the AI helpful without enabling harm.
-                </p>
-                <p class="text-lg text-gray-700">
-                    Because MMX™ is psychologist‑informed, it adapts its responses to the user’s emotional state. When a person is overwhelmed or angry, the system switches into Reassure Mode, validating the emotion and focusing on micro‑tasks that build momentum. When there’s a risk of procedural violation, it shifts to Neutralize Mode—blocking illicit actions but always suggesting a lawful path. And when the user is ready to act, the engine moves into Focus Mode, asking for key information and presenting the best steps clearly and confidently.
-                </p>
-                <!-- Placeholder for future video embed -->
-                <div class="relative bg-gray-200 h-64 rounded-xl flex items-center justify-center">
-                    <p class="text-gray-600">Video demonstration coming soon…</p>
-                </div>
-            </div>
-        </section>
+  <section class="band deep">
+    <div class="wrap">
+      <div class="eyebrow">Vectors, deltas &amp; drift</div>
+      <h2>Stay on the compass without locking the person out.</h2>
+      <p style="color:var(--muted);max-width:62ch;">Each person’s journey has a direction — motivation, identity, context, and time. MMX watches that vector against the ethics compass. When a request starts to diverge — evasion, discrimination, procedural shortcuts — the system detects the non-vector delta.</p>
+      <p style="color:var(--muted);max-width:62ch;margin-top:14px;">It does not slam the door and walk away. It explains the problem and offers a lawful, fair path that still preserves agency.</p>
+      <div class="principle-grid">
+        <article>
+          <h3>Reassure</h3>
+          <p>When someone is overwhelmed or angry — validate the load, shrink the next step, rebuild momentum without flattery.</p>
+        </article>
+        <article>
+          <h3>Neutralize</h3>
+          <p>When a request would break process or harm — block the illicit path, name why, and still offer a legal alternative.</p>
+        </article>
+        <article>
+          <h3>Focus</h3>
+          <p>When the person is ready to act — ask for the key facts, present clear steps, keep the vector clean.</p>
+        </article>
+        <article>
+          <h3>F / A / P</h3>
+          <p>Label what is known, what is assumed, and what is projected. Honesty under load beats a confident invention.</p>
+        </article>
+      </div>
+      <p class="coming-note">More writing is coming on this page — deeper MMX notes, case texture, and how the governor feels in daily use. This house keeps room for that.</p>
+    </div>
+  </section>
 
-        <!-- Use Cases Section -->
-        <section class="py-16 lg:py-20 bg-white">
-            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4">How MMX™ &amp; Ethics Pulse™ Power Real Workflows</h2>
-                <div class="space-y-10">
-                    <div>
-                        <h3 class="text-2xl font-bold text-orange-600 mb-2">Legal &amp; Justice</h3>
-                        <p class="text-gray-700">
-                            In the justice domain, the MMX engine can analyse a case file in seconds, assessing for fairness and procedural compliance. It checks whether due process was followed, whether participants acted within the bounds of law, and whether biases tainted decisions. The Ethics Pulse ensures that any recommendation—whether for settlement, appeal, or negotiation—keeps the user on the right side of the law while preserving their agency.
-                        </p>
-                    </div>
-                    <div>
-                        <h3 class="text-2xl font-bold text-orange-600 mb-2">Recruiting &amp; Human Resources</h3>
-                        <p class="text-gray-700">
-                            For hiring teams, MMX™ goes beyond résumés. It weighs effort against achievement, notes structural barriers, and cross‑checks alignment with company values. Instead of reinforcing pedigree bias, the system highlights candidates who thrive in adversity and whose motivations resonate with an employer’s mission. The Ethics Pulse monitors for discriminatory patterns and prompts corrective questions.
-                        </p>
-                    </div>
-                    <div>
-                        <h3 class="text-2xl font-bold text-orange-600 mb-2">Compliance &amp; Risk Management</h3>
-                        <p class="text-gray-700">
-                            Within regulated industries like finance or healthcare, MMX assesses transactions or treatment plans for compliance risks. It flags potential violations—procedural errors, hidden biases, or illegal requests—and suggests actions that satisfy regulatory expectations. This means your team can focus on strategy while the system handles complex ethical edge‑cases.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
+  <section class="band">
+    <div class="wrap">
+      <div class="eyebrow" style="color:#8a7020">Where it shows up</div>
+      <h2>Same governor. Different desks.</h2>
+      <div class="mode-row">
+        <article>
+          <h3>Legal &amp; justice</h3>
+          <p>Fairness and procedural compliance in the file. Recommendations that keep agency without crossing due process.</p>
+        </article>
+        <article>
+          <h3>People &amp; hiring</h3>
+          <p>Effort against achievement. Structural barriers named. Pedigree bias challenged. Values alignment without theater.</p>
+        </article>
+        <article>
+          <h3>Compliance &amp; risk</h3>
+          <p>Hidden bias, procedural error, illegal asks — flagged early, with a path that still lets the team move.</p>
+        </article>
+      </div>
+    </div>
+  </section>
 
-        <!-- Invitation to Learn More -->
-        <section class="py-16 lg:py-20 bg-gray-900 text-white">
-            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-                <h2 class="text-3xl sm:text-4xl font-extrabold mb-4">Ready to See It in Action?</h2>
-                <p class="text-lg text-gray-300">Explore how MMX &amp; Ethics Pulse integrate the Eight Core Principles of AI auditability and prepare your organisation for the future. We tailor workshops and proof‑of‑concept projects to your needs—ensuring your AI strategy is both effective and fair.</p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a class='inline-flex items-center justify-center px-6 py-3 rounded-lg bg-orange-600 text-white font-semibold hover:bg-orange-700 shadow' href='audit-principles.html'>Learn the Audit Principles</a>
-                    <a class='inline-flex items-center justify-center px-6 py-3 rounded-lg bg-white text-gray-900 font-semibold hover:bg-gray-100 shadow' href='index.html#contact'>Book a Consult</a>
-                </div>
-            </div>
-        </section>
-    </main>
+  <section class="band deep" id="japan">
+    <div class="wrap">
+      <div class="eyebrow">Kinship abroad</div>
+      <h2>Japan’s light-touch AIA — and why it fits.</h2>
+      <p style="color:var(--muted);max-width:62ch;">Japan’s Artificial Intelligence Agency, under the 2025 AI Promotion Act, chose guidelines, testing, and best practices over rigid mandates. Eight core principles — human-centered safety, fairness, privacy, transparency, accountability, education, sustainability, and international cooperation — paired with practical evaluation methods.</p>
+      <p style="color:var(--muted);max-width:62ch;margin-top:14px;">That “auditable innovation” stance maps cleanly onto MMX and Ethics Pulse: human-centered values meet motivation and context; fairness meets due process; transparency and accountability meet F/A/P labeling and explanation. Ethical governance can accelerate building when it is built on trust, not theater.</p>
+      <div class="actions" style="margin-top:28px">
+        <a class="btn btn-gold" href="/blog/japan-aia.html">Read the Japan AIA article</a>
+        <a class="btn btn-ghost" href="/audit-principles.html">Eight audit principles</a>
+      </div>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white">
-        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div>
-                    <h4 class="text-2xl font-extrabold text-orange-500 mb-4">TexanoAI<span class="text-orange-300">™</span></h4>
-                    <p class="text-gray-400 text-sm">Human‑first AI innovation built with Texas reliability. We deliver pragmatic, ethical solutions that drive measurable human outcomes.</p>
-                </div>
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a class='text-gray-400 hover:text-orange-500' href='index.html#mission'>Our Mission</a></li>
-                        <li><a class='text-gray-400 hover:text-orange-500' href='index.html#mmx'>MMX™ &amp; Ethics Pulse™</a></li>
-                        <li><a class='text-gray-400 hover:text-orange-500' href='index.html#raguelai'>RaguelAI™ Engine</a></li>
-                        <li><a class='text-gray-400 hover:text-orange-500' href='index.html#investors'>Investor Interest</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Contact &amp; Leadership</h4>
-                    <p class="text-gray-300 text-sm font-semibold">Michael J. Long</p>
-                    <p class="text-gray-300 text-sm">Founder &amp; Chief Architect</p>
-                    <p class="text-gray-300 text-sm mt-2">Press: <a href="mailto:public@texanoai.com" class="hover:text-orange-400">public@texanoai.com</a></p>
-                </div>
-            </div>
-            <div class="mt-8 border-t border-gray-700 pt-8">
-                <p class="text-center text-gray-400 text-sm">© 2025 TexanoAI<span class="text-orange-400">™</span>. All rights reserved. MMX™ and Ethics Pulse™ are proprietary technologies.</p>
-            </div>
-        </div>
+  <section class="band">
+    <div class="wrap" style="text-align:left">
+      <div class="eyebrow" style="color:#8a7020">Next step</div>
+      <h2>Ready to begin a companion?</h2>
+      <p class="bridge" style="max-width:54ch;">Intake is live. A human reads what you write. We sculpt for one person — not a product of your private life.</p>
+      <div class="actions" style="margin-top:24px">
+        <a class="btn btn-gold" href="/intake.html">Get started</a>
+        <a class="btn btn-ghost" href="/#contact">Talk to us</a>
+        <a class="btn btn-ghost" href="/">Home</a>
+      </div>
+      <p class="fence" style="margin-top:28px">TexanoAI™ is not a law firm or a clinic. Educational self-help and product architecture only. Consult licensed counsel for legal matters.</p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <footer>
+      <span>© TexanoAI™ · MMX™ · Ethics Pulse™</span>
+      <span class="footer-links">
+        <a href="/intake.html">Get started</a>
+        <span class="footer-sep">·</span>
+        <a href="/memory-core.html">Memory Core</a>
+        <span class="footer-sep">·</span>
+        <a href="/why-train.html">Why train</a>
+        <span class="footer-sep">·</span>
+        <a href="/privacy.html">Privacy</a>
+      </span>
     </footer>
+  </div>
 
-    <!-- Scripts for Mobile Drawer -->
-    <script>
-        (function(){
-            var d=document,drawer=d.getElementById('mobileDrawer');
-            var openBtn=d.getElementById('navOpen'), closeBtn=d.getElementById('navClose'), overlay=d.getElementById('navOverlay');
-            function open(){ if(!drawer) return; drawer.classList.remove('hidden'); drawer.setAttribute('aria-hidden','false'); openBtn&&openBtn.setAttribute('aria-expanded','true'); closeBtn&&closeBtn.focus(); d.documentElement.style.overflow='hidden'; }
-            function close(){ if(!drawer) return; drawer.classList.add('hidden'); drawer.setAttribute('aria-hidden','true'); openBtn&&openBtn.setAttribute('aria-expanded','false'); d.documentElement.style.overflow=''; openBtn&&openBtn.focus(); }
-            openBtn&&openBtn.addEventListener('click', open, false);
-            closeBtn&&closeBtn.addEventListener('click', close, false);
-            overlay&&overlay.addEventListener('click', close, false);
-            d.addEventListener('keydown', function(e){ if(e.key==='Escape') close(); }, false);
-            drawer&&drawer.addEventListener('click', function(e){ if(e.target && e.target.tagName==='A'){ setTimeout(close,0); } }, false);
-        })();
-    </script>
-
-<section aria-label="Public Ending" class="public-ending" style="margin-top:18px;border-top:1px solid #e5e7eb;padding-top:12px">
-  <p><strong lang="en">Public Notice:</strong> TexanoAI™ is not a law firm; educational self‑help only. We guide procedures—no attorney‑client advice. Consult a licensed attorney.</p>
-  <p><strong lang="es">Aviso Público:</strong> TexanoAI™ no es un bufete de abogados; solo autoayuda educativa. Guiamos procedimientos—no asesoría abogado‑cliente. Consulte a un abogado con licencia.</p>
-</section>
-
+  <script>
+    (function () {
+      var toggle = document.querySelector(".nav-toggle");
+      var backdrop = document.querySelector(".nav-backdrop");
+      var nav = document.getElementById("site-nav");
+      if (!toggle || !nav) return;
+      function setOpen(open) {
+        document.body.classList.toggle("nav-open", open);
+        toggle.setAttribute("aria-expanded", open ? "true" : "false");
+        toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+        if (backdrop) backdrop.hidden = !open;
+      }
+      toggle.addEventListener("click", function () {
+        setOpen(!document.body.classList.contains("nav-open"));
+      });
+      if (backdrop) backdrop.addEventListener("click", function () { setOpen(false); });
+      nav.addEventListener("click", function (e) { e.stopPropagation(); });
+      nav.querySelectorAll("a").forEach(function (a) {
+        a.addEventListener("click", function () { setOpen(false); });
+      });
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") setOpen(false);
+      });
+    })();
+  </script>
 </body>
 </html>
