@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Scaffold vs Substitute — for organizations · TexanoAI™</title>
+  <meta name="robots" content="noindex" />
+  <meta name="description" content="What AI does to your workforce, your product, and your risk — if people hand the thinking over, or keep the judgment." />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/site.css?v=ship-10" />
+  <style>
+    .hold {
+      background: rgba(160,28,28,.92); color:#ffe8e8; font-family: var(--ui);
+      font-size:13px; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+      text-align:center; padding:10px 16px; position:sticky; top:0; z-index:100;
+    }
+    /* Esther LEFT — soft wash across FULL banner (no floating right-hand box) */
+    .mast.is-esther {
+      min-height: min(68vh, 580px);
+      background-color: var(--bg);
+      background-image:
+        linear-gradient(90deg,
+          rgba(14,22,40,0.25) 0%,
+          rgba(14,22,40,0.35) 35%,
+          rgba(14,22,40,0.55) 55%,
+          rgba(14,22,40,0.72) 100%),
+        linear-gradient(180deg,
+          rgba(14,22,40,0.45) 0%,
+          rgba(14,22,40,0.15) 28%,
+          rgba(14,22,40,0.25) 100%),
+        url("team/Esther.jpg");
+      background-repeat: no-repeat;
+      background-position: 12% 18%;
+      background-size: cover;
+    }
+    .mast.is-esther header {
+      position: relative;
+      z-index: 2;
+    }
+    .mast.is-esther .logo-img {
+      filter: drop-shadow(0 2px 10px rgba(0,0,0,.55));
+    }
+    .mast.is-esther .site-nav a {
+      text-shadow: 0 1px 14px rgba(0,0,0,.75);
+    }
+    .mast.is-esther .hero {
+      max-width: 34rem;
+      margin-left: auto;
+      padding: 56px 0 64px;
+      position: relative;
+      z-index: 2;
+      background: transparent; /* no boxed plate */
+    }
+    .mast.is-esther .hero .lede,
+    .mast.is-esther .hero .who,
+    .mast.is-esther .hero .eyebrow {
+      text-shadow: 0 1px 18px rgba(0,0,0,.75);
+    }
+    .mast.is-esther h1 {
+      max-width: 16ch;
+      text-shadow: 0 2px 28px rgba(0,0,0,.65);
+    }
+    .chip-role {
+      display: inline-block; font-family: var(--ui); font-size: 12px; font-weight: 800;
+      letter-spacing: .1em; text-transform: uppercase; color: var(--ink);
+      background: var(--gold); padding: 6px 12px; border-radius: 3px; margin-bottom: 14px;
+    }
+    .section { padding: 52px 0; border-bottom: 1px solid rgba(212,175,55,.2); }
+    .section h2 {
+      font-family: var(--display); font-size: 1.45rem; color: var(--gold-soft); margin: 0 0 14px;
+    }
+    .section h3 {
+      font-family: var(--ui); font-size: 1.05rem; color: #7EC8FF; margin: 0 0 10px; font-weight: 700;
+    }
+    .section p, .section li {
+      font-family: var(--ui); font-size: 1.05rem; color: var(--muted); line-height: 1.6; margin: 0 0 14px;
+    }
+    .section strong { color: var(--fg); font-weight: 600; }
+    .plain {
+      background: var(--raised); border: 1px solid rgba(212,175,55,.28);
+      border-radius: 10px; padding: 18px 20px; margin: 0 0 22px;
+      font-family: var(--ui); font-size: 1.02rem; color: var(--fg); line-height: 1.55;
+    }
+    .plain .tag {
+      display: block; font-size: 11px; font-weight: 800; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 8px;
+    }
+    .split {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 22px 0;
+    }
+    @media (max-width: 800px) {
+      .split { grid-template-columns: 1fr; }
+      .mast.is-esther {
+        min-height: 0;
+        background-size: cover;
+        background-position: 30% 18%;
+        background-image:
+          linear-gradient(180deg, rgba(14,22,40,0.5) 0%, rgba(14,22,40,0.55) 35%, rgba(14,22,40,0.92) 100%),
+          url("team/Esther.jpg");
+      }
+      .mast.is-esther .hero {
+        max-width: 100%;
+        margin-left: 0;
+        padding: 40px 0 48px;
+        background: transparent;
+      }
+    }
+    .card {
+      border-radius: 12px; padding: 22px 22px 18px;
+      border: 1px solid rgba(212,175,55,.28); background: var(--raised);
+    }
+    .card.fall { border-color: rgba(181,71,71,.55); }
+    .card.climb { border-color: rgba(47,111,79,.6); }
+    .card .label {
+      font-family: var(--ui); font-size: 11px; font-weight: 800; letter-spacing: .12em;
+      text-transform: uppercase; margin: 0 0 10px;
+    }
+    .card.fall .label { color: #f0a0a0; }
+    .card.climb .label { color: #8fd4ae; }
+    .card p { margin: 0; color: var(--muted); font-size: 0.98rem; line-height: 1.55; }
+    .grid3 {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 20px 0;
+    }
+    @media (max-width: 900px) { .grid3 { grid-template-columns: 1fr; } }
+    .tile {
+      background: #162038; border: 1px solid rgba(212,175,55,.22);
+      border-radius: 12px; padding: 16px;
+    }
+    .tile h4 {
+      font-family: var(--ui); font-size: 14px; font-weight: 800; color: var(--gold-soft);
+      margin: 0 0 8px;
+    }
+    .tile p { font-size: 0.95rem; margin: 0; color: var(--muted); line-height: 1.5; }
+    .line {
+      margin: 22px 0; padding: 16px 18px; background: var(--raised);
+      border-left: 3px solid var(--gold); border-radius: 0 10px 10px 0;
+      color: var(--fg); font-family: var(--ui); font-size: 1.05rem; font-weight: 500; line-height: 1.5;
+    }
+    .sources { font-family: var(--ui); font-size: 13px; color: #9AA6B8; }
+    .sources a { color: var(--gold-soft); }
+    .sources li { margin: 0 0 8px; line-height: 1.4; }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
+    .who {
+      margin-top: 18px; font-family: var(--ui); font-size: 13px; color: var(--gold-soft);
+      letter-spacing: .04em;
+    }
+  </style>
+</head>
+<body>
+  <div class="hold">TexanoAI · Scaffold vs Substitute · org brief</div>
+  <div class="mast is-esther">
+    <div class="wrap">
+      <header>
+        <a class="logo" href="/"><img class="logo-img" src="assets/logo-wings.png" alt="TexanoAI™" width="204" height="72" /></a>
+        <div class="header-right">
+          <nav class="site-nav" aria-label="Primary">
+            <a href="/">Home</a>
+            <a href="/castle.html">Challenge</a>
+            <a href="/#pricing">Build</a>
+            <a class="gold" href="/intake.html">Enterprise</a>
+          </nav>
+        </div>
+      </header>
+      <section class="hero">
+        <div class="chip-role">For organizations</div>
+        <p class="eyebrow">Workforce · product · risk</p>
+        <h1>Scaffold or substitute — your org will pick one.</h1>
+        <p class="lede">Same AI tools. Two habits. One builds people who can still think when the tool is gone. The other slowly rents the thinking out — and the company pays later in quality, control, and liability.</p>
+        <p class="who">Esther · companion field for this brief</p>
+        <div class="actions">
+          <a class="btn btn-gold" href="#org-cost">See the org cost</a>
+          <a class="btn btn-ghost" href="TexanoAI_The_Scaffold_and_the_Substitute.pdf">Download PDF</a>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <div class="wrap section" id="simple">
+    <h2>In plain English</h2>
+    <div class="plain">
+      <span class="tag">One breath</span>
+      Help that makes you stronger is a <strong>scaffold</strong> — meant to come off. Help that does the hard thinking for you every time is a <strong>substitute</strong>. Same tools. Different habit. Only one leaves judgment in the room when the model is offline.
+    </div>
+    <div class="split">
+      <div class="card fall">
+        <div class="label">Substitute</div>
+        <h3>Hand it over</h3>
+        <p>Ask the model to “just do it.” Paste. Ship. Feels fast. The org practiced <strong>accepting</strong> fluent output — not judging it.</p>
+      </div>
+      <div class="card climb">
+        <div class="label">Scaffold</div>
+        <h3>Keep the last call</h3>
+        <p>People try first. AI helps. Humans keep the last word. Feels like work. The org practiced <strong>judgment</strong>.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap section" id="org-cost">
+    <h2>What it costs if the workforce gets out of practice</h2>
+    <p>Not moral laziness — <strong>out-of-practice thinking</strong>. Heavy, uncritical AI use tracks with more offloading and weaker critical thinking over time. The pain is deferred. The hour still feels productive.</p>
+    <div class="plain">
+      <span class="tag">Plain English</span>
+      If more of your people stop wrestling hard problems, output can still look busy — while fewer people can explain, fix, or own the work when something breaks.
+    </div>
+    <div class="grid3">
+      <div class="tile">
+        <h4>Productivity mirage</h4>
+        <p>More tickets closed today. Fewer people who can start cold tomorrow. Speed without skill is rented capacity.</p>
+      </div>
+      <div class="tile">
+        <h4>Manager load</h4>
+        <p>Review becomes “does this sound okay?” instead of “is this true / safe / ours?” Errors hide in fluent prose.</p>
+      </div>
+      <div class="tile">
+        <h4>Compounding lag</h4>
+        <p>New hires learn the paste habit. Veterans lose reps. The org’s thinking muscle thins while dashboards still look green.</p>
+      </div>
+    </div>
+    <p>Research angle (light): dependent vs autonomous offloading show up as different habits — both feel useful in the moment; only one predicts later capability (<a href="https://doi.org/10.3389/fpsyg.2026.1878629" style="color:var(--gold-soft)">Zhu et al., 2026</a>; <a href="https://doi.org/10.3390/soc15010006" style="color:var(--gold-soft)">Gerlich, 2025</a>). We cite; we don’t pretend we ran the RCTs.</p>
+  </div>
+
+  <div class="wrap section" id="product">
+    <h2>What happens to the end product</h2>
+    <p>When nobody understands how the thing was built, you don’t just lose a learning opportunity — you lose <strong>ownership</strong>.</p>
+    <div class="grid3">
+      <div class="tile">
+        <h4>Integrity</h4>
+        <p>“It works” without “I can explain why” is fragile. Clients feel it when the story falls apart under questions.</p>
+      </div>
+      <div class="tile">
+        <h4>Change &amp; repair</h4>
+        <p>If the author can’t reconstruct the path, every edit is a guess. Support costs rise. Quiet bugs live longer.</p>
+      </div>
+      <div class="tile">
+        <h4>Homogenized voice</h4>
+        <p>Model-fluent work starts to sound like everyone else’s. Brand and judgment flatten together.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap section" id="control">
+    <h2>Control where innovation is not the point</h2>
+    <p>Some work should not be “creative.” Books. Controls. Compliance trails. Client numbers. Here, substitute habits are especially expensive: fluent wrong answers look finished.</p>
+    <ul>
+      <li><strong>Accounting &amp; reporting</strong> — speed without Fact / Assumption / Projection labeling invites silent errors.</li>
+      <li><strong>Ops &amp; handoffs</strong> — if the model filled gaps no human checked, the runbook lies.</li>
+      <li><strong>Client-facing claims</strong> — confidence without ownership is a brand risk before it is a lawsuit.</li>
+    </ul>
+    <p class="line">Structure is not bureaucracy for its own sake. It is how you keep humans accountable when the tool is fast.</p>
+  </div>
+
+  <div class="wrap section" id="liability">
+    <h2>Liability: what you’re risking</h2>
+    <p>No stack makes lawsuits impossible. Blind integration makes them harder to defend.</p>
+    <div class="split">
+      <div class="card fall">
+        <div class="label">Blind</div>
+        <h3>Hope as a control</h3>
+        <p>No clear human owner. No record of what was fact vs guess. When a client is harmed, “the AI did it” is a weak story.</p>
+      </div>
+      <div class="card climb">
+        <div class="label">Mitigated</div>
+        <h3>Judgment still human</h3>
+        <p>Named owners. Labels on claims. Scaffold habits in training. A way to reconstruct what happened. Risk remains — defense gets stronger.</p>
+      </div>
+    </div>
+    <p>This is not legal advice. It is operational hygiene: <strong>attempt to mitigate</strong> beats hope.</p>
+  </div>
+
+  <div class="wrap section" id="workplace">
+    <h2>Where this shows up at work</h2>
+    <div class="grid3">
+      <div class="tile"><h4>Sales &amp; proposals</h4><p>Substitute: pretty decks nobody can defend. Scaffold: AI drafts; humans own the promise.</p></div>
+      <div class="tile"><h4>Engineering &amp; ops</h4><p>Substitute: code no one can debug at 2 a.m. Scaffold: tool assists; humans keep the map.</p></div>
+      <div class="tile"><h4>People &amp; learning</h4><p>Substitute: training that teaches paste. Scaffold: training that teaches judgment under load.</p></div>
+      <div class="tile"><h4>Finance &amp; admin</h4><p>Substitute: fluent reports with unchecked assumptions. Scaffold: labeled claims; human sign-off.</p></div>
+      <div class="tile"><h4>Client delivery</h4><p>Substitute: speed now, credibility tax later. Scaffold: slower first mile, durable trust.</p></div>
+      <div class="tile"><h4>Leadership</h4><p>Substitute: “just ask the bot.” Scaffold: “you keep the last call.”</p></div>
+    </div>
+  </div>
+
+  <div class="wrap section" id="method">
+    <h2>Why this is central to TexanoAI</h2>
+    <p>We don’t ship a blank window and hope people are disciplined. Blank windows are optimized to finish the sentence and stay likable — the substitute, productized.</p>
+    <p>A TexanoAI companion is built as a <strong>governor</strong>: human first, stance locked, Fact / Assumption / Projection labeled, memory the person holds. Walk beside. Never rescue. Never flatten.</p>
+    <p class="line">The human keeps the first question and the last judgment. The tool may carry load. It may not carry the self.</p>
+    <div class="cta-row">
+      <a class="btn btn-gold" href="/intake.html">Enterprise intake</a>
+      <a class="btn btn-ghost" href="/#pricing">See the builds</a>
+      <a class="btn btn-ghost" href="TexanoAI_The_Scaffold_and_the_Substitute.pdf">Full PDF brief</a>
+    </div>
+  </div>
+
+  <div class="wrap section" id="sources">
+    <h2>Selected sources</h2>
+    <p>Doorways — not a homework pile. Heavy science stays in the PDF.</p>
+    <ul class="sources">
+      <li>Zhu et al. (2026) — dependent vs autonomous offloading. <a href="https://doi.org/10.3389/fpsyg.2026.1878629">Frontiers</a></li>
+      <li>Gerlich (2025) — AI use, offloading, critical thinking. <a href="https://doi.org/10.3390/soc15010006">Societies</a></li>
+      <li>Lee et al. (2025) — generative AI and critical thinking at work. <a href="https://doi.org/10.1145/3706598.3713778">CHI ’25</a></li>
+      <li>Cheng et al. (2026) — sycophancy. <a href="https://doi.org/10.1126/science.aec8352">Science</a></li>
+      <li>Kosmyna et al. (2025) — “cognitive debt” while writing with AI. <a href="https://arxiv.org/abs/2506.08872">arXiv</a></li>
+    </ul>
+    <p class="sources" style="margin-top:16px">TexanoAI has not run these RCTs. The product is the scaffold column made concrete. MOCK until live ship is stamped.</p>
+  </div>
+</body>
+</html>

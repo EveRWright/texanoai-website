@@ -90,25 +90,26 @@ nav.site-nav a.gold { color: var(--gold-soft); }
   position: relative;
   min-height: min(92vh, 860px);
   background-color: var(--bg);
+  /* PUBLISH 2026-09-10: Eve only on home. Mark removed for now. */
   background-image:
     linear-gradient(90deg,
-      rgba(14,22,40,0.94) 0%,
-      rgba(14,22,40,0.82) 34%,
-      rgba(14,22,40,0.28) 58%,
-      rgba(14,22,40,0.08) 100%),
-    url("hero-04.jpg");
+      rgba(14,22,40,0.96) 0%,
+      rgba(14,22,40,0.88) 32%,
+      rgba(14,22,40,0.42) 58%,
+      rgba(14,22,40,0.12) 100%),
+    url("Eve_Home.jpg");
   background-repeat: no-repeat;
   background-position: right center;
   background-size: cover;
 }
-.mast.is-declan {
+.mast.is-mark {
   background-image:
     linear-gradient(90deg,
-      rgba(14,22,40,0.94) 0%,
-      rgba(14,22,40,0.82) 34%,
-      rgba(14,22,40,0.28) 58%,
-      rgba(14,22,40,0.08) 100%),
-    url("hero-declan.jpg");
+      rgba(14,22,40,0.97) 0%,
+      rgba(14,22,40,0.90) 28%,
+      rgba(14,22,40,0.50) 55%,
+      rgba(14,22,40,0.14) 100%),
+    url("Eve_Home.jpg");
 }
 .hero {
   padding: 72px 0 96px; position: relative; z-index: 1;
@@ -159,6 +160,14 @@ h1 {
 .band.deep { background: var(--bg); color: var(--fg); }
 h2 { font-family: var(--display); font-size: clamp(22px, 5vw, 28px); margin-bottom: 16px; font-weight: 600; overflow-wrap: break-word; }
 .band p { max-width: 62ch; line-height: 1.65; }
+/* Parchment contrast: never use --muted (ice gray) on cream — unreadable */
+.band:not(.navy):not(.deep) p,
+.band:not(.navy):not(.deep) li,
+.band:not(.navy):not(.deep) .lede {
+  color: #3d3428;
+}
+.band:not(.navy):not(.deep) .eyebrow { color: #8a7020; }
+.band:not(.navy):not(.deep) h2 { color: var(--ink); }
 .dilemma { font-size: 21px; font-weight: 500; max-width: 46ch; line-height: 1.45; font-family: var(--body); }
 .bridge { margin-top: 18px; color: #3d3428; }
 .product-line {
@@ -263,7 +272,7 @@ h2 { font-family: var(--display); font-size: clamp(22px, 5vw, 28px); margin-bott
   .cost-grid { grid-template-columns: 1fr; }
 }
 
-.doors { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-top: 28px; }
+.doors { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 28px; }
 .doors article {
   padding: 20px; background: #ebe4d4; font-family: var(--ui); border-left: 3px solid var(--gold);
 }
@@ -301,19 +310,19 @@ footer a { color: var(--gold-soft); }
     min-height: 0;
     background-image:
       linear-gradient(180deg,
-        rgba(14,22,40,0.12) 0%,
-        rgba(14,22,40,0.28) 32%,
-        rgba(14,22,40,0.78) 100%),
-      url("hero-04.jpg");
+        rgba(14,22,40,0.35) 0%,
+        rgba(14,22,40,0.55) 32%,
+        rgba(14,22,40,0.88) 100%),
+      url("Eve_Home.jpg");
     background-position: 70% 8%;
   }
-  .mast.is-declan {
+  .mast.is-mark {
     background-image:
       linear-gradient(180deg,
-        rgba(14,22,40,0.12) 0%,
-        rgba(14,22,40,0.28) 32%,
-        rgba(14,22,40,0.78) 100%),
-      url("hero-declan.jpg");
+        rgba(14,22,40,0.40) 0%,
+        rgba(14,22,40,0.62) 32%,
+        rgba(14,22,40,0.90) 100%),
+      url("Eve_Home.jpg");
   }
   .hero h1, .hero .lede, .hero .motto, .hero .proof {
     text-shadow: 0 2px 16px rgba(8,12,24,0.85);
@@ -369,152 +378,4 @@ footer a:hover { color: var(--gold); }
 .note {
   margin-top: 24px; padding: 14px 16px; border: 1px dashed rgba(212,175,55,0.4);
   font-family: var(--ui); font-size: 14px; color: var(--muted);
-}
-
-/* —— Ship 2026-09-08 · stats / castle / stimuli —— */
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-  margin-top: 28px;
-}
-.stats-grid article {
-  background: var(--raised);
-  border: 1px solid rgba(212,175,55,0.28);
-  border-radius: 10px;
-  padding: 20px 18px;
-  min-width: 0;
-}
-.stats-grid .num {
-  font-family: var(--display);
-  font-size: clamp(28px, 4vw, 40px);
-  color: var(--gold-soft);
-  line-height: 1.1;
-  margin-bottom: 8px;
-}
-.stats-grid h3 {
-  font-family: var(--ui);
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--fg);
-  margin-bottom: 8px;
-}
-.stats-grid p { font-size: 14px; color: var(--muted); line-height: 1.5; margin: 0; }
-.stats-grid .cite {
-  display: block;
-  margin-top: 10px;
-  font-family: var(--ui);
-  font-size: 12px;
-  color: rgba(197,205,216,0.85);
-}
-.stats-grid .cite a { color: var(--gold-soft); text-decoration: underline; text-underline-offset: 2px; }
-@media (max-width: 900px) {
-  .stats-grid { grid-template-columns: 1fr; }
-}
-
-.pattern-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-  margin-top: 28px;
-}
-.pattern-grid article {
-  background: var(--raised);
-  border: 1px solid rgba(212,175,55,0.28);
-  border-radius: 10px;
-  padding: 18px 16px;
-}
-.pattern-grid h3 {
-  font-family: var(--display);
-  font-size: 17px;
-  color: var(--gold-soft);
-  margin-bottom: 10px;
-}
-.pattern-grid p { font-size: 14.5px; color: var(--muted); line-height: 1.55; margin: 0; }
-@media (max-width: 900px) {
-  .pattern-grid { grid-template-columns: 1fr; }
-}
-
-.infographic-frame {
-  margin-top: 28px;
-  border: 1px solid rgba(212,175,55,0.32);
-  border-radius: 12px;
-  overflow: hidden;
-  background: #0a1220;
-}
-.infographic-frame img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.flow {
-  display: grid;
-  gap: 10px;
-  margin-top: 24px;
-  max-width: 42rem;
-}
-.flow .node {
-  background: var(--raised);
-  border: 1px solid rgba(212,175,55,0.3);
-  border-radius: 10px;
-  padding: 14px 16px;
-  font-family: var(--ui);
-  font-size: 14.5px;
-  color: var(--fg);
-  line-height: 1.45;
-}
-.flow .node strong { color: var(--gold-soft); }
-.flow .arrow {
-  text-align: center;
-  color: var(--gold);
-  font-size: 18px;
-  line-height: 1;
-  opacity: 0.85;
-}
-.flow .split {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-}
-@media (max-width: 640px) {
-  .flow .split { grid-template-columns: 1fr; }
-}
-.flow .node.warn { border-color: rgba(201,160,160,0.45); }
-.flow .node.ok { border-color: rgba(126,200,255,0.4); }
-
-.ai-callout {
-  margin-top: 28px;
-  padding: 18px 20px;
-  border-radius: 10px;
-  border: 1px solid rgba(126,200,255,0.35);
-  background: rgba(30,42,72,0.85);
-}
-.ai-callout h3 {
-  font-family: var(--display);
-  font-size: 18px;
-  color: #7EC8FF;
-  margin-bottom: 8px;
-}
-.ai-callout p { color: var(--muted); font-size: 15px; line-height: 1.55; margin: 0 0 12px; }
-
-.castle-toc {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-  margin: 24px 0 32px;
-}
-.castle-toc a {
-  display: block;
-  padding: 12px 14px;
-  background: var(--raised);
-  border: 1px solid rgba(212,175,55,0.28);
-  border-radius: 8px;
-  font-family: var(--ui);
-  font-size: 14px;
-  color: var(--gold-soft);
-}
-.castle-toc a:hover { border-color: var(--gold); }
-@media (max-width: 640px) {
-  .castle-toc { grid-template-columns: 1fr; }
 }
