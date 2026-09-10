@@ -90,16 +90,16 @@ nav.site-nav a.gold { color: var(--gold-soft); }
   position: relative;
   min-height: min(92vh, 860px);
   background-color: var(--bg);
-  /* RESTORE: homepage mast = original hero-04.jpg (pre Eve_Home overwrite). */
+  /* LOCKED: homepage mast = assets/hero.jpg ONLY (Michael 2026-09-10). */
   background-image:
     linear-gradient(90deg,
       rgba(14,22,40,0.96) 0%,
       rgba(14,22,40,0.88) 32%,
       rgba(14,22,40,0.42) 58%,
       rgba(14,22,40,0.12) 100%),
-    url("hero-04.jpg");
+    url("hero.jpg");
   background-repeat: no-repeat;
-  background-position: right center;
+  background-position: 78% 22%;
   background-size: cover;
 }
 .mast.is-mark {
@@ -109,7 +109,7 @@ nav.site-nav a.gold { color: var(--gold-soft); }
       rgba(14,22,40,0.90) 28%,
       rgba(14,22,40,0.50) 55%,
       rgba(14,22,40,0.14) 100%),
-    url("hero-04.jpg");
+    url("hero.jpg");
 }
 .hero {
   padding: 72px 0 96px; position: relative; z-index: 1;
@@ -310,11 +310,13 @@ footer a { color: var(--gold-soft); }
     min-height: 0;
     background-image:
       linear-gradient(180deg,
-        rgba(14,22,40,0.35) 0%,
-        rgba(14,22,40,0.55) 32%,
-        rgba(14,22,40,0.88) 100%),
-      url("hero-04.jpg");
-    background-position: 70% 8%;
+        rgba(14,22,40,0.45) 0%,
+        rgba(14,22,40,0.55) 40%,
+        rgba(14,22,40,0.90) 100%),
+      url("hero.jpg");
+    /* Keep torso/jacket in frame — not a face-only crop */
+    background-position: 62% 28%;
+    background-size: cover;
   }
   .mast.is-mark {
     background-image:
@@ -322,7 +324,7 @@ footer a { color: var(--gold-soft); }
         rgba(14,22,40,0.40) 0%,
         rgba(14,22,40,0.62) 32%,
         rgba(14,22,40,0.90) 100%),
-      url("hero-04.jpg");
+      url("hero.jpg");
   }
   .hero h1, .hero .lede, .hero .motto, .hero .proof {
     text-shadow: 0 2px 16px rgba(8,12,24,0.85);
