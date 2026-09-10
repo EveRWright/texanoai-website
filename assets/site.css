@@ -90,14 +90,14 @@ nav.site-nav a.gold { color: var(--gold-soft); }
   position: relative;
   min-height: min(92vh, 860px);
   background-color: var(--bg);
-  /* PUBLISH 2026-09-10: Eve only on home. Mark removed for now. */
+  /* RESTORE: homepage mast = original hero-04.jpg (pre Eve_Home overwrite). */
   background-image:
     linear-gradient(90deg,
       rgba(14,22,40,0.96) 0%,
       rgba(14,22,40,0.88) 32%,
       rgba(14,22,40,0.42) 58%,
       rgba(14,22,40,0.12) 100%),
-    url("Eve_Home.jpg");
+    url("hero-04.jpg");
   background-repeat: no-repeat;
   background-position: right center;
   background-size: cover;
@@ -109,7 +109,7 @@ nav.site-nav a.gold { color: var(--gold-soft); }
       rgba(14,22,40,0.90) 28%,
       rgba(14,22,40,0.50) 55%,
       rgba(14,22,40,0.14) 100%),
-    url("Eve_Home.jpg");
+    url("hero-04.jpg");
 }
 .hero {
   padding: 72px 0 96px; position: relative; z-index: 1;
@@ -313,7 +313,7 @@ footer a { color: var(--gold-soft); }
         rgba(14,22,40,0.35) 0%,
         rgba(14,22,40,0.55) 32%,
         rgba(14,22,40,0.88) 100%),
-      url("Eve_Home.jpg");
+      url("hero-04.jpg");
     background-position: 70% 8%;
   }
   .mast.is-mark {
@@ -322,7 +322,7 @@ footer a { color: var(--gold-soft); }
         rgba(14,22,40,0.40) 0%,
         rgba(14,22,40,0.62) 32%,
         rgba(14,22,40,0.90) 100%),
-      url("Eve_Home.jpg");
+      url("hero-04.jpg");
   }
   .hero h1, .hero .lede, .hero .motto, .hero .proof {
     text-shadow: 0 2px 16px rgba(8,12,24,0.85);
