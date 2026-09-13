@@ -1,48 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog – TexanoAI™</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="canonical" href="https://www.texanoai.com/blog/" />
-    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blog — TexanoAI™</title>
+  <link rel="canonical" href="https://www.texanoai.com/blog/" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Source+Sans+3:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *{box-sizing:border-box} html,body{margin:0;background:#F6F1E6;color:#2A241C;font-family:"Source Sans 3",sans-serif}
+    .bar{background:#0E1628;padding:12px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    .bar img{height:44px;width:auto}
+    .bar nav{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+    .bar nav a{color:#E8E0D0;text-decoration:none;font-size:14px}
+    .bar nav a.gold{color:#E4C86A;font-weight:600}
+    .wrap{max-width:860px;margin:0 auto;padding:28px 18px 64px}
+    .eyebrow{color:#8a7020;letter-spacing:.08em;font-size:12px;text-transform:uppercase}
+    h1{font-family:Cinzel,serif;color:#0E1628;font-size:2rem;margin:.2em 0 .8em}
+    .card{background:#0E1628;border-radius:12px;overflow:hidden;margin:0 0 22px;text-decoration:none;display:block;color:#E8E0D0}
+    .banner{position:relative;min-height:220px;background:#0E1628 url("/assets/og-share.jpg") right center / cover no-repeat}
+    .banner:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#0E1628 18%,rgba(14,22,40,.55) 55%,rgba(14,22,40,.15) 100%)}
+    .banner .txt{position:relative;z-index:1;padding:28px 24px 24px;max-width:28rem}
+    .banner .txt h2{font-family:Cinzel,serif;color:#E4C86A;font-size:1.55rem;margin:8px 0 10px;line-height:1.25}
+    .banner .txt p{margin:0;color:#d7d0c2;font-size:15px;line-height:1.5}
+    .list{margin:8px 0 0;padding:0;list-style:none}
+    .list li{border-top:1px solid #e5dcc8;padding:14px 0}
+    .list a{color:#0E1628;font-weight:600;text-decoration:none}
+    .list span{display:block;color:#6b5d45;font-size:13px;margin-top:3px}
+    footer{background:#0E1628;color:#9aa3b2;text-align:center;padding:22px;font-size:13px}
+  </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
-<div style="background:#0E1628;color:#E4C86A;font-family:Georgia,serif;font-size:13px;padding:8px 16px;text-align:center;">
-  TexanoAI™ · <a href="/" style="color:#F5F7FA;text-decoration:underline;">Front door</a>
-  · <a href="/blog/weird-science-dilemma.html" style="color:#E4C86A;text-decoration:underline;">The Weird Science Dilemma</a>
-</div>
-<header class="bg-white border-b">
-  <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-    <a href="/" class="font-extrabold text-xl text-gray-900">TexanoAI<span style="color:#E4C86A">™</span></a>
-    <nav class="hidden md:flex items-center gap-6 text-sm">
-      <a href="/">Home</a>
-      <a href="/whitepapers/">White Papers</a>
-      <a href="/blog/" class="font-bold" style="color:#8a4b12">Blog</a>
-      <a href="/intake.html">Get started</a>
+<body>
+  <div class="bar">
+    <a href="/"><img src="/assets/logo-wings.png?v=tm" alt="TexanoAI™" /></a>
+    <nav>
+      <a href="/#stakes">Stakes</a>
+      <a href="/castle.html">Castle</a>
+      <a href="/whitepapers/">Papers</a>
+      <a class="gold" href="/blog/">Blog</a>
+      <a class="gold" href="/intake.html">Get started</a>
     </nav>
   </div>
-</header>
-<main class="max-w-7xl mx-auto px-4 py-16">
-  <h1 class="text-4xl font-extrabold text-gray-900 mb-8">Insights & Updates</h1>
-  <article class="bg-[#0E1628] text-[#E8E0D0] rounded-xl overflow-hidden mb-10">
-    <a href="weird-science-dilemma.html"><img src="/assets/og-share.jpg" alt="The Weird Science Dilemma" style="width:100%;max-height:320px;object-fit:cover;object-position:center top;display:block" /></a>
-    <div class="p-6">
-      <p class="text-xs tracking-wide" style="color:#E4C86A">FEATURED · 13 SEPTEMBER 2026 · MICHAEL J. LONG</p>
-      <h2 class="text-2xl font-semibold mt-2 mb-2" style="font-family:Georgia,serif">The Weird Science Dilemma</h2>
-      <p class="text-sm mb-4" style="color:#d7d0c2">Appeasement is not a companion problem. It is what happens when a tool with no memory of you still needs you to feel served.</p>
-      <a href="weird-science-dilemma.html" style="color:#E4C86A;font-weight:600">Read the essay →</a>
-    </div>
-  </article>
-  <ul class="mb-8 text-sm">
-    <li><a href="weird-science-dilemma.html">The Weird Science Dilemma</a> <span class="text-gray-500">September 13, 2026</span></li>
-    <li><a href="japan-aia-auditable-innovation.html">Japan’s AI Ethics Agency</a> <span class="text-gray-500">November 7, 2025</span></li>
-    <li><a href="us-state-laws-aia-lens.html">U.S. State AI Laws</a> <span class="text-gray-500">November 8, 2025</span></li>
-    <li><a href="eu-ai-act-enforcement-aia-lens.html">EU AI Act Enforcement</a> <span class="text-gray-500">November 9, 2025</span></li>
-  </ul>
-</main>
-<footer class="bg-gray-800 text-white py-8 text-center text-sm text-gray-400">© 2026 TexanoAI™</footer>
+  <div class="wrap">
+    <p class="eyebrow">TexanoAI™ · writing</p>
+    <h1>Essays</h1>
+    <a class="card" href="weird-science-dilemma.html">
+      <div class="banner">
+        <div class="txt">
+          <p class="eyebrow" style="color:#E4C86A">Featured · 13 September 2026</p>
+          <h2>The Weird Science Dilemma</h2>
+          <p>Appeasement is not a companion problem. It is what happens when a tool with no memory of you still needs you to feel served.</p>
+        </div>
+      </div>
+    </a>
+    <ul class="list">
+      <li><a href="weird-science-dilemma.html">The Weird Science Dilemma</a><span>Michael J. Long · 13 September 2026</span></li>
+      <li><a href="japan-aia.html">Japan’s AIA: Auditable Innovation</a><span>7 November 2025</span></li>
+      <li><a href="us-state-laws.html">U.S. State AI Laws</a><span>8 November 2025</span></li>
+      <li><a href="eu-ai-act.html">EU AI Act Enforcement</a><span>9 November 2025</span></li>
+      <li><a href="copyright-bill.html">U.S. Copyright Bill</a><span>7 November 2025</span></li>
+      <li><a href="ai-index.html">Stanford AI Index 2025</a><span>8 November 2025</span></li>
+    </ul>
+  </div>
+  <footer>© 2026 TexanoAI™ · Educational. Not clinical or legal advice.</footer>
 </body>
 </html>
