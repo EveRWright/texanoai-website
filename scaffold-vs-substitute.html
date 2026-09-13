@@ -30,26 +30,28 @@
     }
     .est-split {
       display: grid;
-      grid-template-columns: minmax(220px, 40%) 1fr;
-      gap: 32px;
+      grid-template-columns: minmax(220px, 0.85fr) 1.15fr;
+      gap: clamp(18px, 3.5vw, 44px);
       align-items: center;
-      padding: 8px 0 48px;
+      padding: 4px 0 40px;
     }
     .est-plate {
+      display: block;
       width: 100%;
-      height: min(72vh, 640px);
+      max-width: 400px;
+      height: auto;
+      max-height: min(62vh, 520px);
       object-fit: contain;
       object-position: center top;
-      display: block;
       background: transparent;
       border: 0;
-      box-shadow: none;
-      filter: drop-shadow(0 18px 40px rgba(0,0,0,0.35));
+      filter: drop-shadow(0 16px 36px rgba(0,0,0,0.35));
+      justify-self: start;
     }
     .mast.is-esther .hero {
       max-width: 36rem;
       margin-left: 0;
-      padding: 20px 0 28px;
+      padding: 12px 0 24px;
       position: relative;
       z-index: 2;
       background: transparent;
@@ -85,10 +87,28 @@
     }
     @media (max-width: 900px) {
       .split { grid-template-columns: 1fr; }
-      .est-split { grid-template-columns: 1fr; gap: 18px; padding: 8px 0 36px; }
-      .est-plate { height: min(56vh, 480px); object-fit: contain; }
+      .est-split {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 14px;
+        padding: 4px 0 28px;
+      }
+      .est-plate {
+        max-width: min(300px, 72vw);
+        max-height: min(42vh, 340px);
+        justify-self: center;
+      }
       .mast.is-esther { background-image: none; }
-      .mast.is-esther .hero { max-width: 100%; padding: 8px 0 28px; }
+      .mast.is-esther .hero { max-width: 100%; padding: 4px 0 20px; }
+    }
+    @media (max-width: 560px) {
+      .est-plate {
+        max-width: min(240px, 78vw);
+        max-height: min(36vh, 280px);
+      }
+    }
+    @media (min-width: 1100px) {
+      .est-plate { max-width: 440px; max-height: min(66vh, 560px); }
     }
     .card {
       border-radius: 12px; padding: 22px 22px 18px;
@@ -132,22 +152,27 @@
   </style>
 </head>
 <body>
+  <div class="nav-backdrop" data-nav-close hidden></div>
   <div class="hold">TexanoAI · Scaffold vs Substitute · org brief</div>
   <div class="mast is-esther">
     <div class="wrap">
       <header>
-        <a class="logo" href="/"><img class="logo-img" src="assets/logo-wings.png" alt="TexanoAI™" width="204" height="72" /></a>
+        <a class="logo" href="/" aria-label="TexanoAI home"><img class="logo-img" src="assets/logo-wings.png?v=tm" alt="TexanoAI™" width="204" height="72" /></a>
         <div class="header-right">
-          <nav class="site-nav" aria-label="Primary">
+          <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu">
+            <span class="nav-toggle-bars" aria-hidden="true"></span>
+          </button>
+          <nav id="site-nav" class="site-nav" aria-label="Primary">
             <a href="/">Home</a>
-            <a href="/castle.html">Challenge</a>
+            <a href="/castle.html">Castle</a>
+            <a href="/dictionary.html">Dictionary</a>
             <a href="/#pricing">Build</a>
             <a class="gold" href="/intake.html">Enterprise</a>
           </nav>
         </div>
       </header>
       <div class="est-split">
-        <img class="est-plate" src="team/Esther-navy-gold.jpg" alt="Esther — companion field for this brief" width="832" height="1248" />
+        <img class="est-plate" src="team/Esther-navy-gold.jpg?v=gold1" alt="Esther — companion field for this brief" width="832" height="1248" />
         <section class="hero">
           <div class="chip-role">For organizations</div>
           <p class="eyebrow">Workforce · product · risk</p>
@@ -305,5 +330,30 @@
       </span>
     </footer>
   </div>
+  <script>
+    (function () {
+      var toggle = document.querySelector(".nav-toggle");
+      var backdrop = document.querySelector(".nav-backdrop");
+      var nav = document.getElementById("site-nav");
+      if (!toggle || !nav) return;
+      function setOpen(open) {
+        document.body.classList.toggle("nav-open", open);
+        toggle.setAttribute("aria-expanded", open ? "true" : "false");
+        toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+        if (backdrop) backdrop.hidden = !open;
+      }
+      toggle.addEventListener("click", function () {
+        setOpen(!document.body.classList.contains("nav-open"));
+      });
+      if (backdrop) backdrop.addEventListener("click", function () { setOpen(false); });
+      nav.addEventListener("click", function (e) { e.stopPropagation(); });
+      nav.querySelectorAll("a").forEach(function (a) {
+        a.addEventListener("click", function () { setOpen(false); });
+      });
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") setOpen(false);
+      });
+    })();
+  </script>
 </body>
 </html>
