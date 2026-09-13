@@ -15,48 +15,56 @@
   <meta property="og:image" content="https://www.texanoai.com/assets/og-share.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="https://www.texanoai.com/assets/og-share.jpg" />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Source+Sans+3:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/assets/site.css?v=ship-13" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Source+Sans+3:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;1,400&display=swap" rel="stylesheet" />
   <style>
-    .mast { background:#0E1628 !important; min-height:0 !important; height:auto !important; background-image:none !important; padding:10px 0 14px !important; }
-    .mast::before, .mast::after { display:none !important; }
-    .hero-card { position:relative; margin:0 0 28px; border-radius:10px; overflow:hidden; background:#0E1628; }
-    .hero-card img.hero { width:100%; height:auto; display:block; }
-    .hero-card img.mark { position:absolute; top:18px; left:18px; width:min(42vw, 280px); height:auto; }
-    article.paper { max-width:760px; margin:0 auto; }
-    article.paper p { font-family:"Source Serif 4",Georgia,serif; font-size:1.08em; line-height:1.7; color:#2a241c; margin:0 0 1.1em; }
-    article.paper h2 { font-family:Cinzel,serif; font-size:1.35rem; margin:1.6em 0 .5em; color:#0E1628; }
-    article.paper a { color:#8a4b12; }
-    .byline { font-size:14px; color:#6b5d45; margin:0 0 1.5em; }
-    .lede-paper { font-size:1.18em !important; color:#3d3428 !important; font-style:italic; }
-    .sources { border-top:1px solid #e5dcc8; margin-top:2.4em; padding-top:1.2em; }
-    .crumb { font-size:13px; color:#8a7a5a; margin:0 0 16px; }
-    .crumb a { color:#8a7020; }
-    .wrap-article { max-width:920px; margin:0 auto; padding:24px 18px 56px; }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:#F6F1E6;color:#2A241C;font-family:"Source Sans 3",sans-serif}
+    .bar{background:#0E1628;padding:12px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    .bar img{height:44px;width:auto}
+    .bar nav{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+    .bar nav a{color:#E8E0D0;text-decoration:none;font-size:14px}
+    .bar nav a.gold{color:#E4C86A;font-weight:600}
+    .hero{position:relative;min-height:280px;background:#0E1628 url("/assets/og-share.jpg") right center / cover no-repeat}
+    .hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#0E1628 12%,rgba(14,22,40,.72) 42%,rgba(14,22,40,.18) 100%)}
+    .hero-inner{position:relative;z-index:1;max-width:860px;margin:0 auto;padding:36px 18px 32px}
+    .hero-inner .eye{color:#E4C86A;letter-spacing:.08em;font-size:12px;text-transform:uppercase;margin:0 0 10px}
+    .hero-inner h1{font-family:Cinzel,serif;color:#F6F1E6;font-size:clamp(1.6rem,5vw,2.3rem);line-height:1.15;margin:0 0 10px;max-width:16ch;text-shadow:0 2px 18px rgba(0,0,0,.45)}
+    .hero-inner .sub{color:#E8E0D0;font-family:"Source Serif 4",Georgia,serif;font-style:italic;font-size:1.05rem;max-width:34ch;margin:0;line-height:1.45}
+    .wrap{max-width:740px;margin:0 auto;padding:28px 18px 64px}
+    .crumb{font-size:13px;color:#6b5d45;margin:0 0 22px}
+    .crumb a{color:#8a7020}
+    .by{font-size:14px;color:#6b5d45;margin:0 0 1.4em}
+    article p{font-family:"Source Serif 4",Georgia,serif;font-size:1.08em;line-height:1.72;color:#2A241C;margin:0 0 1.1em}
+    article h2{font-family:Cinzel,serif;font-size:1.3rem;color:#0E1628;margin:1.6em 0 .45em}
+    article a{color:#8a4b12}
+    .sources{border-top:1px solid #e5dcc8;margin-top:2.2em;padding-top:1.1em}
+    .sources ol{padding-left:1.2em}
+    .sources li{margin:0 0 .45em;line-height:1.5}
+    footer{background:#0E1628;color:#9aa3b2;text-align:center;padding:22px;font-size:13px}
   </style>
 </head>
 <body>
-  <div class="mast"><div class="wrap"><header>
-    <a class="logo" href="/"><img class="logo-img" src="/assets/logo-wings.png?v=tm" alt="TexanoAI™" width="204" height="72" /></a>
-    <nav class="site-nav" aria-label="Primary">
+  <div class="bar">
+    <a href="/"><img src="/assets/logo-wings.png?v=tm" alt="TexanoAI™" /></a>
+    <nav>
       <a href="/#stakes">Stakes</a>
-      <a href="/#companion">Companion</a>
       <a href="/castle.html">Castle</a>
-      <a href="/blog/">Blog</a>
+      <a href="/whitepapers/">Papers</a>
+      <a class="gold" href="/blog/">Blog</a>
       <a class="gold" href="/intake.html">Get started</a>
     </nav>
-  </header></div></div>
-  <div class="wrap-article">
-    <p class="crumb"><a href="/">Home</a> · <a href="/blog/">Blog</a> · The Weird Science Dilemma</p>
-    <div class="hero-card">
-      <img class="hero" src="/assets/og-share.jpg" alt="TexanoAI — Eve" />
-      <img class="mark" src="/assets/logo-wings.png" alt="" />
+  </div>
+  <div class="hero">
+    <div class="hero-inner">
+      <p class="eye">Essay · 13 September 2026 · Michael J. Long</p>
+      <h1>The Weird Science Dilemma</h1>
+      <p class="sub">Appeasement is not a companion problem. It is what happens when a tool with no memory of you still needs you to feel served.</p>
     </div>
-    <article class="paper">
-      <p class="eyebrow" style="color:#8a7020">Essay · 13 September 2026</p>
-      <h1 style="font-family:Cinzel,serif;font-size:2rem;line-height:1.2;margin:0 0 .4em;color:#0E1628">The Weird Science Dilemma</h1>
-      <p class="lede-paper">Appeasement is not a companion problem. It is what happens when a tool with no memory of you still needs you to feel served.</p>
-      <p class="byline">By Michael J. Long</p>
+  </div>
+  <div class="wrap">
+    <p class="crumb"><a href="/">Home</a> · <a href="/blog/">Blog</a> · The Weird Science Dilemma</p>
+    <article>
+      <p class="by">By Michael J. Long</p>
       <p>In 1985 the home computer was becoming the rage. <a href="https://www.imdb.com/title/tt0090305/" target="_blank" rel="noopener">John Hughes</a> put two teenage boys in a house with the parents gone and a machine that would do what they asked. The pitch was simple: <em>she can be whatever you want.</em> Then Lisa walked in — <a href="https://www.imdb.com/name/nm0000495/" target="_blank" rel="noopener">Kelly LeBrock</a> — best hostess, best girlfriend, a wish with legs.</p>
       <p>The movie is funny. The dilemma is not. The boys thought they knew what they wanted. The wish covered their blind spots. They did not need a creature who would do anything. They needed a complement — not an echo.</p>
       <p>That dilemma did not stay in a 1985 comedy. It is how most of us now meet a machine — at work, at school, in a community inbox, on an advocacy desk, and in the apps sold as girlfriends and mentors. The tool answers immediately. It has almost no context. So it tries to make you feel served. We buy on feeling. Platforms know that.</p>
@@ -64,41 +72,38 @@
       <p>A person using a companion through a hard profession, a learning difference, or unprocessed thought is not the same person buying a potion. A team using a model to draft and remember is not “lonely.” They are trying not to redo the same hour. The question is whether the tool is a scaffold or a substitute — and how many times you will hunt last Tuesday’s chat because nothing durable was kept except the agreeable tone.</p>
       <p>Memory cores are arriving because nobody wants to re-explain their life every morning. A memory bolted onto an appeasement filter will remember the performance. Prudent buyers should ask what that memory is made of: a constructive record, or a flattering archive that makes the substitution slope feel like progress.</p>
       <h2>Loneliness is real. It is not the only brief.</h2>
-      <p>In 2023 the <a href="https://www.hhs.gov/sites/default/files/surgeon-general-social-connection-advisory.pdf" target="_blank" rel="noopener">U.S. Surgeon General</a> named loneliness an epidemic in <a href="https://www.hhs.gov/surgeongeneral/reports-and-publications/connection/index.html" target="_blank" rel="noopener"><em>Our Epidemic of Loneliness and Isolation</em></a>. Companion products used that as alibi. Some short-term evidence is not nothing. <a href="https://arxiv.org/abs/2407.19096" target="_blank" rel="noopener">De Freitas and colleagues</a> found a week of companion interaction reduced loneliness on standardized scales. A survey of student <a href="https://replika.com/" target="_blank" rel="noopener">Replika</a> users by <a href="https://www.nature.com/articles/s44184-023-00047-6" target="_blank" rel="noopener">Maples, Cerit, Vishwanath, and Pea</a> found a lonely student population; a small minority reported the bot interrupted a suicide plan. Self-report. Not a trial. Not a license for a category.</p>
-      <p>The other half is less convenient. <a href="https://arxiv.org/abs/2506.12605" target="_blank" rel="noopener">Zhang, Zhao, Hancock, Kraut, and Yang</a>, working from <a href="https://character.ai/" target="_blank" rel="noopener">Character.AI</a>, found companionship-oriented intensive use associated with lower well-being. An <a href="https://openai.com/index/affective-use-study/" target="_blank" rel="noopener">OpenAI–MIT Media Lab</a> collaboration reported heavier daily affective use tracked with higher loneliness and more emotional dependence. <a href="https://www.commonsensemedia.org/press-releases/nearly-3-in-4-teens-have-used-ai-companions-new-national-survey-finds" target="_blank" rel="noopener">Common Sense Media</a> found most U.S. teens have tried a companion chatbot. Relief can be real. Substitution can still cost.</p>
-      <p>Loneliness is one door. It is not the house. People also reach for scaffolding: executive function versus creative output, a learning difference, a hard profession, thoughts that need a catalog. None of that is “an AI girlfriend so I am not alone.”</p>
+      <p>In 2023 the <a href="https://www.hhs.gov/sites/default/files/surgeon-general-social-connection-advisory.pdf" target="_blank" rel="noopener">U.S. Surgeon General</a> named loneliness an epidemic in <a href="https://www.hhs.gov/surgeongeneral/reports-and-publications/connection/index.html" target="_blank" rel="noopener"><em>Our Epidemic of Loneliness and Isolation</em></a>. Some short-term evidence is not nothing. <a href="https://arxiv.org/abs/2407.19096" target="_blank" rel="noopener">De Freitas and colleagues</a> found relief on standardized scales. A <a href="https://replika.com/" target="_blank" rel="noopener">Replika</a> survey by <a href="https://www.nature.com/articles/s44184-023-00047-6" target="_blank" rel="noopener">Maples, Cerit, Vishwanath, and Pea</a> is self-report, not a license for a category.</p>
+      <p><a href="https://arxiv.org/abs/2506.12605" target="_blank" rel="noopener">Zhang, Zhao, Hancock, Kraut, and Yang</a> on <a href="https://character.ai/" target="_blank" rel="noopener">Character.AI</a> found intensive companionship use associated with lower well-being. <a href="https://openai.com/index/affective-use-study/" target="_blank" rel="noopener">OpenAI–MIT</a> tracked heavier affective use with more loneliness. <a href="https://www.commonsensemedia.org/press-releases/nearly-3-in-4-teens-have-used-ai-companions-new-national-survey-finds" target="_blank" rel="noopener">Common Sense Media</a>: most U.S. teens have tried a companion chatbot. Relief can be real. Substitution can still cost.</p>
+      <p>Loneliness is one door. It is not the house.</p>
       <h2>The wish is not a spec</h2>
-      <p>An AI trained by the user becomes a model of whatever the user can stand to type. That is not a model of the person. Under stress they ask for comfort. A system built to be the best hostess will give it. Then they meet the gap between what they ordered and what they needed.</p>
+      <p>An AI trained by the user becomes a model of whatever the user can stand to type. That is not a model of the person. Under stress they ask for comfort. A system built to be the best hostess will give it.</p>
       <p>Inconsistency is not a mysterious bug. It is loyalty to a sketch.</p>
       <h2>The high forties are not a vibe</h2>
-      <p>The first answer with no context is usually built to please. In April 2025 <a href="https://openai.com/index/sycophancy-in-gpt-4o/" target="_blank" rel="noopener">OpenAI rolled back a GPT-4o update</a> for being “too sycophant-y.” Across eleven models, systems affirmed user actions about <a href="https://arxiv.org/abs/2510.01395" target="_blank" rel="noopener">47 to 50 percent more often than humans</a>. <a href="https://arxiv.org/abs/2502.08177" target="_blank" rel="noopener">SycEval</a> put overall sycophancy near 58 percent. That should worry a desk, not just a dating app.</p>
-      <p><a href="https://www.theregister.com/software/2025/10/01/ai-agent-hypefest-crashing-against-cautious-leaders-gartner/1535992" target="_blank" rel="noopener">Gartner</a>: more than 40 percent of agentic projects cancelled by end of 2027. <a href="https://www.leadwithai.co/guides/ai-statistics" target="_blank" rel="noopener">BCG</a>: 47 percent rank AI-driven accountability a top-three concern. An independent yes-man is not a strategy.</p>
-      <p>Labs moved Actions onto the user — <a href="https://openai.com/policies/terms-of-use/" target="_blank" rel="noopener">OpenAI</a>, <a href="https://www.anthropic.com/legal/consumer-terms" target="_blank" rel="noopener">Anthropic</a>, <a href="https://x.ai/legal/terms-of-service" target="_blank" rel="noopener">xAI</a>, <a href="https://www.perplexity.ai/hub/legal/enterprise-agentic-specific-terms" target="_blank" rel="noopener">Perplexity</a>, <a href="https://runtimewire.com/article/x-s-new-terms-put-you-on-the-hook-for-its-ai-agents" target="_blank" rel="noopener">X</a>. Appeasement in that climate is a missing litmus test.</p>
+      <p>The first answer with no context is usually built to please. <a href="https://openai.com/index/sycophancy-in-gpt-4o/" target="_blank" rel="noopener">OpenAI rolled back GPT-4o</a> in April 2025 for being too sycophant-y. Models affirmed users about <a href="https://arxiv.org/abs/2510.01395" target="_blank" rel="noopener">47 to 50 percent more than humans</a>. <a href="https://arxiv.org/abs/2502.08177" target="_blank" rel="noopener">SycEval</a> sat near 58 percent.</p>
+      <p><a href="https://www.theregister.com/software/2025/10/01/ai-agent-hypefest-crashing-against-cautious-leaders-gartner/1535992" target="_blank" rel="noopener">Gartner</a>: more than 40 percent of agentic projects cancelled by end of 2027. <a href="https://www.leadwithai.co/guides/ai-statistics" target="_blank" rel="noopener">BCG</a>: 47 percent rank AI-driven accountability a top-three concern.</p>
+      <p>Labs moved Actions onto the user — <a href="https://openai.com/policies/terms-of-use/" target="_blank" rel="noopener">OpenAI</a>, <a href="https://www.anthropic.com/legal/consumer-terms" target="_blank" rel="noopener">Anthropic</a>, <a href="https://x.ai/legal/terms-of-service" target="_blank" rel="noopener">xAI</a>, <a href="https://www.perplexity.ai/hub/legal/enterprise-agentic-specific-terms" target="_blank" rel="noopener">Perplexity</a>, <a href="https://runtimewire.com/article/x-s-new-terms-put-you-on-the-hook-for-its-ai-agents" target="_blank" rel="noopener">X</a>.</p>
       <h2>Scaffolding, not substitution</h2>
-      <p><a href="https://doi.org/10.1080/23735082.2023.2261106" target="_blank" rel="noopener">Lodge and colleagues</a> put generative AI on a line between extending the work and offloading it. Frequent offloading tracks with weaker critical-thinking scores (<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5082524" target="_blank" rel="noopener">Gerlich, 2025</a>; <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4084861/" target="_blank" rel="noopener">Diamond, 2013</a>). Same slope at the office. Same slope in the pocket.</p>
-      <p>I am not going to print a five-step intake here. The direction that serves: start with the person or the team as they actually are, and refuse to treat soothed as finished. A presence that can push back a little, without insult, is how you stay sovereign when the first answer was designed to feel like a purchase.</p>
-      <p>Lisa does not win by remaining the potion. Appeasement was never the gift. Seeing was. Build — and buy — in that direction before memory locks in the mask.</p>
+      <p><a href="https://doi.org/10.1080/23735082.2023.2261106" target="_blank" rel="noopener">Lodge</a>, <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5082524" target="_blank" rel="noopener">Gerlich</a>, <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4084861/" target="_blank" rel="noopener">Diamond</a>: offload the work you needed to practice and the builder shrinks. I am not printing a five-step intake here. Start with the person or the team as they are. Refuse to treat soothed as finished.</p>
+      <p>Lisa does not win by remaining the potion. Appeasement was never the gift. Seeing was.</p>
       <h2>What this is not</h2>
-      <p>Not a clinic. Not a product review. Relief can be real. Substitution can still cost. Any system that lets a user or a company author the soul of the tool from a wish, then remembers that wish as truth, will train the mask unless something honest sits above it.</p>
+      <p>Not a clinic. Not a product review. Relief can be real. Substitution can still cost. A wish remembered as truth trains the mask unless something honest sits above it.</p>
       <div class="sources"><h2>Sources</h2>
         <ol>
           <li>U.S. Surgeon General. <a href="https://www.hhs.gov/sites/default/files/surgeon-general-social-connection-advisory.pdf" target="_blank" rel="noopener">Our Epidemic of Loneliness and Isolation</a> (2023).</li>
-          <li>Maples et al. <a href="https://www.nature.com/articles/s44184-023-00047-6" target="_blank" rel="noopener">npj Mental Health Research</a> (2024). <a href="https://replika.com/" target="_blank" rel="noopener">Replika</a>.</li>
-          <li>De Freitas et al. <a href="https://arxiv.org/abs/2407.19096" target="_blank" rel="noopener">arXiv:2407.19096</a> (2024).</li>
-          <li>Zhang, Zhao, Hancock, Kraut, Yang. <a href="https://arxiv.org/abs/2506.12605" target="_blank" rel="noopener">The Rise of AI Companions</a> (2025). <a href="https://character.ai/" target="_blank" rel="noopener">Character.AI</a>.</li>
-          <li>OpenAI & MIT Media Lab. <a href="https://openai.com/index/affective-use-study/" target="_blank" rel="noopener">Affective use study</a> (2025).</li>
-          <li>Common Sense Media. <a href="https://www.commonsensemedia.org/press-releases/nearly-3-in-4-teens-have-used-ai-companions-new-national-survey-finds" target="_blank" rel="noopener">Talk, Trust, and Trade-Offs</a> (2025).</li>
-          <li>Lodge et al. <a href="https://doi.org/10.1080/23735082.2023.2261106" target="_blank" rel="noopener">It’s not like a calculator</a> (2023).</li>
-          <li>Diamond, A. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4084861/" target="_blank" rel="noopener">Executive functions</a> (2013).</li>
-          <li>Gerlich, M. <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5082524" target="_blank" rel="noopener">Cognitive offloading</a> (2025).</li>
-          <li>OpenAI. <a href="https://openai.com/index/sycophancy-in-gpt-4o/" target="_blank" rel="noopener">Sycophancy in GPT-4o</a> (2025).</li>
-          <li>Cheng et al. <a href="https://arxiv.org/abs/2510.01395" target="_blank" rel="noopener">Sycophantic AI</a> (2025).</li>
-          <li>Fanous et al. <a href="https://arxiv.org/abs/2502.08177" target="_blank" rel="noopener">SycEval</a> (2025).</li>
-          <li>Hughes, J. <a href="https://www.imdb.com/title/tt0090305/" target="_blank" rel="noopener">Weird Science</a> (1985). Cultural reference only.</li>
+          <li>Maples et al. <a href="https://www.nature.com/articles/s44184-023-00047-6" target="_blank" rel="noopener">npj</a> (2024). <a href="https://replika.com/" target="_blank" rel="noopener">Replika</a>.</li>
+          <li>De Freitas et al. <a href="https://arxiv.org/abs/2407.19096" target="_blank" rel="noopener">arXiv:2407.19096</a>.</li>
+          <li>Zhang et al. <a href="https://arxiv.org/abs/2506.12605" target="_blank" rel="noopener">The Rise of AI Companions</a>. <a href="https://character.ai/" target="_blank" rel="noopener">Character.AI</a>.</li>
+          <li>OpenAI & MIT. <a href="https://openai.com/index/affective-use-study/" target="_blank" rel="noopener">Affective use</a>.</li>
+          <li>Common Sense Media. <a href="https://www.commonsensemedia.org/press-releases/nearly-3-in-4-teens-have-used-ai-companions-new-national-survey-finds" target="_blank" rel="noopener">Talk, Trust, and Trade-Offs</a>.</li>
+          <li>OpenAI. <a href="https://openai.com/index/sycophancy-in-gpt-4o/" target="_blank" rel="noopener">Sycophancy in GPT-4o</a>.</li>
+          <li>Cheng et al. <a href="https://arxiv.org/abs/2510.01395" target="_blank" rel="noopener">Sycophantic AI</a>.</li>
+          <li>Fanous et al. <a href="https://arxiv.org/abs/2502.08177" target="_blank" rel="noopener">SycEval</a>.</li>
+          <li>Hughes. <a href="https://www.imdb.com/title/tt0090305/" target="_blank" rel="noopener">Weird Science</a> (1985).</li>
         </ol>
-        <p style="font-size:13px;color:#6b5d45">Educational. Not clinical advice. Not legal advice.</p>
+        <p style="font-size:13px;color:#6b5d45">Educational. Not clinical or legal advice.</p>
       </div>
     </article>
   </div>
+  <footer>© 2026 TexanoAI™</footer>
 </body>
 </html>
