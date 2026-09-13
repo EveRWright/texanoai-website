@@ -37,13 +37,14 @@
     }
     .est-plate {
       width: 100%;
-      height: min(70vh, 620px);
-      object-fit: cover;
-      object-position: 50% 12%;
+      height: min(72vh, 640px);
+      object-fit: contain;
+      object-position: center top;
       display: block;
-      border-radius: 2px;
-      border: 1px solid rgba(212,175,55,0.32);
-      box-shadow: 0 18px 48px rgba(0,0,0,0.35);
+      background: transparent;
+      border: 0;
+      box-shadow: none;
+      filter: drop-shadow(0 18px 40px rgba(0,0,0,0.35));
     }
     .mast.is-esther .hero {
       max-width: 36rem;
@@ -85,7 +86,7 @@
     @media (max-width: 900px) {
       .split { grid-template-columns: 1fr; }
       .est-split { grid-template-columns: 1fr; gap: 18px; padding: 8px 0 36px; }
-      .est-plate { height: min(52vh, 420px); object-position: 50% 10%; }
+      .est-plate { height: min(56vh, 480px); object-fit: contain; }
       .mast.is-esther { background-image: none; }
       .mast.is-esther .hero { max-width: 100%; padding: 8px 0 28px; }
     }
@@ -146,7 +147,7 @@
         </div>
       </header>
       <div class="est-split">
-        <img class="est-plate" src="team/Esther.jpg" alt="Esther — companion field for this brief" width="720" height="900" />
+        <img class="est-plate" src="team/Esther-navy.jpg" alt="Esther — companion field for this brief" width="832" height="1248" />
         <section class="hero">
           <div class="chip-role">For organizations</div>
           <p class="eyebrow">Workforce · product · risk</p>
