@@ -580,13 +580,32 @@ footer a:hover { color: var(--gold); }
 
 .ai-callout {
   margin-top: 22px;
-  padding: 20px 22px;
+  padding: 22px 24px;
   border: 1px solid rgba(212,175,55,0.35);
   background: var(--raised);
   max-width: 68ch;
 }
-.ai-callout h3 { font-family: var(--display); font-size: 18px; color: var(--gold-soft); margin: 0 0 10px; }
-.ai-callout p { color: #E4E9F0; max-width: none; }
+.ai-callout h3 { font-family: var(--read); font-size: 1.2rem; color: var(--gold-soft); margin: 0 0 12px; }
+.ai-callout p { color: #E4E9F0; max-width: none; line-height: 1.7; }
+
+.castle-toc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 28px 0 8px;
+}
+.castle-toc a {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 14px;
+  border: 1px solid rgba(212,175,55,0.4);
+  color: var(--gold-soft);
+  font-family: var(--ui);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.castle-toc a:hover { border-color: var(--gold); color: var(--gold); }
 
 .compare tbody { color: #D8DEE8; }
 .quiet-18 {
