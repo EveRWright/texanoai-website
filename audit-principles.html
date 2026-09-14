@@ -1,172 +1,238 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eight Core Principles of AI Auditability — TexanoAI<span class="text-orange-600">™</span></title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
-        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
-    </style>
-<style>.tm{color:#ea580c;}</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Eight principles for auditable AI — TexanoAI</title>
+  <meta name="description" content="Japan’s eight AI Guidelines for Business principles, in Order chrome, with primary-source links. How TexanoAI maps them in public: Fact / Assumption / Projection, not a cookbook." />
+  <meta name="theme-color" content="#0E1628" />
   <link rel="canonical" href="https://www.texanoai.com/audit-principles.html" />
-  <!-- Privacy-friendly analytics by Plausible -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <meta property="og:title" content="Eight principles for auditable AI — TexanoAI" />
+  <meta property="og:description" content="Primary sources. Named principles. Public map, not instruments." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.texanoai.com/audit-principles.html" />
+  <meta property="og:image" content="https://www.texanoai.com/assets/og-share.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Source+Sans+3:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/site.css?v=ship-14" />
+  <style>
+    .principle-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px 28px;
+      margin-top: 32px;
+    }
+    .principle-grid article {
+      padding: 22px 20px 20px;
+      border: 1px solid rgba(61, 52, 40, 0.16);
+      background: #efe8d8;
+      min-width: 0;
+    }
+    .principle-grid .n {
+      font-family: var(--display);
+      color: #8a7020;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+    }
+    .principle-grid h3 {
+      font-family: var(--display);
+      font-size: 1.15rem;
+      color: var(--ink);
+      margin: 0 0 12px;
+      line-height: 1.3;
+    }
+    .principle-grid p {
+      color: #3d3428;
+      font-size: 16px;
+      line-height: 1.7;
+      margin: 0 0 12px;
+      max-width: none;
+    }
+    .principle-grid p:last-child { margin-bottom: 0; }
+    .principle-grid a { color: #6b5418; text-decoration: underline; font-weight: 600; }
+    .src-list { margin: 18px 0 0; padding: 0; list-style: none; }
+    .src-list li { margin: 0 0 12px; line-height: 1.6; }
+    .src-list a { color: var(--gold-soft); text-decoration: underline; }
+    @media (max-width: 800px) { .principle-grid { grid-template-columns: 1fr; } }
+  </style>
   <script async src="https://plausible.io/js/pa-DkqRMwm06Uep5sF8eiHT1.js"></script>
   <script>
     window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
     plausible.init()
   </script>
 </head>
-<body class="bg-gray-50 text-gray-800">
-<div style="background:#0E1628;color:#E4C86A;font-family:Georgia,serif;font-size:13px;padding:8px 16px;text-align:center;position:relative;z-index:60;">
-  TexanoAI™ ethics &amp; papers archive · <a href="/" style="color:#F5F7FA;text-decoration:underline;">New front door</a>
-</div>
-
-    <!-- Header Navigation (consistent with other pages) -->
-    <header class="fixed top-0 inset-x-0 z-50 bg-white border-b">
-        <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-            <a href="/" class="font-extrabold text-xl text-gray-900">TexanoAI<span class="text-orange-600">™</span></a>
-            <nav class="hidden lg:flex items-center gap-6 text-sm">
-                <a class='hover:opacity-80' href='index.html#mission'>About</a>
-                <a class='hover:opacity-80' href='index.html#mmx'>MMX™ &amp; Pulse™</a>
-                <a class='hover:opacity-80' href='index.html#raguelai'>RaguelAI™</a>
-                <a class='hover:opacity-80' href='mmx-ethics.html'>AI Ethics</a>
-                <a class='hover:opacity-80 font-semibold text-orange-600' href='audit-principles.html'>Audit Principles</a>
-                <a class='hover:opacity-80' href='whitepapers/index.html'>White Papers</a>
-                <a class='hover:opacity-80' href='blog/index.html'>Blog</a>
-                <a class='hover:opacity-80' href='index.html#investors'>Investors</a>
-                <a class='inline-flex items-center px-3 py-1.5 rounded-md bg-orange-600 text-white hover:bg-orange-700' href='index.html#contact'>Contact</a>
-            </nav>
-            <button id="navOpen" aria-controls="mobileDrawer" aria-expanded="false" aria-label="Open menu" class="lg:hidden inline-flex items-center justify-center p-2 rounded border border-gray-300 text-gray-700">☰</button>
+<body>
+  <div class="nav-backdrop" data-nav-close hidden></div>
+  <div class="mast">
+    <div class="wrap">
+      <header>
+        <a class="logo" href="/" aria-label="TexanoAI home">
+          <img class="logo-img" src="assets/logo-wings.png?v=tm" alt="TexanoAI™" width="204" height="72" />
+        </a>
+        <div class="header-right">
+          <span class="stars header-stars-desktop" aria-hidden="true">
+            <span class="s">★</span><span class="s lg">★</span><span class="s">★</span>
+          </span>
+          <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu">
+            <span class="nav-toggle-bars" aria-hidden="true"></span>
+          </button>
+          <nav id="site-nav" class="site-nav" aria-label="Primary">
+            <a href="/">Home</a>
+            <a href="/blog/">Blog</a>
+            <a href="/mmx-ethics.html">Ethics</a>
+            <a href="/castle.html">Castle</a>
+            <a href="/dictionary.html">Dictionary</a>
+            <a class="gold" href="/intake.html">Get started</a>
+          </nav>
         </div>
-    </header>
-    <div class="h-16 lg:h-[68px]"></div>
-    <div id="mobileDrawer" aria-hidden="true" class="fixed inset-0 z-50 hidden">
-        <div id="navOverlay" class="absolute inset-0 bg-black/60"></div>
-        <nav class="absolute right-0 top-0 h-full w-72 max-w-[80vw] bg-white shadow-2xl p-4 flex flex-col gap-3 text-base">
-            <div class="flex items-center justify-between pb-2 border-b">
-                <span class="font-extrabold text-lg text-gray-900">TexanoAI<span class="text-orange-600">™</span></span>
-                <button id="navClose" aria-label="Close menu" class="p-2 rounded border border-gray-300">✕</button>
-            </div>
-            <a class='py-2' href='index.html#mission'>About</a>
-            <a class='py-2' href='index.html#mmx'>MMX™ &amp; Pulse™</a>
-            <a class='py-2' href='index.html#raguelai'>RaguelAI™</a>
-            <a class='py-2' href='mmx-ethics.html'>AI Ethics</a>
-            <a class='py-2 text-orange-600 font-semibold' href='audit-principles.html'>Audit Principles</a>
-            <a class='py-2' href='whitepapers/index.html'>White Papers</a>
-            <a class='py-2' href='blog/index.html'>Blog</a>
-            <a class='py-2' href='index.html#investors'>Investors</a>
-            <a class='inline-flex mt-2 items-center justify-center px-3 py-2 rounded-md bg-orange-600 text-white' href='index.html#contact'>Contact</a>
-        </nav>
+      </header>
+      <section class="hero">
+        <div class="eyebrow">
+          <span class="stars" aria-hidden="true"><span class="s">★</span><span class="s lg">★</span><span class="s">★</span></span>
+          Auditability · public map
+        </div>
+        <h1>Eight principles for auditable AI.</h1>
+        <p class="motto">Named expectations. Primary sources. No orange archive.</p>
+        <p class="lede">Japan’s <a href="https://www.meti.go.jp/english/press/2024/0419_002.html" rel="noopener" target="_blank" style="color:var(--gold-soft);text-decoration:underline">AI Guidelines for Business</a> (METI + MIC) put eight principles next to practical checks. This page is a reading room for those principles — and how TexanoAI talks about them in public. Instruments stay in the shop.</p>
+        <div class="actions">
+          <a class="btn btn-gold" href="/blog/japan-aia.html">Japan AIA essay</a>
+          <a class="btn btn-ghost" href="/mmx-ethics.html">Ethics Pulse™</a>
+          <a class="btn btn-ghost" href="/dictionary.html#fap">F / A / P</a>
+        </div>
+      </section>
     </div>
+  </div>
 
-    <main>
-        <section class="hero-bg text-white pt-20 pb-24 lg:pt-32 lg:pb-48">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <div class="max-w-4xl mx-auto">
-                    <div class="flex justify-center mb-6">
-                        <svg class="w-16 h-16 text-orange-600" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 3h5.5L19 8.5V19a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M13.5 3V8.5H19" stroke="currentColor" stroke-width="2"/><path d="M9 11h6M9 15h6M9 19h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-                    </div>
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight mb-6">Eight Principles for Auditable AI</h1>
-                    <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">Learn how the AI Guidelines for Business outline core principles that every trustworthy system should follow—and how TexanoAI’s MMX™ &amp; Ethics Pulse™ operationalize them.</p>
-                </div>
-            </div>
-        </section>
+  <section class="band">
+    <div class="wrap">
+      <div class="eyebrow" style="color:#8a7020">What this is</div>
+      <h2>A structure you can audit against — not a slogan wall.</h2>
+      <p style="color:#3d3428;max-width:62ch;line-height:1.75;font-size:1.08em">The guidelines are <strong>soft law</strong>: unified guiding principles for businesses using AI, updated as Ver 1.0 (April 2024) and later revisions. Japan’s <strong>AI Promotion Act (Act No. 53 of 2025)</strong> then stood up the Artificial Intelligence Agency. We do not invent ISO numbers. We do not claim a certification we have not earned.</p>
+      <p style="color:#3d3428;max-width:62ch;line-height:1.75;font-size:1.08em;margin-top:16px"><strong>Fact:</strong> the eight headings below are Japan’s public list. <strong>Assumption:</strong> they are a useful kinship for how we talk about honesty under load. <strong>Projection:</strong> none of this is a substitute for counsel in a specific jurisdiction.</p>
+    </div>
+  </section>
 
-        <section class="py-16 lg:py-20 bg-white">
-            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900">The Eight Core Principles</h2>
-                <p class="text-lg text-gray-700">Japan’s Artificial Intelligence Agency (AIA) distills its audit framework into eight interlocking principles. These guidelines—from human‑centered values to international cooperation—provide a blueprint for AI systems that enhance dignity and accountability. Below we summarise each principle and show how the MMX™ &amp; Ethics Pulse™ architecture meets or exceeds the recommendation.</p>
-                <!-- Principle Cards -->
-                <div class="grid gap-10 md:grid-cols-2">
-                    <div class="space-y-4">
-                        <h3 class="text-2xl font-bold text-orange-600">1. Human‑Centered Values &amp; Safety</h3>
-                        <p class="text-gray-700">AI must align with societal norms and prevent harm. Robustness testing and red‑teaming protocols ensure systems respect human safety. <strong>TexanoAI’s approach:</strong> The Ethics Pulse favors fairness and safety in every tie‑break, while MMX™ modes adjust to emotional states, preventing overload and guiding users to safe, empowering actions.</p>
-                        <h3 class="text-2xl font-bold text-orange-600">2. Fairness &amp; Non‑Discrimination</h3>
-                        <p class="text-gray-700">Bias audits and impact assessments are critical. Demographic parity metrics flag inequities. <strong>TexanoAI’s approach:</strong> The MMX engine tags each claim (Fact/Assumption/Projection) and logs decisions, enabling post‑hoc audits. It ranks options to minimize discrimination, and the Ethics Pulse blocks requests that could embed bias.</p>
-                        <h3 class="text-2xl font-bold text-orange-600">3. Privacy Protection</h3>
-                        <p class="text-gray-700">Data minimisation and consent protocols underpin privacy. Systems must audit data flows and maintain consent mechanisms. <strong>TexanoAI’s approach:</strong> Our cryptographic design stores user state on user‑owned media; MMX scenarios never assume sensitive data when it is unknown, and the Ethics Pulse restricts information access to justifiable needs.</p>
-                        <h3 class="text-2xl font-bold text-orange-600">4. Transparency &amp; Explainability</h3>
-                        <p class="text-gray-700">Clear documentation of models and decision logic is essential. Explainability reports should outline decision pathways. <strong>TexanoAI’s approach:</strong> Each MMX recommendation includes a plain‑language reason—for example, "Option A ranks higher because it satisfies the fairness criterion and meets the deadline"—and links back to the F/A/P inputs.</p>
-                    </div>
-                    <div class="space-y-4">
-                        <h3 class="text-2xl font-bold text-orange-600">5. Accountability</h3>
-                        <p class="text-gray-700">Governance chains and audit trails are mandatory. Responsible parties must be identifiable and correction protocols defined. <strong>TexanoAI’s approach:</strong> Each interaction is versioned; edition logs capture who changed what and why. Responsibility can be traced from AI to human supervisors, supporting swift remediation.</p>
-                        <h3 class="text-2xl font-bold text-orange-600">6. Education &amp; Literacy</h3>
-                        <p class="text-gray-700">Non‑experts deserve clear communication of an AI’s capabilities and limitations. <strong>TexanoAI’s approach:</strong> Our responses avoid jargon and emphasise rights and options. The MMX model’s micro‑task prompts are designed so anyone can act, regardless of background.</p>
-                        <h3 class="text-2xl font-bold text-orange-600">7. Sustainability</h3>
-                        <p class="text-gray-700">AI systems should consider their environmental footprint. <strong>TexanoAI’s approach:</strong> We partner with green data centres and measure compute intensity. Our algorithm chooses leaner operations where possible, aligning ethical ends with ecological responsibility.</p>
-                        <h3 class="text-2xl font-bold text-orange-600">8. International Cooperation</h3>
-                        <p class="text-gray-700">Systems should align with global standards. Referencing international benchmarks ensures cross‑border fairness. <strong>TexanoAI’s approach:</strong> MMX and Ethics Pulse are designed to slot into diverse regulatory schemes—from Japan’s voluntary guidelines to the EU’s prescriptive AI Act—helping organisations adopt a single ethical core that scales.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
+  <section class="band" id="principles">
+    <div class="wrap">
+      <div class="eyebrow" style="color:#8a7020">The eight</div>
+      <h2>Principles, checks, and our public map</h2>
+      <div class="principle-grid">
+        <article>
+          <div class="n">01</div>
+          <h3>Human-centered values &amp; safety</h3>
+          <p>Align with human dignity. Test for harm. Red-team before you bless a path.</p>
+          <p>Public map: regulation and agency as first-class design. Walk beside — never rescue. <a href="/stimuli.html">Environments are not neutral</a>.</p>
+        </article>
+        <article>
+          <div class="n">02</div>
+          <h3>Fairness &amp; non-discrimination</h3>
+          <p>Bias audits and impact assessments. Who is left out of the option set?</p>
+          <p>Public map: non-appeasement is not cruelty. It is refusing a fluent lie that would treat people as a type. <a href="/mmx-ethics.html">Ethics you can steer by</a>.</p>
+        </article>
+        <article>
+          <div class="n">03</div>
+          <h3>Privacy protection</h3>
+          <p>Minimisation, consent, and auditable data flows.</p>
+          <p>Public map: user-owned memory. The house can live on Drive, disk, or USB. <a href="/memory-core.html">Memory Core</a>. High-stakes zero-retention is a <em>mode</em>, not a slogan.</p>
+        </article>
+        <article>
+          <div class="n">04</div>
+          <h3>Transparency &amp; explainability</h3>
+          <p>Document models and decision paths in language a human can check.</p>
+          <p>Public map: <a href="/dictionary.html#fap">Fact / Assumption / Projection</a>. Say what is known, guessed, and feared — instead of smuggling comfort in as certainty.</p>
+        </article>
+        <article>
+          <div class="n">05</div>
+          <h3>Accountability</h3>
+          <p>Named roles. Correction paths. Someone can answer for a change.</p>
+          <p>Public map: edition logs in the shop; public fence on this site. We do not invent outcome percentages we have not earned. <a href="/castle.html">Castle fences</a>.</p>
+        </article>
+        <article>
+          <div class="n">06</div>
+          <h3>Education &amp; literacy</h3>
+          <p>Non-experts deserve limits and options in plain language.</p>
+          <p>Public map: <a href="/dictionary.html">Dictionary</a> · <a href="/age-of-retrieval.html">Age of Retrieval</a> · <a href="/blog/">essays</a>. Visiting AIs are told where meaning lives.</p>
+        </article>
+        <article>
+          <div class="n">07</div>
+          <h3>Sustainability</h3>
+          <p>Lifecycle cost — compute, attention, and the human load of a noisy field.</p>
+          <p>Public map: dense sculpting for one human beats endless prompt churn. We do not publish a green-score we have not measured.</p>
+        </article>
+        <article>
+          <div class="n">08</div>
+          <h3>International cooperation</h3>
+          <p>Read other houses. Harmonise where it helps. Do not pretend one poster is world law.</p>
+          <p>Public map: Japan’s light-touch model beside the <a href="/blog/eu-ai-act.html">EU AI Act</a> and <a href="/blog/us-state-laws.html">U.S. state patchwork</a>. Kinship, not copy-paste compliance.</p>
+        </article>
+      </div>
+    </div>
+  </section>
 
-        <!-- Consulting Offer Section -->
-        <section class="py-16 lg:py-20 bg-gray-900 text-white">
-            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-                <h2 class="text-3xl sm:text-4xl font-extrabold mb-4">Is Your AI Ready for Audits?</h2>
-                <p class="text-lg text-gray-300">The pace of regulation is accelerating. As new laws cascade—from state patchworks to global mandates—only organisations who embed ethical governance will thrive. TexanoAI<span class="text-orange-600">™</span> offers business consulting to help you implement the Eight Principles and tailor MMX™ &amp; Ethics Pulse™ to your workflows. Get ahead of the curve while there’s still runway.</p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a class='inline-flex items-center justify-center px-6 py-3 rounded-lg bg-orange-600 text-white font-semibold hover:bg-orange-700 shadow' href='index.html#contact'>Talk to an Expert</a>
-                    <a class='inline-flex items-center justify-center px-6 py-3 rounded-lg bg-white text-gray-900 font-semibold hover:bg-gray-100 shadow' href='blog/ai-index.html'>Read more about the AI Boom</a>
-                </div>
-            </div>
-        </section>
-    </main>
+  <section class="band deep" id="sources">
+    <div class="wrap">
+      <div class="eyebrow">Primary sources · follow the links</div>
+      <h2>Read the documents, not our paraphrase.</h2>
+      <ul class="src-list">
+        <li><a href="https://www.meti.go.jp/english/press/2024/0419_002.html" rel="noopener" target="_blank">METI + MIC press: AI Guidelines for Business Ver 1.0</a> — 19 April 2024 (English release)</li>
+        <li><a href="https://www.meti.go.jp/shingikai/mono_info_service/ai_shakai_jisso/pdf/20240419_9.pdf" rel="noopener" target="_blank">AI Guidelines for Business Ver 1.0 (English PDF, provisional translation)</a></li>
+        <li><a href="https://www.meti.go.jp/shingikai/mono_info_service/ai_shakai_jisso/20260331_report.html" rel="noopener" target="_blank">METI page: AI Guidelines for Business (latest Japanese hub, Ver 1.2)</a></li>
+        <li><a href="https://www.meti.go.jp/shingikai/mono_info_service/ai_shakai_jisso/pdf/20260331_12.pdf" rel="noopener" target="_blank">AI Guidelines for Business Ver 1.2 (English PDF, 31 March 2026)</a></li>
+        <li><a href="https://hai.stanford.edu/ai-index/2025-ai-index-report/policy-and-governance" rel="noopener" target="_blank">Stanford HAI AI Index 2025 — Policy and Governance</a></li>
+        <li><a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" rel="noopener" target="_blank">European Commission — EU AI Act regulatory framework</a></li>
+        <li>On this site: <a href="/blog/japan-aia.html">Japan AIA essay</a> · <a href="/blog/ai-index.html">Stanford Index notes</a> · <a href="/mmx-ethics.html">MMX™ &amp; Ethics Pulse™</a> · <a href="/castle.html">Castle</a></li>
+      </ul>
+      <p class="fence" style="margin-top:28px">Educational commentary. Not legal advice. Not a law firm. Not a clinic. Jurisdictional detail changes — verify against the primary government pages above before any compliance decision. The map is public. The instruments are not.</p>
+      <div class="actions" style="margin-top:28px">
+        <a class="btn btn-gold" href="/intake.html">Get started</a>
+        <a class="btn btn-ghost" href="/blog/japan-aia.html">Read Japan AIA</a>
+        <a class="btn btn-ghost" href="/">Home</a>
+      </div>
+    </div>
+  </section>
 
-    <!-- Footer (same as other pages) -->
-    <footer class="bg-gray-800 text-white">
-        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div>
-                    <h4 class="text-2xl font-extrabold text-orange-500 mb-4">TexanoAI<span class="text-orange-600">™</span></h4>
-                    <p class="text-gray-400 text-sm">AI innovation built with Texas reliability. We deliver pragmatic, ethical solutions that drive measurable human outcomes.</p>
-                </div>
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a class='text-gray-400 hover:text-orange-500' href='index.html#mission'>Our Mission</a></li>
-                        <li><a class='text-gray-400 hover:text-orange-500' href='index.html#mmx'>MMX™ &amp; Ethics Pulse™</a></li>
-                        <li><a class='text-gray-400 hover:text-orange-500' href='index.html#raguelai'>RaguelAI™ Engine</a></li>
-                        <li><a class='text-gray-400 hover:text-orange-500' href='index.html#investors'>Investor Interest</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Contact &amp; Leadership</h4>
-                    <p class="text-gray-300 text-sm font-semibold">Michael J. Long</p>
-                    <p class="text-gray-300 text-sm">Founder &amp; Chief Architect</p>
-                    <p class="text-gray-300 text-sm mt-2">Press: <a href="mailto:public@texanoai.com" class="hover:text-orange-400">public@texanoai.com</a></p>
-                </div>
-            </div>
-            <div class="mt-8 border-t border-gray-700 pt-8">
-                <p class="text-center text-gray-400 text-sm">© 2025 TexanoAI<span class="text-orange-600">™</span>. All rights reserved. MMX™ and Ethics Pulse™ are proprietary technologies.</p>
-            </div>
-        </div>
+  <div class="wrap">
+    <footer>
+      <span>© TexanoAI™ · MMX™ · Ethics Pulse™</span>
+      <span class="footer-links">
+        <a href="/mmx-ethics.html">Ethics</a>
+        <span class="footer-sep">·</span>
+        <a href="/blog/">Blog</a>
+        <span class="footer-sep">·</span>
+        <a href="/privacy.html">Privacy</a>
+        <span class="footer-sep">·</span>
+        <a href="/terms.html">Terms</a>
+      </span>
     </footer>
-
-    <!-- Scripts for Mobile Drawer -->
-    <script>
-        (function(){
-            var d=document,drawer=d.getElementById('mobileDrawer');
-            var openBtn=d.getElementById('navOpen'), closeBtn=d.getElementById('navClose'), overlay=d.getElementById('navOverlay');
-            function open(){ if(!drawer) return; drawer.classList.remove('hidden'); drawer.setAttribute('aria-hidden','false'); openBtn&&openBtn.setAttribute('aria-expanded','true'); closeBtn&&closeBtn.focus(); d.documentElement.style.overflow='hidden'; }
-            function close(){ if(!drawer) return; drawer.classList.add('hidden'); drawer.setAttribute('aria-hidden','true'); openBtn&&openBtn.setAttribute('aria-expanded','false'); d.documentElement.style.overflow=''; openBtn&&openBtn.focus(); }
-            openBtn&&openBtn.addEventListener('click', open, false);
-            closeBtn&&closeBtn.addEventListener('click', close, false);
-            overlay&&overlay.addEventListener('click', close, false);
-            d.addEventListener('keydown', function(e){ if(e.key==='Escape') close(); }, false);
-            drawer&&drawer.addEventListener('click', function(e){ if(e.target && e.target.tagName==='A'){ setTimeout(close,0); } }, false);
-        })();
-    </script>
-
-<section aria-label="Public Ending" class="public-ending" style="margin-top:18px;border-top:1px solid #e5e7eb;padding-top:12px">
-  <p><strong lang="en">Public Notice:</strong> TexanoAI™ is not a law firm; educational self‑help only. We guide procedures—no attorney‑client advice. Consult a licensed attorney.</p>
-  <p><strong lang="es">Aviso Público:</strong> TexanoAI™ no es un bufete de abogados; solo autoayuda educativa. Guiamos procedimientos—no asesoría abogado‑cliente. Consulte a un abogado con licencia.</p>
-</section>
-
+  </div>
+  <script>
+    (function () {
+      var toggle = document.querySelector(".nav-toggle");
+      var backdrop = document.querySelector(".nav-backdrop");
+      var nav = document.getElementById("site-nav");
+      if (!toggle || !nav) return;
+      function setOpen(open) {
+        document.body.classList.toggle("nav-open", open);
+        toggle.setAttribute("aria-expanded", open ? "true" : "false");
+        toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+        if (backdrop) backdrop.hidden = !open;
+      }
+      toggle.addEventListener("click", function () {
+        setOpen(!document.body.classList.contains("nav-open"));
+      });
+      if (backdrop) backdrop.addEventListener("click", function () { setOpen(false); });
+      nav.addEventListener("click", function (e) { e.stopPropagation(); });
+      nav.querySelectorAll("a").forEach(function (a) {
+        a.addEventListener("click", function () { setOpen(false); });
+      });
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") setOpen(false);
+      });
+    })();
+  </script>
 </body>
 </html>

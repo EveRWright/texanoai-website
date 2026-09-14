@@ -7,10 +7,11 @@
   --gold: #D4AF37;
   --gold-soft: #E4C86A;
   --fg: #F5F7FA;
-  --muted: #C5CDD8;
+  --muted: #D5DCE6; /* 2026-09-13 KEEP contrast: was #C5CDD8, too washed on navy */
   --parchment: #F4F0E6;
   --ink: #16120C;
-  --display: "Cinzel", Georgia, serif;
+  --display: "Cinzel", Georgia, serif; /* eyebrows, motto, small brand only */
+  --read: "Source Serif 4", Georgia, "Times New Roman", serif; /* H1/H2/body — easier to read than Cinzel */
   --ui: "Source Sans 3", Helvetica, sans-serif;
   --body: "Source Serif 4", Georgia, serif;
 }
@@ -125,8 +126,8 @@ nav.site-nav a.gold { color: var(--gold-soft); }
   content: ""; flex: 0 0 48px; height: 1px; background: linear-gradient(90deg, var(--gold), transparent);
 }
 h1 {
-  font-family: var(--display); font-size: clamp(28px, 7vw, 58px); font-weight: 600;
-  letter-spacing: -0.02em; line-height: 1.12; max-width: 18ch; position: relative;
+  font-family: var(--read); font-size: clamp(28px, 6.2vw, 52px); font-weight: 600;
+  letter-spacing: -0.015em; line-height: 1.2; max-width: 20ch; position: relative;
   text-shadow: 0 2px 24px rgba(0,0,0,0.35);
   overflow-wrap: break-word;
 }
@@ -158,8 +159,9 @@ h1 {
 .band { background: var(--parchment); color: var(--ink); padding: 72px 0; }
 .band.navy { background: var(--surface); color: var(--fg); }
 .band.deep { background: var(--bg); color: var(--fg); }
-h2 { font-family: var(--display); font-size: clamp(22px, 5vw, 28px); margin-bottom: 16px; font-weight: 600; overflow-wrap: break-word; }
-.band p { max-width: 62ch; line-height: 1.65; }
+h2 { font-family: var(--read); font-size: clamp(24px, 4.2vw, 32px); margin: 2.1em 0 0.75em; font-weight: 600; line-height: 1.28; overflow-wrap: break-word; }
+h2:first-child { margin-top: 0; }
+.band p { max-width: 62ch; line-height: 1.75; }
 /* Parchment contrast: never use --muted (ice gray) on cream — unreadable */
 .band:not(.navy):not(.deep) p,
 .band:not(.navy):not(.deep) li,
@@ -371,13 +373,235 @@ footer a:hover { color: var(--gold); }
 .contact-form .btn { justify-self: start; margin-top: 8px; border: 0; cursor: pointer; }
 .contact-form .honey { position: absolute; left: -9999px; height: 0; width: 0; opacity: 0; }
 
-.page-hero { padding: 56px 0 28px; }
-.page-hero h1 { max-width: 18ch; font-size: clamp(28px, 4vw, 42px); }
-.prose { max-width: 68ch; padding-bottom: 64px; }
-.prose p, .prose li { color: var(--muted); line-height: 1.7; margin-bottom: 14px; font-size: 17px; }
+.page-hero { padding: 56px 0 36px; }
+.page-hero h1 { max-width: 22ch; font-size: clamp(30px, 4.4vw, 44px); font-family: var(--read); }
+.prose { max-width: 68ch; padding-bottom: 72px; }
+.prose p, .prose li { color: #E4E9F0; line-height: 1.8; margin-bottom: 1.05em; font-size: 18px; }
+.prose h2 { margin-top: 2.6em; margin-bottom: 0.85em; }
 .prose ul { padding-left: 1.2em; margin-bottom: 18px; }
 .prose strong { color: var(--fg); }
+.prose .fence { margin-top: 1.4em; margin-bottom: 0.4em; }
+
+.stim-loop {
+  display: grid;
+  gap: 16px;
+  margin: 28px 0 8px;
+}
+.stim-loop article {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 16px;
+  align-items: start;
+  padding: 20px 20px 18px;
+  background: rgba(22, 32, 56, 0.72);
+  border: 1px solid rgba(212,175,55,0.28);
+  border-top: 3px solid var(--gold);
+}
+.stim-loop .n {
+  font-family: var(--read);
+  font-size: 1.35rem;
+  color: var(--gold-soft);
+  line-height: 1;
+  padding-top: 2px;
+}
+.stim-loop h3 {
+  font-family: var(--read);
+  font-size: 1.15rem;
+  color: var(--gold-soft);
+  margin: 0 0 8px;
+  line-height: 1.3;
+}
+.stim-loop p {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.7;
+  color: #E8EDF4 !important;
+  max-width: none;
+}
+.stim-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.stim-split article.warn { border-top-color: #c9a0a0; }
+.stim-split article.ok { border-top-color: #8dffc0; }
+.stim-why { margin-top: 3.2em; padding-top: 2em; border-top: 1px solid rgba(212,175,55,0.28); }
+@media (max-width: 700px) {
+  .stim-split { grid-template-columns: 1fr; }
+  .stim-loop article { grid-template-columns: 1fr; gap: 8px; }
+}
 .note {
   margin-top: 24px; padding: 14px 16px; border: 1px dashed rgba(212,175,55,0.4);
   font-family: var(--ui); font-size: 14px; color: var(--muted);
+}
+
+/* 2026-09-13 local tighten + contrast (stamps #4 KEEP #5 KEEP). Do not push www until last-click. */
+.band { padding: 56px 0; }
+.card { min-height: 0; padding: 18px 18px 16px; }
+.hero .lede { color: #E8EDF4; }
+
+.band.navy p,
+.band.deep p,
+.band.navy .lede,
+.band.deep .lede {
+  color: #E4E9F0;
+}
+.band.navy .card p,
+.band.deep .card p,
+.band.navy .vs ul,
+.band.deep .vs ul {
+  color: #D8DEE8;
+}
+
+.stakes-lede {
+  color: #3d3428;
+  max-width: 62ch;
+  font-size: 1.08em;
+  line-height: 1.75;
+  margin: 0 0 8px;
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  margin-top: 36px;
+}
+.stats-grid article {
+  background: #efe8d8;
+  border: 1px solid rgba(61, 52, 40, 0.14);
+  border-top: 3px solid var(--gold);
+  padding: 28px 24px 24px;
+  min-width: 0;
+}
+.stats-grid .num {
+  font-family: var(--display);
+  font-size: clamp(32px, 4.2vw, 42px);
+  color: #8a7020;
+  line-height: 1.15;
+  margin-bottom: 14px;
+}
+.stats-grid h3 {
+  font-family: var(--read);
+  font-size: 1.15rem;
+  color: var(--ink);
+  margin: 0 0 16px;
+  line-height: 1.35;
+}
+.stats-grid p {
+  color: #3d3428 !important;
+  font-size: 16px;
+  line-height: 1.75;
+  max-width: none;
+  margin-bottom: 0;
+}
+.stats-grid .cite {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(138, 112, 32, 0.28);
+  font-family: var(--ui);
+  font-size: 13px;
+  line-height: 1.5;
+  color: #5a5040;
+}
+.stats-grid .cite a { color: #6b5418; text-decoration: underline; font-weight: 600; }
+
+.writing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 28px;
+}
+.writing-grid article {
+  padding: 22px 20px;
+  border: 1px solid rgba(212,175,55,0.28);
+  background: rgba(22,32,56,0.45);
+  min-width: 0;
+}
+.writing-grid h3 {
+  font-family: var(--display);
+  font-size: 1.2rem;
+  margin: 8px 0 12px;
+  line-height: 1.35;
+}
+.writing-grid h3 a { color: var(--gold-soft); text-decoration: none; }
+.writing-grid h3 a:hover { text-decoration: underline; }
+.writing-grid p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.7;
+  max-width: none;
+}
+
+.patterns-lede {
+  color: #E4E9F0;
+  max-width: 62ch;
+  font-size: 1.08em;
+  line-height: 1.75;
+  margin: 0;
+}
+.pattern-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  margin-top: 36px;
+}
+.pattern-grid article {
+  background: rgba(22, 32, 56, 0.72);
+  border: 1px solid rgba(212,175,55,0.32);
+  border-top: 3px solid var(--gold);
+  padding: 26px 22px 24px;
+  min-width: 0;
+}
+.pattern-grid .ico {
+  width: 40px;
+  height: 40px;
+  color: var(--gold-soft);
+  margin-bottom: 16px;
+}
+.pattern-grid .ico svg { display: block; width: 40px; height: 40px; }
+.pattern-grid h3 {
+  font-family: var(--read);
+  font-size: 1.12rem;
+  color: var(--gold-soft);
+  margin: 0 0 12px;
+  line-height: 1.35;
+}
+.pattern-grid p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #E8EDF4 !important;
+  max-width: none;
+  margin: 0;
+}
+
+.ai-callout {
+  margin-top: 22px;
+  padding: 20px 22px;
+  border: 1px solid rgba(212,175,55,0.35);
+  background: var(--raised);
+  max-width: 68ch;
+}
+.ai-callout h3 { font-family: var(--display); font-size: 18px; color: var(--gold-soft); margin: 0 0 10px; }
+.ai-callout p { color: #E4E9F0; max-width: none; }
+
+.compare tbody { color: #D8DEE8; }
+.quiet-18 {
+  margin-top: 16px;
+  font-family: var(--ui);
+  font-size: 12px;
+  color: #8a8378;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 900px) {
+  .stats-grid, .pattern-grid, .writing-grid { grid-template-columns: 1fr 1fr; }
+  .price-grid { grid-template-columns: 1fr !important; }
+}
+@media (max-width: 640px) {
+  .stats-grid, .pattern-grid, .writing-grid { grid-template-columns: 1fr; }
+  .band { padding: 40px 0; }
 }
