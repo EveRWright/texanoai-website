@@ -128,9 +128,11 @@ nav.site-nav a.gold { color: var(--gold-soft); }
 h1 {
   font-family: var(--read); font-size: clamp(28px, 6.2vw, 52px); font-weight: 600;
   letter-spacing: -0.015em; line-height: 1.2; max-width: 20ch; position: relative;
+  color: var(--fg);
   text-shadow: 0 2px 24px rgba(0,0,0,0.35);
   overflow-wrap: break-word;
 }
+.mast h1, .hero h1 { color: #F5F7FA; }
 .hero .lede {
   margin-top: 24px; max-width: 54ch; font-size: 18px; line-height: 1.65;
   color: var(--muted); position: relative;
@@ -179,14 +181,8 @@ h2:first-child { margin-top: 0; }
 .product-line strong { color: #8a7020; }
 
 .ladder { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 36px; }
-@media (max-width: 900px) {
-  /* Same left-to-right fade as desktop — do not switch to a haze wash here. */
-  .mast {
-    min-height: 0;
-    background-position: 82% center;
-  }
-  .hero { max-width: 32rem; }
-  .ladder, .vs, .roles, .loop, .doors { grid-template-columns: 1fr 1fr; }
+/* Hamburger earlier than 900 — full nav crowds mid-width (2026-09-15). */
+@media (max-width: 1180px) {
   .nav-toggle { display: inline-flex; }
   .header-stars-desktop { display: none; }
   nav.site-nav {
@@ -217,6 +213,15 @@ h2:first-child { margin-top: 0; }
     color: #F0D060;
     font-weight: 700;
   }
+}
+@media (max-width: 900px) {
+  /* Same left-to-right fade as desktop — do not switch to a haze wash here. */
+  .mast {
+    min-height: 0;
+    background-position: 82% center;
+  }
+  .hero { max-width: 32rem; }
+  .ladder, .vs, .roles, .loop, .doors { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 560px) {
   .ladder, .vs, .roles, .loop, .doors, .refuse { grid-template-columns: 1fr; }
