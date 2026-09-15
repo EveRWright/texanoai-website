@@ -279,17 +279,51 @@ h2:first-child { margin-top: 0; }
   .cost-grid { grid-template-columns: 1fr; }
 }
 
+.companion-top {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.85fr) 1.15fr;
+  gap: 36px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.companion-plate {
+  margin: 0;
+  border-top: 3px solid var(--gold);
+  overflow: hidden;
+  background: #0E1628;
+  min-height: 280px;
+}
+.companion-plate img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+  object-fit: cover;
+  object-position: 70% 18%;
+}
 .doors { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 28px; }
+.doors-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.refuse-h {
+  font-family: var(--read);
+  font-size: 1.35rem;
+  color: var(--ink);
+  margin: 40px 0 16px;
+}
 .doors article {
   padding: 20px; background: #ebe4d4; font-family: var(--ui); border-left: 3px solid var(--gold);
 }
-.doors h3 { font-family: var(--display); font-size: 17px; margin-bottom: 8px; }
-.doors p { font-size: 14px; max-width: none; }
+.doors h3 { font-family: var(--read); font-size: 1.08rem; margin-bottom: 8px; }
+.doors p { font-size: 16px; line-height: 1.65; max-width: none; }
 
 .two { display: grid; grid-template-columns: 1.15fr 1fr; gap: 40px; }
-@media (max-width: 900px) { .two { grid-template-columns: 1fr; } }
-.refuse { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 18px; }
-.refuse div { padding: 14px 16px; background: #ebe4d4; font-size: 14px; font-family: var(--ui); border-left: 3px solid var(--gold); }
+@media (max-width: 900px) {
+  .two { grid-template-columns: 1fr; }
+  .companion-top { grid-template-columns: 1fr; }
+  .doors-3 { grid-template-columns: 1fr; }
+  .refuse { grid-template-columns: 1fr 1fr; }
+}
+.refuse { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 8px; }
+.refuse div { padding: 18px 18px; background: #efe8d8; font-size: 15px; line-height: 1.45; font-family: var(--ui); border-top: 3px solid var(--gold); }
 
 footer {
   margin-top: 48px;
