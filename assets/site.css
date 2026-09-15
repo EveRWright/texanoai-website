@@ -325,13 +325,39 @@ h2:first-child { margin-top: 0; }
 .refuse { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 8px; }
 .refuse div { padding: 18px 18px; background: #efe8d8; font-size: 15px; line-height: 1.45; font-family: var(--ui); border-top: 3px solid var(--gold); }
 
-footer {
+footer, .site-footer {
   margin-top: 48px;
-  padding: 28px 0 8px; color: var(--muted); font-size: 13px; font-family: var(--ui);
-  display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+  padding: 36px 0 20px;
+  color: var(--muted);
+  font-size: 14px;
+  font-family: var(--ui);
   border-top: 1px solid rgba(212,175,55,0.22);
 }
-footer a { color: var(--gold-soft); }
+footer a, .site-footer a { color: var(--gold-soft); text-decoration: none; }
+.foot-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr 0.9fr;
+  gap: 32px 28px;
+  align-items: start;
+}
+.foot-brand img { height: 48px; width: auto; display: block; margin-bottom: 12px; }
+.foot-brand p { margin: 0 0 8px; line-height: 1.55; max-width: 28ch; }
+.foot-grid h4 {
+  font-family: var(--ui);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-soft);
+  margin: 0 0 12px;
+}
+.foot-grid nav { display: flex; flex-direction: column; gap: 8px; }
+.foot-copy { margin: 28px 0 0; padding-top: 16px; border-top: 1px solid rgba(212,175,55,0.16); font-size: 12px; }
+@media (max-width: 800px) {
+  .foot-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 520px) {
+  .foot-grid { grid-template-columns: 1fr; }
+}
 
 /* Breakpoints AFTER grid defaults so they actually win (was overridden by .loop 4-col). */
 @media (max-width: 900px) {
