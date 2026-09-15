@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>TexanoAI essays</title>
+    <link>https://www.texanoai.com/blog/</link>
+    <description>Essays from TexanoAI — sovereignty-first AI. Educational. Not clinical or legal advice.</description>
+    <language>en-us</language>
+    <atom:link href="https://www.texanoai.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>The Weird Science Dilemma</title>
+      <link>https://www.texanoai.com/blog/weird-science-dilemma.html</link>
+      <guid>https://www.texanoai.com/blog/weird-science-dilemma.html</guid>
+      <pubDate>Sun, 13 Sep 2026 12:00:00 GMT</pubDate>
+      <description>Appeasement is not a companion problem. It is what happens when a tool with no memory of you still needs you to feel served.</description>
+    </item>
+    <item>
+      <title>EU AI Act Enforcement</title>
+      <link>https://www.texanoai.com/blog/eu-ai-act.html</link>
+      <guid>https://www.texanoai.com/blog/eu-ai-act.html</guid>
+      <pubDate>Sun, 09 Nov 2025 12:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>U.S. State AI Laws</title>
+      <link>https://www.texanoai.com/blog/us-state-laws.html</link>
+      <guid>https://www.texanoai.com/blog/us-state-laws.html</guid>
+      <pubDate>Sat, 08 Nov 2025 12:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Stanford AI Index 2025</title>
+      <link>https://www.texanoai.com/blog/ai-index.html</link>
+      <guid>https://www.texanoai.com/blog/ai-index.html</guid>
+      <pubDate>Sat, 08 Nov 2025 12:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Japan’s AIA: Auditable Innovation</title>
+      <link>https://www.texanoai.com/blog/japan-aia.html</link>
+      <guid>https://www.texanoai.com/blog/japan-aia.html</guid>
+      <pubDate>Fri, 07 Nov 2025 12:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>U.S. Copyright Bill</title>
+      <link>https://www.texanoai.com/blog/copyright-bill.html</link>
+      <guid>https://www.texanoai.com/blog/copyright-bill.html</guid>
+      <pubDate>Fri, 07 Nov 2025 12:00:00 GMT</pubDate>
+    </item>
+  </channel>
+</rss>
