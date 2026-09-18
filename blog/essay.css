@@ -1,0 +1,119 @@
+*{box-sizing:border-box}
+html,body{margin:0;background:#F6F1E6;color:#2A241C;font-family:"Source Serif 4",Georgia,serif}
+.bar{background:#0E1628;padding:18px 0 16px;border-bottom:1px solid rgba(212,175,55,.32)}
+.bar-inner{max-width:1120px;margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.bar img{height:72px;width:auto;filter:drop-shadow(0 2px 12px rgba(212,175,55,.28))}
+.bar nav{display:flex;gap:26px;flex-wrap:wrap;align-items:center;font-family:"Source Sans 3",sans-serif}
+.bar nav a{color:#E6E0D4;text-decoration:none;font-size:16px;font-weight:600}
+.bar nav a:hover{color:#E4C86A}
+.bar nav a.gold{color:#E4C86A}
+.hero{position:relative;min-height:min(56vh,520px);background-color:#0E1628;background-repeat:no-repeat;background-size:cover}
+.hero:after{content:"";position:absolute;inset:0;pointer-events:none}
+.hero-inner{position:relative;z-index:1;max-width:1120px;margin:0 auto;padding:48px 28px 40px}
+.hero-inner .eye{font-family:"Source Sans 3",sans-serif;color:#E4C86A;letter-spacing:.08em;font-size:12px;text-transform:uppercase;margin:0 0 12px}
+.hero-inner .hero-title{font-family:"Source Serif 4",Georgia,serif;color:#F6F1E6;font-size:clamp(1.7rem,5vw,2.45rem);line-height:1.18;margin:0 0 12px;max-width:18ch;text-shadow:0 2px 18px rgba(0,0,0,.45);font-weight:600}
+.hero-inner .sub{color:#E8E0D0;font-style:italic;font-size:1.08rem;max-width:36ch;margin:0;line-height:1.5}
+
+/* Eve — face on the right, overlay only holds type on the left */
+.hero.eve{
+  background-image:url("/assets/hero-04.jpg");
+  background-position:88% 28%;
+}
+.hero.eve:after{
+  background:linear-gradient(90deg,#0E1628 0%,rgba(14,22,40,.55) 16%,rgba(14,22,40,.18) 38%,rgba(14,22,40,.04) 58%,transparent 78%);
+}
+
+.hero.chamber{
+  background-image:url("/assets/eu-ai-act-hero.jpg");
+  background-position:72% 40%;
+}
+.hero.chamber:after{
+  background:linear-gradient(90deg,#0E1628 0%,rgba(14,22,40,.72) 24%,rgba(14,22,40,.28) 52%,rgba(14,22,40,.08) 78%);
+}
+
+.hero.door{
+  background-image:url("/assets/castle-hero.jpg");
+  background-position:78% 42%;
+}
+.hero.door:after{
+  background:linear-gradient(90deg,#0E1628 0%,rgba(14,22,40,.78) 28%,rgba(14,22,40,.32) 55%,rgba(14,22,40,.08) 80%);
+}
+
+.hero.library{
+  background-image:url("/assets/blog/we-taught-it-to-survive-mast.jpg?v=c2");
+  background-position:82% center;
+}
+.hero.library:after{
+  background:linear-gradient(90deg,#0E1628 0%,rgba(14,22,40,.62) 26%,rgba(14,22,40,.18) 52%,transparent 74%);
+}
+@media (max-width:640px){
+  .bar img{height:56px}
+  .bar nav{gap:14px}
+  .bar nav a{font-size:15px}
+  .bar-inner{padding:0 16px}
+  .hero{min-height:440px}
+  .hero-inner{padding:32px 16px 28px}
+  .hero-inner .hero-title{font-size:1.55rem;max-width:16ch}
+  .hero.eve{background-position:82% 22%}
+  .hero.library{background-position:78% 38%}
+  .hero.library:after{
+    background:linear-gradient(180deg,rgba(14,22,40,.9) 0%,rgba(14,22,40,.55) 52%,rgba(14,22,40,.28) 100%);
+  }
+  .bar nav{gap:10px}
+  .share a,.share button{padding:10px 12px}
+  .media.player audio{height:44px}
+}
+@media (min-width:641px) and (max-width:1024px){
+  .hero.library{background-position:80% 42%}
+  .hero-inner .hero-title{max-width:16ch}
+}
+
+.wrap{max-width:820px;margin:0 auto;padding:28px 18px 72px}
+.crumb{font-family:"Source Sans 3",sans-serif;font-size:13px;color:#6b5d45;margin:0 0 18px}
+.crumb a{color:#8a7020}
+.paper-title{font-family:"Source Serif 4",Georgia,serif;font-size:clamp(1.7rem,4vw,2.35rem);line-height:1.2;color:#0E1628;margin:0 0 .35em;font-weight:600}
+.paper-dek{font-style:italic;font-size:1.15em;line-height:1.55;color:#3d3428;margin:0 0 1.1em;max-width:42ch}
+.by{font-family:"Source Sans 3",sans-serif;font-size:14px;color:#6b5d45;margin:0 0 1.5em}
+article p{font-size:1.1em;line-height:1.78;color:#2A241C;margin:0 0 1.15em}
+article h2{font-family:"Source Serif 4",Georgia,serif;font-size:1.45rem;color:#0E1628;margin:2em 0 .55em;line-height:1.3}
+article a{color:#8a4b12}
+article ul,article ol{margin:0 0 1.15em;padding-left:1.2em}
+article li{font-size:1.05em;line-height:1.7;color:#2A241C;margin:0 0 .45em}
+.pull{
+  margin:1.6em 0 1.8em;
+  padding:18px 22px;
+  border-left:4px solid #D4AF37;
+  background:#efe8d8;
+  font-size:1.2em;
+  line-height:1.5;
+  color:#0E1628;
+  font-style:italic;
+}
+.share{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 28px;align-items:center}
+.share span{font-family:"Source Sans 3",sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#8a7020;margin-right:4px}
+.share a,.share button{font-family:"Source Sans 3",sans-serif;font-size:13px;font-weight:600;border:1px solid rgba(138,112,32,.4);background:#efe8d8;color:#3d3428;padding:8px 12px;border-radius:3px;text-decoration:none;cursor:pointer}
+.share a:hover,.share button:hover{border-color:#D4AF37;color:#0E1628}
+.share button.copied{background:#D4AF37;border-color:#D4AF37}
+.engage{font-family:"Source Sans 3",sans-serif;font-size:14px;color:#6b5d45;margin:-8px 0 28px;line-height:1.5}
+.engage a{color:#8a4b12}
+.media{margin:1.8em 0 2em;background:#0E1628;border-radius:6px;overflow:hidden}
+.media img,.media video{display:block;width:100%;height:auto}
+.media figcaption{font-family:"Source Sans 3",sans-serif;font-size:13px;color:#c9c0b0;padding:10px 14px 14px;line-height:1.45}
+.media.embed{position:relative;padding-top:56.25%;background:#0E1628}
+.media.embed iframe,.media.embed video{position:absolute;inset:0;width:100%;height:100%;border:0}
+.media.player{padding:16px 16px 4px}
+.media.player audio{display:block;width:100%;height:40px}
+.media.player figcaption{padding-top:8px}
+.note{margin:2.8em 0 0;padding:22px 20px;border:1px solid rgba(138,112,32,.35);background:#efe8d8}
+.note .eyebrow{font-family:"Source Sans 3",sans-serif;color:#8a7020;letter-spacing:.08em;font-size:12px;text-transform:uppercase;margin:0 0 8px}
+.note p{font-size:15px;line-height:1.6;margin:0 0 14px;color:#3d3428}
+.note label{display:block;font-family:"Source Sans 3",sans-serif;font-size:13px;font-weight:600;margin:0 0 12px;color:#3d3428}
+.note input,.note textarea{display:block;width:100%;margin-top:6px;padding:10px 12px;border:1px solid rgba(61,52,40,.25);background:#F6F1E6;font-family:"Source Serif 4",Georgia,serif;font-size:16px}
+.note textarea{min-height:120px}
+.note button{font-family:"Source Sans 3",sans-serif;font-weight:600;background:#D4AF37;border:0;color:#16120C;padding:12px 18px;cursor:pointer}
+.sources{border-top:1px solid #e5dcc8;margin-top:2.4em;padding-top:1.2em}
+.sources ol{padding-left:1.2em}
+.sources li{margin:0 0 .5em;line-height:1.55}
+.fence{font-size:14px;color:#6b5d45;margin-top:1.2em}
+footer{background:#0E1628;color:#9aa3b2;text-align:center;padding:22px;font-size:13px;font-family:"Source Sans 3",sans-serif}
+footer a{color:#E4C86A}
