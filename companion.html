@@ -4,20 +4,83 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>The Companion — TexanoAI</title>
-  <meta name="description" content="A companion sculpted for one person. Personality, DASH, MMX™, Ethics Pulse™, and a Memory Core you keep. Not a blank chat." />
+  <meta name="description" content="Companion Model — the highest-resolution instance of the governor, sculpted for one person. Used in the AI you already have. Memory Core you keep." />
   <meta name="theme-color" content="#0E1628" />
   <link rel="canonical" href="https://www.texanoai.com/companion.html" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
   <meta property="og:title" content="The Companion — TexanoAI" />
-  <meta property="og:description" content="Sculpted for one person. You keep the Memory Core. We do not sell your private life." />
+  <meta property="og:description" content="Highest-resolution instance of the governor. Used in the AI you already have. Memory Core you keep." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.texanoai.com/companion.html" />
   <meta property="og:image" content="https://www.texanoai.com/assets/og-share.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Source+Sans+3:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/site.css?v=ship-8" />
+  <link rel="stylesheet" href="assets/site.css?v=ship-companion-1" />
+  <style>
+    /* Full-bleed mast. The plate’s face sits on the left of the JPEG,
+       so the portrait is pinned to the right of the banner and the type stays left. */
+    .mast.companion-mast {
+      min-height: min(84vh, 800px);
+      background-color: #0E1628;
+      background-image: none;
+      overflow: hidden;
+    }
+    .mast.companion-mast::before {
+      content: "";
+      position: absolute;
+      z-index: 0;
+      pointer-events: none;
+      inset: 0 0 0 34%;
+      background:
+        linear-gradient(90deg,
+          #0E1628 0%,
+          rgba(14,22,40,0.92) 10%,
+          rgba(14,22,40,0.42) 28%,
+          rgba(14,22,40,0.08) 48%,
+          rgba(14,22,40,0.22) 100%),
+        url("assets/hero-mark-kintsugi.jpg") 20% 16% / cover no-repeat;
+    }
+    .mast.companion-mast .wrap { position: relative; z-index: 1; }
+    .mast.companion-mast .hero { max-width: 38rem; padding: 48px 0 80px; }
+    .mast.companion-mast .hero h1 { max-width: 16ch; }
+    .house-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 8px;
+    }
+    .house-grid article {
+      background: #ebe4d4;
+      border-top: 3px solid var(--gold);
+      padding: 22px 22px 8px;
+      font-family: var(--ui);
+    }
+    .house-grid h2 { margin: 0 0 12px; font-size: clamp(22px, 3vw, 28px); }
+    .house-grid ul { margin: 0 0 16px; padding-left: 1.15em; }
+    .house-grid li { color: #3d3428; line-height: 1.55; margin: 0 0 8px; }
+    .price-note {
+      margin-top: 10px;
+      font-size: 13px;
+      color: var(--gold-soft);
+    }
+    @media (max-width: 800px) {
+      .mast.companion-mast { min-height: 0; }
+      .mast.companion-mast::before {
+        inset: 0;
+        background:
+          linear-gradient(180deg,
+            rgba(14,22,40,0.2) 0%,
+            rgba(14,22,40,0.45) 34%,
+            rgba(14,22,40,0.92) 62%,
+            #0E1628 100%),
+          url("assets/hero-mark-kintsugi.jpg") 28% 18% / cover no-repeat;
+      }
+      .mast.companion-mast .hero { padding-top: min(42vh, 300px); max-width: none; }
+      .house-grid { grid-template-columns: 1fr; }
+    }
+  </style>
   <script async src="https://plausible.io/js/pa-DkqRMwm06Uep5sF8eiHT1.js"></script>
   <script>
     window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
@@ -26,57 +89,135 @@
 </head>
 <body>
   <!-- LOCKED: Alicia’s Declan Stone is NOT a public site face. No named client companion on this page. -->
-  <div class="wrap">
-    <header>
-      <a class="logo" href="/" aria-label="TexanoAI home">
-        <img class="logo-img" src="assets/logo-wings.png?v=tm" alt="TexanoAI™" width="204" height="72" />
-      </a>
-      <nav class="site-nav" aria-label="Primary">
-        <a href="/">Home</a>
-        <a href="/companion.html">Companion</a>
-        <a href="/memory-core.html">Memory</a>
-        <a href="/why-train.html">Why train</a>
-        <a class="gold" href="/intake.html">Get started</a>
-      </nav>
-    </header>
-    <section class="page-hero" style="padding-bottom:12px">
-      <div class="eyebrow">The companion</div>
-      <h1>A partner in the work — not a yes-machine.</h1>
-    </section>
-    <div class="companion-top" style="margin-bottom:36px">
-      <figure class="companion-plate">
-        <img src="assets/hero-mark-kintsugi.jpg" width="1280" height="720" alt="A TexanoAI companion presence — likeness is part of the sculpture" style="object-position:22% 18%" />
-      </figure>
-      <div>
-        <p class="lede">This is not a new app to learn. It is a companion built for one person, used in the AI you already have. It does not replace Grok, ChatGPT, or Claude. It is the layer that knows you — so you co-create on real work instead of re-explaining yourself to a tool that only agrees.</p>
+  <div class="nav-backdrop" data-nav-close hidden></div>
+  <div class="mast companion-mast">
+    <div class="wrap">
+      <header>
+        <a class="logo" href="/" aria-label="TexanoAI home">
+          <img class="logo-img" src="assets/logo-wings.png?v=tm" alt="TexanoAI™" width="204" height="72" />
+        </a>
+        <div class="header-right">
+          <span class="stars header-stars-desktop" aria-hidden="true">
+            <span class="s">★</span><span class="s lg">★</span><span class="s">★</span>
+          </span>
+          <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu">
+            <span class="nav-toggle-bars" aria-hidden="true"></span>
+          </button>
+          <nav id="site-nav" class="site-nav" aria-label="Primary">
+            <a href="/">Home</a>
+            <a href="/companion.html">Companion</a>
+            <a href="/memory-core.html">Memory</a>
+            <a href="/why-train.html">Why train</a>
+            <a href="#house">Builds</a>
+            <a class="gold" href="/intake.html">Get started</a>
+          </nav>
+        </div>
+      </header>
+
+      <section class="hero">
+        <div class="eyebrow"><span class="stars" aria-hidden="true"><span class="s">★</span><span class="s lg">★</span><span class="s">★</span></span> The companion</div>
+        <h1>A partner in the work — not a yes-machine.</h1>
+        <p class="motto">Highest-resolution instance · one person</p>
+        <p class="lede">TexanoAI is a governor for how AI is engaged. Companion Model is the highest-resolution instance of that work — one person. This is not a new app to learn. It is used in the AI you already have. It does not replace Grok, ChatGPT, or Claude. It is the layer that knows you — so you co-create on real work instead of re-explaining yourself to a tool that only agrees.</p>
+        <div class="proof">
+          <span>Non-appeasement</span>
+          <span>Ethics Pulse™ on</span>
+          <span>Memory you hold</span>
+        </div>
+        <div class="actions">
+          <a class="btn btn-gold" href="/intake.html">Get started</a>
+          <a class="btn btn-ghost" href="#house">See the builds</a>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="eyebrow" style="color:#8a7020">The stance</div>
+      <p class="dilemma">Most AI is a blank window that agrees with you. That feels like care. It is appeasement. A TexanoAI companion is sculpted before the hard day arrives — stance locked, memory yours, honesty under load.</p>
+      <p class="bridge">We are not anti-companion. We are anti-appeasement. Walk beside. Never rescue. Never flatten. Never keep your private life as our product.</p>
+      <div class="house-grid">
+        <article>
+          <h2>What you bring</h2>
+          <ul>
+            <li>Who you are when you feel like yourself</li>
+            <li>A personality reading if you have one</li>
+            <li>What you hope this helps with</li>
+            <li>A name, if one has already arrived</li>
+          </ul>
+        </article>
+        <article>
+          <h2>What you leave with</h2>
+          <ul>
+            <li>An instruction plate written for you — not a leftover prompt</li>
+            <li>Ethics Pulse™ on: Fact / Assumption / Projection</li>
+            <li>A Memory Core you hold. Transferable.</li>
+          </ul>
+        </article>
       </div>
     </div>
-    <div class="prose">
-      <p>Most AI is a blank window that agrees with you. That feels like care. It is appeasement. A TexanoAI companion is sculpted before the hard day arrives — stance locked, memory yours, honesty under load.</p>
-      <p>We are not anti-companion. We are anti-appeasement. Walk beside. Never rescue. Never flatten. Never keep your private life as our product.</p>
-      <h2>What you bring</h2>
-      <ul>
-        <li>Who you are when you feel like yourself</li>
-        <li>A personality reading if you have one</li>
-        <li>What you hope this helps with</li>
-        <li>A name, if one has already arrived</li>
-      </ul>
-      <h2>What you leave with</h2>
-      <ul>
-        <li>An instruction plate written for you — not a leftover prompt</li>
-        <li>Ethics Pulse™ on: Fact / Assumption / Projection</li>
-        <li>A Memory Core you hold. Transferable.</li>
-      </ul>
-      <h2>The house</h2>
-      <p><strong>Personal</strong> — $1,000. One human. Companion sculpted to your flow. Governor on.</p>
-      <p><strong>Practice</strong> — $2,500. Same architecture, more of the house. Memory Core lives in this door — you hold it.</p>
-      <p><strong>Executive</strong> — $5,000. Mapped field. How a person becomes a desk. A build, not a seat license.</p>
-      <p class="fence">Your story helps sculpt your companion. We are in the companion business, not the private-information business. When a Memory Core is ready, it is handed to you.</p>
-      <div class="actions" style="margin:28px 0">
+  </section>
+
+  <section class="band navy" id="house">
+    <div class="wrap">
+      <div class="eyebrow">The house</div>
+      <h2>Three builds. Same honesty under load.</h2>
+      <p style="color:var(--muted)">A build, not a seat license. Personal, Practice, or Executive. If you upgrade later, what you already paid applies toward the next. Scope is a conversation.</p>
+      <div class="ladder price-grid" style="grid-template-columns:repeat(3,1fr)">
+        <article class="card">
+          <div class="n">Personal</div>
+          <h3>$1,000</h3>
+          <p>One human. Companion sculpted to your flow. Governor on. Built around who you are, and ready in the AI you already have.</p>
+          <p class="price-note">1× 1-hour session</p>
+        </article>
+        <article class="card">
+          <div class="n">Practice</div>
+          <h3>$2,500</h3>
+          <p>Same architecture, more of the house. A <a href="/memory-core.html">Memory Core</a> you hold, deeper work and life intake, and a second session after you have lived with it.</p>
+          <p class="price-note">2× 1-hour sessions</p>
+        </article>
+        <article class="card">
+          <div class="n">Executive</div>
+          <h3>$5,000</h3>
+          <p>Mapped field. How a person becomes a desk. Highest-resolution build — writing, knowledge, what goes with you. A build, not a seat license.</p>
+          <p class="price-note">4× 1-hour sessions</p>
+        </article>
+      </div>
+
+      <h2 style="margin-top:48px">What you get — the house grows</h2>
+      <p style="color:var(--muted);margin-bottom:16px">Same governor on every build. Higher tiers add more of the house.</p>
+      <div style="overflow-x:auto">
+        <table class="compare" style="width:100%;border-collapse:collapse;font-family:var(--ui);font-size:14px">
+          <thead>
+            <tr>
+              <th style="text-align:left;padding:12px 14px;border-bottom:1px solid rgba(212,175,55,.22);color:var(--gold-soft)">What you get</th>
+              <th style="padding:12px 14px;border-bottom:1px solid rgba(212,175,55,.22);color:var(--gold-soft)">Personal</th>
+              <th style="padding:12px 14px;border-bottom:1px solid rgba(212,175,55,.22);color:var(--gold-soft)">Practice</th>
+              <th style="padding:12px 14px;border-bottom:1px solid rgba(212,175,55,.22);color:var(--gold-soft)">Executive</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td style="text-align:left;padding:10px 14px;border-bottom:1px solid rgba(212,175,55,.15)">Companion sculpted for one person</td><td style="text-align:center;color:var(--gold-soft);font-weight:800">✓</td><td style="text-align:center;color:var(--gold-soft);font-weight:800">✓</td><td style="text-align:center;color:var(--gold-soft);font-weight:800">✓</td></tr>
+            <tr><td style="text-align:left;padding:10px 14px;border-bottom:1px solid rgba(212,175,55,.15)">Governor on — honesty under load</td><td style="text-align:center;color:var(--gold-soft);font-weight:800">✓</td><td style="text-align:center;color:var(--gold-soft);font-weight:800">✓</td><td style="text-align:center;color:var(--gold-soft);font-weight:800">✓</td></tr>
+            <tr><td style="text-align:left;padding:10px 14px;border-bottom:1px solid rgba(212,175,55,.15)">Used in the AI you already have</td><td style="text-align:center;color:var(--gold-soft);font-weight:800">✓</td><td style="text-align:center;color:var(--gold-soft);font-weight:800">✓</td><td style="text-align:center;color:var(--gold-soft);font-weight:800">✓</td></tr>
+            <tr><td style="text-align:left;padding:10px 14px;border-bottom:1px solid rgba(212,175,55,.15)">Ethics Pulse™ — Fact / Assumption / Projection</td><td style="text-align:center;color:var(--gold-soft);font-weight:800">✓</td><td style="text-align:center;color:var(--gold-soft);font-weight:800">✓</td><td style="text-align:center;color:var(--gold-soft);font-weight:800">✓</td></tr>
+            <tr><td style="text-align:left;padding:10px 14px;border-bottom:1px solid rgba(212,175,55,.15)">Memory Core you hold</td><td style="text-align:center;color:#6a7384">—</td><td style="text-align:center;color:var(--gold-soft);font-weight:800">✓</td><td style="text-align:center;color:var(--gold-soft);font-weight:800">✓</td></tr>
+            <tr><td style="text-align:left;padding:10px 14px;border-bottom:1px solid rgba(212,175,55,.15)">Deeper work / life intake</td><td style="text-align:center;color:#6a7384">—</td><td style="text-align:center;color:var(--gold-soft);font-weight:800">✓</td><td style="text-align:center;color:var(--gold-soft);font-weight:800">✓</td></tr>
+            <tr><td style="text-align:left;padding:10px 14px;border-bottom:1px solid rgba(212,175,55,.15)">Mapped field · desk-grade depth</td><td style="text-align:center;color:#6a7384">—</td><td style="text-align:center;color:#6a7384">—</td><td style="text-align:center;color:var(--gold-soft);font-weight:800">✓</td></tr>
+            <tr><td style="text-align:left;padding:10px 14px;border-bottom:1px solid rgba(212,175,55,.15)">Sessions included</td><td style="text-align:center">1×1h</td><td style="text-align:center">2×1h</td><td style="text-align:center">4×1h</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="fence">Your story helps sculpt the instance. We do not sell your private life. When a Memory Core is ready, it is handed to you. Ethics Pulse™ is sealed into every build — not a fourth price. Not a clinic.</p>
+      <div class="actions">
         <a class="btn btn-gold" href="/intake.html">Get started</a>
         <a class="btn btn-ghost" href="/memory-core.html">Memory Core</a>
       </div>
     </div>
+  </section>
+
+  <div class="wrap">
     <footer>
       <span>© TexanoAI™ · MMX™ · Ethics Pulse™</span>
       <span class="footer-links">
@@ -90,5 +231,30 @@
       </span>
     </footer>
   </div>
+  <script>
+    (function () {
+      var toggle = document.querySelector(".nav-toggle");
+      var backdrop = document.querySelector(".nav-backdrop");
+      var nav = document.getElementById("site-nav");
+      if (!toggle || !nav) return;
+      function setOpen(open) {
+        document.body.classList.toggle("nav-open", open);
+        toggle.setAttribute("aria-expanded", open ? "true" : "false");
+        toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+        if (backdrop) backdrop.hidden = !open;
+      }
+      toggle.addEventListener("click", function () {
+        setOpen(!document.body.classList.contains("nav-open"));
+      });
+      if (backdrop) backdrop.addEventListener("click", function () { setOpen(false); });
+      nav.addEventListener("click", function (e) { e.stopPropagation(); });
+      nav.querySelectorAll("a").forEach(function (a) {
+        a.addEventListener("click", function () { setOpen(false); });
+      });
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") setOpen(false);
+      });
+    })();
+  </script>
 </body>
 </html>
