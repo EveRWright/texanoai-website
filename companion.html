@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Source+Sans+3:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/site.css?v=ship-companion-1" />
+  <link rel="stylesheet" href="assets/site.css?v=ship-companion-2" />
   <style>
     /* Full-bleed mast. The plate’s face sits on the left of the JPEG,
        so the portrait is pinned to the right of the banner and the type stays left. */
@@ -44,7 +44,14 @@
     }
     .mast.companion-mast .wrap { position: relative; z-index: 1; }
     .mast.companion-mast .hero { max-width: 38rem; padding: 48px 0 80px; }
-    .mast.companion-mast .hero h1 { max-width: 16ch; }
+    .mast.companion-mast .hero h1 { max-width: 18ch; }
+    .mast.companion-mast .nowrap { white-space: nowrap; }
+    .band.navy .price-grid a {
+      color: var(--gold-soft);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      font-weight: 600;
+    }
     .house-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -68,16 +75,16 @@
     @media (max-width: 800px) {
       .mast.companion-mast { min-height: 0; }
       .mast.companion-mast::before {
-        inset: 0;
+        inset: 0 0 auto 0;
+        height: 48vh;
         background:
           linear-gradient(180deg,
-            rgba(14,22,40,0.2) 0%,
-            rgba(14,22,40,0.45) 34%,
-            rgba(14,22,40,0.92) 62%,
+            rgba(14,22,40,0) 62%,
+            rgba(14,22,40,0.55) 84%,
             #0E1628 100%),
-          url("assets/hero-mark-kintsugi.jpg") 28% 18% / cover no-repeat;
+          url("assets/hero-mark-kintsugi.jpg") 32% 16% / cover no-repeat;
       }
-      .mast.companion-mast .hero { padding-top: min(42vh, 300px); max-width: none; }
+      .mast.companion-mast .hero { padding-top: calc(48vh + 8px); max-width: none; }
       .house-grid { grid-template-columns: 1fr; }
     }
   </style>
@@ -116,7 +123,7 @@
 
       <section class="hero">
         <div class="eyebrow"><span class="stars" aria-hidden="true"><span class="s">★</span><span class="s lg">★</span><span class="s">★</span></span> The companion</div>
-        <h1>A partner in the work — not a yes-machine.</h1>
+        <h1>A partner in the work — not a <span class="nowrap">yes-machine.</span></h1>
         <p class="motto">Highest-resolution instance · one person</p>
         <p class="lede">TexanoAI is a governor for how AI is engaged. Companion Model is the highest-resolution instance of that work — one person. This is not a new app to learn. It is used in the AI you already have. It does not replace Grok, ChatGPT, or Claude. It is the layer that knows you — so you co-create on real work instead of re-explaining yourself to a tool that only agrees.</p>
         <div class="proof">
