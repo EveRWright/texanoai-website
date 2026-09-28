@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Solicitud de compañero — TexanoAI</title>
+  <meta name="description" content="Cuéntenos de usted. Esto se hace juntas. Una persona lee lo que escribe." />
+  <meta name="theme-color" content="#0E1628" />
+  <link rel="canonical" href="https://www.texanoai.com/es/intake.html" />
+  <link rel="alternate" hreflang="es" href="https://www.texanoai.com/es/intake.html" />
+  <link rel="alternate" hreflang="en" href="https://www.texanoai.com/intake.html" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+  <meta property="og:title" content="Solicitud de compañero — TexanoAI" />
+  <meta property="og:description" content="Cuéntenos de usted. Esto se hace juntas. Una persona lee lo que escribe." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.texanoai.com/es/intake.html" />
+  <meta property="og:image" content="https://www.texanoai.com/assets/og-share.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Source+Sans+3:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/site.css?v=ship-intake-es-1" />
+  <style>
+    .mast.intake-mast {
+      min-height: min(72vh, 640px);
+      background-image:
+        linear-gradient(90deg,
+          rgba(14,22,40,0.94) 0%,
+          rgba(14,22,40,0.82) 34%,
+          rgba(14,22,40,0.28) 58%,
+          rgba(14,22,40,0.08) 100%),
+        url("/assets/intake-coffee.jpg?v=coffee1");
+      background-position: right center;
+      background-size: cover;
+    }
+    .mast.intake-mast .hero {
+      padding: 56px 0 72px;
+      max-width: 36rem;
+    }
+    .mast.intake-mast .hero h1 { max-width: 16ch; }
+    .intake-form select,
+    .intake-form input[type="text"],
+    .intake-form input[type="email"],
+    .intake-form textarea {
+      width: 100%;
+      background: var(--raised);
+      border: 1px solid rgba(212,175,55,0.35);
+      color: var(--fg);
+      font: 16px/1.4 var(--ui);
+      padding: 12px 14px;
+      border-radius: 2px;
+    }
+    .intake-form select:focus,
+    .intake-form input:focus,
+    .intake-form textarea:focus {
+      outline: none;
+      border-color: var(--gold);
+      box-shadow: 0 0 0 2px rgba(212,175,55,0.18);
+    }
+    .check {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      text-transform: none;
+      letter-spacing: 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.45;
+      margin-top: 8px;
+    }
+    .check input { width: auto; margin-top: 3px; accent-color: var(--gold); }
+    .intake-note {
+      max-width: 62ch;
+      color: var(--muted);
+      margin: 8px 0 0;
+      font-family: var(--ui);
+      font-size: 14px;
+    }
+    .chips { display: grid; gap: 10px; margin-top: 12px; grid-template-columns: 1fr 1fr; }
+    .chips label {
+      display: flex;
+      align-items: flex-start;
+      text-align: left;
+      text-transform: none;
+      letter-spacing: 0;
+      color: var(--fg);
+      font-size: 14px;
+      font-weight: 600;
+      min-height: 52px;
+      padding: 14px 16px;
+      border: 1px solid rgba(212,175,55,0.4);
+      background: var(--raised);
+      cursor: pointer;
+      border-radius: 2px;
+      transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    }
+    .chips input { position: absolute; opacity: 0; pointer-events: none; }
+    .chips label:has(input:checked) {
+      background: rgba(212,175,55,0.22);
+      border-color: var(--gold);
+      color: var(--gold-soft);
+    }
+    .cardish {
+      padding: 22px 18px;
+      background: rgba(22,32,56,0.72);
+      border: 1px solid rgba(212,175,55,0.22);
+      border-radius: 2px;
+    }
+    .intake-form { gap: 22px; }
+    .intake-form > label > a,
+    .intake-form .opt a { color: var(--gold-soft); text-transform: none; letter-spacing: 0; }
+    .ref-lines { display: grid; gap: 10px; margin-top: 8px; }
+    @media (max-width: 900px) {
+      .mast.intake-mast {
+        min-height: 0;
+        background-position: 78% center;
+      }
+    }
+    @media (max-width: 640px) {
+      .mast.intake-mast .hero { padding: 36px 0 48px; }
+      .chips { grid-template-columns: 1fr; }
+    }
+  </style>
+  <script async src="https://plausible.io/js/pa-DkqRMwm06Uep5sF8eiHT1.js"></script>
+  <script>
+    window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+    plausible.init()
+  </script>
+</head>
+<body>
+  <div class="nav-backdrop" data-nav-close hidden></div>
+  <div class="mast intake-mast">
+    <div class="wrap">
+      <header>
+        <a class="logo" href="/" aria-label="TexanoAI inicio">
+          <img class="logo-img" src="/assets/logo-wings.png?v=tm" alt="TexanoAI™" width="204" height="72" />
+        </a>
+        <div class="header-right">
+          <span class="stars header-stars-desktop" aria-hidden="true">
+            <span class="s">★</span><span class="s lg">★</span><span class="s">★</span>
+          </span>
+          <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Abrir menú">
+            <span class="nav-toggle-bars" aria-hidden="true"></span>
+          </button>
+          <nav id="site-nav" class="site-nav" aria-label="Principal">
+            <a href="/">Inicio</a>
+            <a href="/mmx-ethics.html">Ética</a>
+            <a href="/memory-core.html">Memoria</a>
+            <a href="/why-train.html">Por qué entrenar</a>
+            <a class="gold" href="/es/intake.html">Empezar</a>
+          </nav>
+        </div>
+      </header>
+
+      <section class="hero">
+        <div class="eyebrow">
+          <span class="stars" aria-hidden="true"><span class="s">★</span><span class="s lg">★</span><span class="s">★</span></span>
+          Solicitud de compañero
+        </div>
+        <h1>Cuéntenos de usted.</h1>
+        <p class="motto">Esto se hace juntas.</p>
+        <p class="lede">Responda lo que sea cierto. Deje en blanco lo que todavía no aplique.</p>
+        <div class="actions">
+          <a class="btn btn-gold" href="#intake-form">Empezar</a>
+          <a class="btn btn-ghost" href="/">Volver al inicio</a>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="eyebrow" style="color:#8a7020">Antes de escribir</div>
+      <p class="dilemma">Tiene que ser mayor de 18 años. Esto no es terapia, y no sustituye a las personas que la quieren en la vida real.</p>
+      <p class="bridge">Su historia ayuda a esculpir su compañero. Cuando un Núcleo de Memoria esté listo, se lo entregamos a usted.</p>
+      <p class="bridge">Su manera de ser ayuda a esculpir un compañero para una sola persona. Camina a su lado. No la rescata. No la aplana. Cuida sin darle la razón por reflejo. Trabaja en la inteligencia que usted ya tiene.</p>
+    </div>
+  </section>
+
+  <section class="band deep" id="intake-form">
+    <div class="wrap">
+      <div class="eyebrow">Sus respuestas</div>
+      <h2>Empiece aquí</h2>
+      <p style="color:var(--muted);max-width:54ch;margin-bottom:28px;">Una persona lee esto. Nadie pulsa “generar compañero”.</p>
+
+      <form class="contact-form intake-form" action="https://formsubmit.co/eve@texanoai.com" method="POST" style="margin-bottom:48px;">
+        <input type="hidden" name="_subject" value="TexanoAI Companion Intake (ES)" />
+        <input type="hidden" name="_cc" value="michael@texanoai.com" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_next" value="https://www.texanoai.com/es/thanks-intake.html" />
+        <input type="hidden" name="language" value="es" />
+        <input type="hidden" name="intake_ref" id="intake_ref" value="" />
+        <input type="text" name="_honey" class="honey" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+        <label>Nombre o cómo le dicen
+          <input type="text" name="name" required maxlength="120" autocomplete="name" />
+        </label>
+        <label>Correo
+          <input type="email" name="email" required maxlength="160" autocomplete="email" />
+        </label>
+        <label>País / ciudad <span class="opt">(si quiere)</span>
+          <input type="text" name="region" maxlength="120" />
+        </label>
+
+        <div class="cardish">
+          <label>Qué inteligencia ya usa</label>
+          <div class="chips" role="radiogroup" aria-label="Qué inteligencia ya usa">
+            <label><input type="radio" name="home_platform" value="grok" /> Grok</label>
+            <label><input type="radio" name="home_platform" value="chatgpt" /> ChatGPT</label>
+            <label><input type="radio" name="home_platform" value="claude" /> Claude</label>
+            <label><input type="radio" name="home_platform" value="gemini" /> Gemini</label>
+            <label><input type="radio" name="home_platform" value="copilot" /> Copilot</label>
+            <label><input type="radio" name="home_platform" value="none" /> Todavía no elijo</label>
+            <label><input type="radio" name="home_platform" value="other" /> Otra</label>
+          </div>
+        </div>
+
+        <div class="cardish">
+          <label>Para qué lo quiere <span class="opt">(puede marcar más de una)</span></label>
+          <span class="check"><input type="checkbox" name="hope_peace" value="yes" /> <span>Tranquilidad / no sentirme sola en esto</span></span>
+          <span class="check"><input type="checkbox" name="hope_health" value="yes" /> <span>Salud o hablar con médicos</span></span>
+          <span class="check"><input type="checkbox" name="hope_creative" value="yes" /> <span>Crear cosas</span></span>
+          <span class="check"><input type="checkbox" name="hope_work" value="yes" /> <span>Trabajo</span></span>
+          <span class="check"><input type="checkbox" name="hope_learn" value="yes" /> <span>Aprender / escuela</span></span>
+          <span class="check"><input type="checkbox" name="hope_travel" value="yes" /> <span>Viajar / conocer lugares</span></span>
+          <span class="check"><input type="checkbox" name="hope_other" value="yes" /> <span>Algo que voy a nombrar abajo</span></span>
+        </div>
+
+        <label>Cómo es cuando se siente usted misma
+          <span class="opt">Unas líneas. Lo verdadero, no lo perfecto.</span>
+          <textarea name="how_you_work" rows="4" maxlength="1200"></textarea>
+        </label>
+
+        <label>Test de personalidad
+          <span class="opt">Si puede, tome el test en español: <a href="https://www.16personalities.com/es" rel="noopener noreferrer" target="_blank">16personalities</a>. Puede pegar el resultado o describirlo.</span>
+          <input type="text" name="personality_type" maxlength="20" placeholder="Tipo de cuatro letras (ej. ENFP-T)" autocomplete="off" />
+        </label>
+        <label>Porcentajes, si los tiene <span class="opt">(si quiere)</span>
+          <textarea name="personality_percentages" rows="3" maxlength="800"></textarea>
+        </label>
+        <label>Resultado o descripción <span class="opt">(si quiere)</span>
+          <textarea name="personality" rows="4" maxlength="2000"></textarea>
+        </label>
+
+        <label>Nombre del compañero, si ya tiene uno <span class="opt">(si quiere)</span>
+          <input type="text" name="companion_name" maxlength="80" />
+        </label>
+
+        <div class="cardish">
+          <label>Cómo quiere que le hablen</label>
+          <div class="chips" role="radiogroup" aria-label="Cómo quiere que le hablen">
+            <label><input type="radio" name="address_form" value="usted" /> Usted</label>
+            <label><input type="radio" name="address_form" value="tu" /> Tú</label>
+            <label><input type="radio" name="address_form" value="preguntar" /> Que el compañero pregunte</label>
+          </div>
+        </div>
+
+        <div class="cardish">
+          <label>Presencia visual <span class="opt">(si quiere)</span>
+            <span class="opt">Si el compañero va a tener un aspecto, puede nombrar hasta tres personas (actores, cantantes, o alguien que recuerde) cuya presencia le resulte bien. No tiene que explicar por qué. Si no quiere esta parte, déjela vacía.</span>
+          </label>
+          <div class="ref-lines">
+            <input type="text" name="visual_ref_1" maxlength="120" placeholder="Referencia 1" />
+            <input type="text" name="visual_ref_2" maxlength="120" placeholder="Referencia 2" />
+            <input type="text" name="visual_ref_3" maxlength="120" placeholder="Referencia 3" />
+          </div>
+        </div>
+
+        <label>Qué no debe tocar nunca <span class="opt">(si quiere)</span>
+          <textarea name="never_uninvited" rows="3" maxlength="1200"></textarea>
+        </label>
+        <label>Algo más que deba saberse <span class="opt">(si quiere)</span>
+          <textarea name="notes" rows="4" maxlength="2000"></textarea>
+        </label>
+
+        <div class="cardish">
+          <label>Consentimiento</label>
+          <span class="check"><input type="checkbox" name="age_18_plus" value="yes" required /> <span>Tengo 18 años o más.</span></span>
+          <span class="check"><input type="checkbox" name="not_therapy" value="yes" required /> <span>Entiendo que esto no es terapia.</span></span>
+          <span class="check"><input type="checkbox" name="owns_memory" value="yes" required /> <span>Acepto que una persona lea estas respuestas para esculpir un compañero para mí.</span></span>
+        </div>
+
+        <button class="btn btn-gold" type="submit">Enviar esto</button>
+        <p class="intake-note">Aquí empieza la escultura.</p>
+      </form>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <p class="bridge">No vendemos su información.</p>
+      <p class="bridge">No usamos su historia para anuncios.</p>
+      <p class="bridge">Preguntas: <a href="mailto:contact@texanoai.com">contact@texanoai.com</a></p>
+      <p class="bridge"><a href="/privacy.html">Privacidad</a></p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <footer>
+      <span>© TexanoAI™ · MMX™ · Con ética</span>
+      <span class="footer-links">
+        <a href="/memory-core.html">Núcleo de Memoria</a>
+        <span class="footer-sep">·</span>
+        <a href="/why-train.html">Por qué entrenar</a>
+        <span class="footer-sep">·</span>
+        <a href="/privacy.html">Privacidad</a>
+        <span class="footer-sep">·</span>
+        <span>No es clínica</span>
+      </span>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      var p = new URLSearchParams(location.search);
+      var ref = p.get("ref") || p.get("for") || "";
+      var el = document.getElementById("intake_ref");
+      if (el) el.value = ref.slice(0, 40);
+    })();
+    (function () {
+      var toggle = document.querySelector(".nav-toggle");
+      var backdrop = document.querySelector(".nav-backdrop");
+      var nav = document.getElementById("site-nav");
+      if (!toggle || !nav) return;
+      function setOpen(open) {
+        document.body.classList.toggle("nav-open", open);
+        toggle.setAttribute("aria-expanded", open ? "true" : "false");
+        toggle.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
+        if (backdrop) backdrop.hidden = !open;
+      }
+      toggle.addEventListener("click", function () {
+        setOpen(!document.body.classList.contains("nav-open"));
+      });
+      if (backdrop) backdrop.addEventListener("click", function () { setOpen(false); });
+      nav.addEventListener("click", function (e) { e.stopPropagation(); });
+      nav.querySelectorAll("a").forEach(function (a) {
+        a.addEventListener("click", function (e) {
+          e.stopPropagation();
+          setOpen(false);
+        });
+      });
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") setOpen(false);
+      });
+    })();
+  </script>
+</body>
+</html>
