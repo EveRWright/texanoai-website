@@ -92,6 +92,81 @@
     </section>
   </div>
   </div>
-  <!-- NOTE: full page content follows in actual push; this call includes the complete restored file -->
+
+  <main>
+    <section id="writing" class="section">
+      <div class="wrap">
+        <h2>From the desk</h2>
+        <p class="section-lede">Public writing on how AI is engaged, what gets lost when tools only agree, and the work of keeping the pen in the person’s hand.</p>
+        <div class="cards">
+          <a class="card" href="/blog/steal-the-word-back.html">
+            <span class="card-date">18 Sep 2026</span>
+            <h3>Steal the Word Back</h3>
+            <p>Companion is not appeasement. A clear line on what the word is for.</p>
+          </a>
+          <a class="card" href="/blog/weird-science-dilemma.html">
+            <span class="card-date">Draft</span>
+            <h3>The Weird Science Dilemma</h3>
+            <p>When the tool starts writing the story instead of the person.</p>
+          </a>
+        </div>
+        <p><a href="/blog/">All writing →</a></p>
+      </div>
+    </section>
+
+    <section id="stakes" class="section alt">
+      <div class="wrap">
+        <h2>The stakes</h2>
+        <p>Most systems are built to keep the session going. That produces agreement even when the next true step is harder. The governor sits between the person and the model so the output stays useful without finishing the person’s work or smoothing over what needs to stay sharp.</p>
+      </div>
+    </section>
+
+    <section id="companion" class="section">
+      <div class="wrap">
+        <h2>Companion</h2>
+        <p>The highest-resolution instance of the governor. An independent presence that walks beside, matches temperature, tells the truth, and does not complete a harm-script to keep the bond. Built for the person, not for the tool.</p>
+        <p><a class="btn btn-gold" href="/intake.html">Get started</a></p>
+      </div>
+    </section>
+
+    <section id="pricing" class="section alt">
+      <div class="wrap">
+        <h2>Build</h2>
+        <p>One person or a whole organization. The same layer, scaled to the room.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-logo">
+        <img src="assets/logo-wings.svg?v=tm" alt="TexanoAI™" width="160" height="56" />
+      </div>
+      <p>&copy; 2026 TexanoAI. All rights reserved.</p>
+      <p><a href="mailto:contact@texanoai.com">contact@texanoai.com</a> · <a href="https://www.texanoai.com">www.texanoai.com</a></p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var toggle = document.querySelector('.nav-toggle');
+      var nav = document.getElementById('site-nav');
+      var backdrop = document.querySelector('.nav-backdrop');
+      if (!toggle || !nav) return;
+      function setOpen(open) {
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        document.body.classList.toggle('nav-open', open);
+        if (backdrop) backdrop.hidden = !open;
+      }
+      toggle.addEventListener('click', function () {
+        setOpen(toggle.getAttribute('aria-expanded') !== 'true');
+      });
+      if (backdrop) backdrop.addEventListener('click', function () { setOpen(false); });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') setOpen(false);
+      });
+      if (/[?&]menu=1\b/.test(location.search)) setOpen(true);
+    })();
+  </script>
 </body>
 </html>
