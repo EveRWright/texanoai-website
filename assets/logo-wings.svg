@@ -1,1 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 140" width="204" height="72"><style>.text { font-family: Arial, sans-serif; font-weight: bold; font-size: 48px; fill: #1a4f9c; }.tm { font-size: 14px; }</style><text x="10" y="80" class="text">TEXANO</text><text x="220" y="80" class="text">AI</text><text x="300" y="95" class="tm">TM</text><path d="M340 40 Q380 20 400 50 Q370 60 340 70 Q360 50 340 40" fill="#2a7fff"/><path d="M350 50 Q390 30 410 60 Q380 70 350 80" fill="#1a5fcc"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 180" width="204" height="72">
+  <defs>
+    <linearGradient id="wing" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4da3ff"/>
+      <stop offset="100%" style="stop-color:#1a5fcc"/>
+    </linearGradient>
+  </defs>
+  <text x="12" y="118" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="72" fill="#1a4f9c" letter-spacing="-1">TEXANO</text>
+  <text x="318" y="118" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="72" fill="#1a4f9c">AI</text>
+  <text x="448" y="138" font-family="Arial, Helvetica, sans-serif" font-weight="600" font-size="16" fill="#1a4f9c">TM</text>
+  <path d="M430 48 C470 18, 500 28, 510 55 C490 48, 470 62, 445 70 C460 55, 445 40, 430 48Z" fill="url(#wing)"/>
+  <path d="M438 62 C475 38, 498 50, 505 72 C485 65, 465 75, 450 82 C462 70, 450 55, 438 62Z" fill="#1a5fcc"/>
+  <path d="M445 78 C475 58, 492 68, 498 85 C480 80, 462 88, 452 94 C462 82, 455 70, 445 78Z" fill="#0d47a1"/>
+</svg>
