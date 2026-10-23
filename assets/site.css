@@ -51,7 +51,6 @@ header {
 .logo { display: inline-flex; align-items: center; gap: 12px; }
 .logo-img {
   height: 72px; width: auto; display: block;
-  filter: drop-shadow(0 2px 12px rgba(212,175,55,0.28));
 }
 .header-right { display: flex; align-items: center; gap: 18px; }
 
