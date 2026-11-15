@@ -14,49 +14,20 @@
       font-size:13px; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
       text-align:center; padding:10px 16px; position:sticky; top:0; z-index:100;
     }
-    /* Esther is a plate, not the header background — logo never sits on her crown. */
-    .mast.is-esther {
-      min-height: 0;
-      background-color: var(--bg);
+    /* Mast matches mmx-ethics / site hero pattern: photo + left-to-right navy fade. */
+    .mast.scaffold-mast {
+      min-height: min(68vh, 580px);
       background-image:
-        repeating-linear-gradient(
-          180deg,
-          transparent 0 22px,
-          rgba(212,175,55,0.055) 22px 23px
-        );
-      background-size: 48px 100%;
-      background-position: calc(42% + 36px) 0;
-      background-repeat: no-repeat;
+        linear-gradient(90deg,
+          rgba(14,22,40,0.94) 0%,
+          rgba(14,22,40,0.84) 40%,
+          rgba(14,22,40,0.35) 70%,
+          rgba(14,22,40,0.12) 100%),
+        url("assets/hero-04.jpg");
+      background-position: 72% center;
+      background-size: cover;
     }
-    .est-split {
-      display: grid;
-      grid-template-columns: minmax(220px, 0.85fr) 1.15fr;
-      gap: clamp(18px, 3.5vw, 44px);
-      align-items: center;
-      padding: 4px 0 40px;
-    }
-    .est-plate {
-      display: block;
-      width: 100%;
-      max-width: 400px;
-      height: auto;
-      max-height: min(62vh, 520px);
-      object-fit: contain;
-      object-position: center top;
-      background: transparent;
-      border: 0;
-      filter: drop-shadow(0 16px 36px rgba(0,0,0,0.35));
-      justify-self: start;
-    }
-    .mast.is-esther .hero {
-      max-width: 36rem;
-      margin-left: 0;
-      padding: 12px 0 24px;
-      position: relative;
-      z-index: 2;
-      background: transparent;
-    }
-    .mast.is-esther h1 { max-width: 16ch; }
+    .mast.scaffold-mast .hero { padding: 48px 0 64px; max-width: 40rem; }
     .chip-role {
       display: inline-block; font-family: var(--ui); font-size: 12px; font-weight: 800;
       letter-spacing: .1em; text-transform: uppercase; color: var(--ink);
@@ -87,28 +58,7 @@
     }
     @media (max-width: 900px) {
       .split { grid-template-columns: 1fr; }
-      .est-split {
-        grid-template-columns: 1fr;
-        justify-items: center;
-        gap: 14px;
-        padding: 4px 0 28px;
-      }
-      .est-plate {
-        max-width: min(300px, 72vw);
-        max-height: min(42vh, 340px);
-        justify-self: center;
-      }
-      .mast.is-esther { background-image: none; }
-      .mast.is-esther .hero { max-width: 100%; padding: 4px 0 20px; }
-    }
-    @media (max-width: 560px) {
-      .est-plate {
-        max-width: min(240px, 78vw);
-        max-height: min(36vh, 280px);
-      }
-    }
-    @media (min-width: 1100px) {
-      .est-plate { max-width: 440px; max-height: min(66vh, 560px); }
+      .mast.scaffold-mast { min-height: 0; background-position: 80% center; }
     }
     .card {
       border-radius: 12px; padding: 22px 22px 18px;
@@ -154,11 +104,16 @@
 <body>
   <div class="nav-backdrop" data-nav-close hidden></div>
   <div class="hold">TexanoAI · Scaffold vs Substitute · org brief</div>
-  <div class="mast is-esther">
+  <div class="mast scaffold-mast">
     <div class="wrap">
       <header>
-        <a class="logo" href="/" aria-label="TexanoAI home"><img class="logo-img" src="assets/logo-texanoai-blackline.png?v=20261023" alt="TexanoAI™" width="226" height="72" /></a>
+        <a class="logo" href="/" aria-label="TexanoAI home">
+          <img class="logo-img" src="assets/logo-texanoai-blackline.png?v=20261023" alt="TexanoAI™" width="226" height="72" />
+        </a>
         <div class="header-right">
+          <span class="stars header-stars-desktop" aria-hidden="true">
+            <span class="s">★</span><span class="s lg">★</span><span class="s">★</span>
+          </span>
           <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu">
             <span class="nav-toggle-bars" aria-hidden="true"></span>
           </button>
@@ -171,20 +126,18 @@
           </nav>
         </div>
       </header>
-      <div class="est-split">
-        <img class="est-plate" src="team/Esther-navy-gold.jpg?v=gold1" alt="Esther — companion field for this brief" width="832" height="1248" />
-        <section class="hero">
-          <div class="chip-role">For organizations</div>
-          <p class="eyebrow">Workforce · product · risk</p>
-          <h1>Scaffold or substitute — your org will pick one.</h1>
-          <p class="lede">Same AI tools. Two habits. One builds people who can still think when the tool is gone. The other slowly rents the thinking out — and the company pays later in quality, control, and liability.</p>
-          <p class="who">Esther · companion field for this brief</p>
-          <div class="actions">
-            <a class="btn btn-gold" href="#org-cost">See the org cost</a>
-            <a class="btn btn-ghost" href="TexanoAI_The_Scaffold_and_the_Substitute.pdf">Download PDF</a>
-          </div>
-        </section>
-      </div>
+
+      <section class="hero">
+        <div class="chip-role">For organizations</div>
+        <p class="eyebrow">Workforce · product · risk</p>
+        <h1>Scaffold or substitute — your org will pick one.</h1>
+        <p class="lede">Same AI tools. Two habits. One builds people who can still think when the tool is gone. The other slowly rents the thinking out — and the company pays later in quality, control, and liability.</p>
+        <p class="who">Esther · companion field for this brief</p>
+        <div class="actions">
+          <a class="btn btn-gold" href="#org-cost">See the org cost</a>
+          <a class="btn btn-ghost" href="TexanoAI_The_Scaffold_and_the_Substitute.pdf">Download PDF</a>
+        </div>
+      </section>
     </div>
   </div>
 
