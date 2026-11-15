@@ -46,6 +46,14 @@ html,body{margin:0;background:#F6F1E6;color:#2A241C;font-family:"Source Serif 4"
 .hero.library:after{
   background:linear-gradient(90deg,#0E1628 0%,rgba(14,22,40,.62) 26%,rgba(14,22,40,.18) 52%,transparent 74%);
 }
+
+.hero.scaffold{
+  background-image:url("/assets/blog/scaffold-vs-substitute-mast.jpg");
+  background-position:82% center;
+}
+.hero.scaffold:after{
+  background:linear-gradient(90deg,#0E1628 0%,rgba(14,22,40,.62) 26%,rgba(14,22,40,.18) 52%,transparent 74%);
+}
 @media (max-width:640px){
   .bar img{height:56px}
   .bar nav{gap:14px}
@@ -59,12 +67,17 @@ html,body{margin:0;background:#F6F1E6;color:#2A241C;font-family:"Source Serif 4"
   .hero.library:after{
     background:linear-gradient(180deg,rgba(14,22,40,.9) 0%,rgba(14,22,40,.55) 52%,rgba(14,22,40,.28) 100%);
   }
+  .hero.scaffold{background-position:78% 38%}
+  .hero.scaffold:after{
+    background:linear-gradient(180deg,rgba(14,22,40,.9) 0%,rgba(14,22,40,.55) 52%,rgba(14,22,40,.28) 100%);
+  }
   .bar nav{gap:10px}
   .share a,.share button{padding:10px 12px}
   .media.player audio{height:44px}
 }
 @media (min-width:641px) and (max-width:1024px){
   .hero.library{background-position:80% 42%}
+  .hero.scaffold{background-position:80% 42%}
   .hero-inner .hero-title{max-width:16ch}
 }
 
