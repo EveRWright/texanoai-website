@@ -101,6 +101,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.texanoai.com/blog/the-scaffold-and-the-substitute.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.texanoai.com/blog/japan-aia.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

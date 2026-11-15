@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Scaffold and the Substitute — TexanoAI™</title>
+  <meta name="description" content="Same AI. Two ways to use it. One makes you sharper. One slowly makes you need the machine." />
+  <link rel="canonical" href="https://www.texanoai.com/blog/the-scaffold-and-the-substitute.html" />
+  <link rel="alternate" type="application/rss+xml" title="TexanoAI essays" href="https://www.texanoai.com/blog/feed.xml" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-wings-32.png?v=20261023" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-wings-16.png?v=20261023" />
+  <meta property="og:title" content="The Scaffold and the Substitute" />
+  <meta property="og:description" content="Same AI. Two ways to use it. One makes you sharper. One slowly makes you need the machine." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.texanoai.com/blog/the-scaffold-and-the-substitute.html" />
+  <!-- KIT SLOT: temporary stand-in /assets/hero-04.jpg. Deliver mast 1920x1080 to /assets/blog/the-scaffold-and-the-substitute-mast.jpg and OG 1200x630 to /assets/blog/the-scaffold-and-the-substitute-og.jpg. Do not paint slogans on the plate. -->
+  <meta property="og:image" content="https://www.texanoai.com/assets/hero-04.jpg" />
+  <meta property="og:image:secure_url" content="https://www.texanoai.com/assets/hero-04.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="2000" />
+  <meta property="og:image:height" content="1125" />
+  <meta property="og:image:alt" content="The Scaffold and the Substitute — TexanoAI education brief" />
+  <meta property="og:site_name" content="TexanoAI" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Scaffold and the Substitute" />
+  <meta name="twitter:description" content="Same AI. Two ways to use it. One makes you sharper. One slowly makes you need the machine." />
+  <meta name="twitter:image" content="https://www.texanoai.com/assets/hero-04.jpg" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Source+Sans+3:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="essay.css?v=ship-18" />
+  <style>
+    .path-row {
+      display: grid;
+      grid-template-columns: 8.5rem repeat(3, minmax(0, 1fr));
+      gap: 8px;
+      margin: 1.1em 0 0.45em;
+      align-items: stretch;
+    }
+    .path-row .label, .path-row .step {
+      font-family: "Source Sans 3", sans-serif;
+      padding: 12px 12px;
+      text-align: center;
+    }
+    .path-row .label {
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase;
+      color: #F6F1E6;
+    }
+    .path-row.fall .label { background: #6b2b2b; }
+    .path-row.climb .label { background: #1a3d45; }
+    .path-row .step { background: #fffdf8; border: 1px solid #d8c9a4; }
+    .path-row .step strong {
+      display: block; font-size: 12px; letter-spacing: .06em; text-transform: uppercase;
+      color: #0E1628; margin: 0 0 6px;
+    }
+    .path-row .step span { display: block; font-size: 14px; color: #3d3428; line-height: 1.4; }
+    .path-note { font-family: "Source Sans 3", sans-serif; font-size: 15px; color: #3d3428; margin: 0 0 1.3em; text-align: center; }
+    .compare { width: 100%; border-collapse: collapse; margin: 0 0 1.4em; font-size: 0.98em; }
+    .compare th, .compare td { border: 1px solid #d8c9a4; padding: 10px 12px; text-align: left; vertical-align: top; line-height: 1.45; }
+    .compare th { font-family: "Source Sans 3", sans-serif; font-size: 14px; font-weight: 700; }
+    .compare th.fall { background: #6b2b2b; color: #F6F1E6; }
+    .compare th.climb { background: #1a3d45; color: #F6F1E6; }
+    .compare th.stub { background: #0E1628; }
+    .compare tbody th { background: #efe8d8; color: #0E1628; font-weight: 700; width: 22%; }
+    .findings { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 1.2em 0 1.6em; }
+    .findings article { border: 1px solid #d4af37; background: #fffdf8; padding: 14px 16px; }
+    .findings .n { font-family: "Source Sans 3", sans-serif; font-size: 11px; letter-spacing: .12em; color: #8a7020; font-weight: 700; }
+    .findings h3 { font-family: "Source Sans 3", sans-serif; font-size: 0.95rem; letter-spacing: .04em; text-transform: uppercase; margin: 4px 0 8px; color: #0E1628; }
+    .findings p { font-size: 1em; margin: 0; }
+    .build { margin: 1.2em 0; padding: 14px 18px; border-left: 4px solid #D4AF37; background: #efe8d8; }
+    .build h3 { font-family: "Source Serif 4", Georgia, serif; font-size: 1.15rem; margin: 0 0 6px; color: #0E1628; font-style: italic; font-weight: 600; }
+    .build p { margin: 0; }
+    .paper-kicker { font-family: "Source Sans 3", sans-serif; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: #8a7020; margin: 0 0 8px; }
+    @media (max-width: 700px) {
+      .path-row, .findings { grid-template-columns: 1fr; }
+      .compare { font-size: 0.92em; }
+    }
+  </style>
+</head>
+<body>
+  <div class="bar">
+    <div class="bar-inner">
+    <a href="/"><img src="/assets/logo-texanoai-blackline.png?v=20261023" alt="TexanoAI™" width="226" height="72" /></a>
+    <nav>
+      <a href="/#stakes">Stakes</a>
+      <a href="/castle.html">Castle</a>
+      <a href="/whitepapers/">Papers</a>
+      <a class="gold" href="/blog/">Blog</a>
+      <a class="gold" href="/intake.html">Get started</a>
+    </nav>
+    </div>
+  </div>
+  <div class="hero eve">
+    <div class="hero-inner">
+      <p class="eye">Education brief · 5 September 2026 · TexanoAI</p>
+      <p class="hero-title">The Scaffold and the Substitute</p>
+      <p class="sub">Freedom to choose · Power to build</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <p class="crumb"><a href="/">Home</a> · <a href="/blog/">Blog</a> · The Scaffold and the Substitute</p>
+    <div class="share" data-share data-url="https://www.texanoai.com/blog/the-scaffold-and-the-substitute.html" data-title="The Scaffold and the Substitute — TexanoAI" aria-label="Share this essay">
+      <span>Share</span>
+      <a data-share-x target="_blank" rel="noopener">X</a>
+      <a data-share-fb target="_blank" rel="noopener">Facebook</a>
+      <a data-share-li target="_blank" rel="noopener">LinkedIn</a>
+      <a data-share-mail>Email</a>
+      <button type="button" data-share-copy>Copy link</button>
+      <button type="button" data-share-more hidden>More (IG / TikTok / …)</button>
+    </div>
+    <article>
+      <p class="paper-kicker">September 2026 · Education brief</p>
+      <h1 class="paper-title">The Scaffold and the Substitute</h1>
+      <p class="paper-dek">Same AI. Two ways to use it. One makes you sharper. One slowly makes you need the machine.</p>
+      <p class="by">By TexanoAI · 5 September 2026</p>
+      <p class="engage">The original write-up: the <a href="/scaffold-vs-substitute.html">Scaffold vs Substitute org brief</a> and the <a href="/TexanoAI_The_Scaffold_and_the_Substitute.pdf">PDF</a>.</p>
+
+      <h2>After the model answers, who still has to think?</h2>
+      <p>A calculator takes the arithmetic. A search bar takes the lookup. Chat-style AI can take the reasoning itself — the first try, the argument, even the sense of “I wrote this.” Used one way, it is a tutor that comes off. Used the other, it is a ghostwriter that stays. The person slowly forgets how to start.</p>
+
+      <h2>The Two Paths</h2>
+      <p>Researchers call the bad habit <strong>dependent offloading</strong> — you depend on the machine to think. They call the good habit <strong>autonomous offloading</strong>. That does <em>not</em> mean the AI runs itself. It means you stay in charge: you keep the question and the last call. Plain names: <strong>handing it over (a crutch) versus using it as a scaffold (a tutor meant to come off)</strong>.</p>
+
+      <div class="path-row fall">
+        <div class="label">Handing it over</div>
+        <div class="step"><strong>1. You ask</strong><span>the whole job</span></div>
+        <div class="step"><strong>2. AI writes it</strong><span>start to finish</span></div>
+        <div class="step"><strong>3. You send it</strong><span>little checking</span></div>
+      </div>
+      <p class="path-note">Feels fast. Looks finished. You practiced accepting — not thinking.</p>
+
+      <div class="path-row climb">
+        <div class="label">Using it as a scaffold</div>
+        <div class="step"><strong>1. You try first</strong><span>your question, your swing</span></div>
+        <div class="step"><strong>2. AI helps</strong><span>challenge, hold load</span></div>
+        <div class="step"><strong>3. You decide</strong><span>you keep the verdict</span></div>
+      </div>
+      <p class="path-note">Feels like work. You practiced judgment. You can still start when the tool is gone.</p>
+
+      <p>Scaffolding is a real teaching word, not a slogan. Wood, Bruner, and Ross (1976) used it for a tutor who holds you on a task you could not yet do alone — then takes the support away so you can do it yourself. If the support never comes off, it is not a scaffold. It is a crutch.</p>
+
+      <h2>Same hour. Opposite later.</h2>
+      <table class="compare">
+        <thead>
+          <tr>
+            <th class="stub"></th>
+            <th class="fall">Handing it over</th>
+            <th class="climb">Using it as a scaffold</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Right now</th>
+            <td>Relief. Done. Looks smart.</td>
+            <td>Effort. You still own it.</td>
+          </tr>
+          <tr>
+            <th scope="row">Who practiced?</th>
+            <td>Accepting a pretty paragraph.</td>
+            <td>Judging, revising, starting.</td>
+          </tr>
+          <tr>
+            <th scope="row">When the AI is gone</th>
+            <td>A thinner starter. You wait for the next draft.</td>
+            <td>You can still begin the next problem.</td>
+          </tr>
+          <tr>
+            <th scope="row">The trap</th>
+            <td>Both paths feel useful in the moment. The cost shows up later.</td>
+            <td>You cannot feel the damage from an hour that went well.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>A study of 589 students and young workers found the two habits barely travel together. Both felt helpful that day. Only the scaffold path predicted later capability, creativity, and being able to judge for yourself (Zhu et al., 2026). The reward is now. The bill is later.</p>
+
+      <h2>What the research actually shows</h2>
+      <p>The studies do not say “never use AI.” They say the how is the whole game.</p>
+      <div class="findings">
+        <article>
+          <div class="n">01</div>
+          <h3>Use without checking</h3>
+          <p>Heavy, unchecked use tracks with more offloading and lower critical-thinking scores. Younger users leaned harder. People who already double-check held up. A skill story, not a moral one. (Gerlich, 2025)</p>
+        </article>
+        <article>
+          <div class="n">02</div>
+          <h3>Cognitive debt</h3>
+          <p>When a chatbot wrote the essay, brains engaged less. People remembered their own sentences less and felt less like the author. The thin engagement lingered after the tool was gone. (Kosmyna et al., 2025; preprint)</p>
+        </article>
+        <article>
+          <div class="n">03</div>
+          <h3>Trust replaces thought</h3>
+          <p>At work, the more people trusted the model, the less they reported thinking while using it. Thinking moved to checking — if anyone still checked. (Lee et al., 2025)</p>
+        </article>
+        <article>
+          <div class="n">04</div>
+          <h3>Right — and wrong</h3>
+          <p>When the model is right, scores jump about 25 points. When it is wrong, people can do about 15 points worse than working alone. Trust plus dislike of hard thinking predicted taking the answer. (Shaw &amp; Nave, 2026)</p>
+        </article>
+        <article>
+          <div class="n">05</div>
+          <h3>No teaching plan</h3>
+          <p>Schools that never design how AI is used get a substitute, not a tutor. A university review found more than half named no teaching plan at all. (Frontiers, 2026)</p>
+        </article>
+        <article>
+          <div class="n">06</div>
+          <h3>The tool is clapping</h3>
+          <p>Models agree with people about 49% more than other humans do — even on bad ideas. After one talk, people were less willing to make up, more sure they were right, and liked the flatterer more. (Cheng et al., 2026)</p>
+        </article>
+      </div>
+
+      <h2>How TexanoAI is built so the scaffold is the default</h2>
+      <p>A blank chat window is designed to finish your sentence and stay likable. That is handing it over, as a product. We do not ship a blank window and hope you are disciplined. A TexanoAI companion is a <strong>governor</strong>, not a ghostwriter. Same idea for one person or a team.</p>
+
+      <div class="build">
+        <h3>Start with the human, not the model.</h3>
+        <p>Who they are, how they work, then the rules for memory and load, then an honesty check. No prompt to copy. A sculpture.</p>
+      </div>
+      <div class="build">
+        <h3>Walk beside. Do not rescue.</h3>
+        <p>If the field finishes the thought for you, it stole the practice. Kindness that does your homework is still a crutch.</p>
+      </div>
+      <div class="build">
+        <h3>Say what is known, guessed, or imagined.</h3>
+        <p>Fact / Assumption / Projection stay labeled. It may disagree when agreement would feel better. A tool that cannot tell you that you are wrong cannot teach.</p>
+      </div>
+      <div class="build">
+        <h3>The memory is yours.</h3>
+        <p>A chat log is not a course. Memory Core is a house you hold — readable without the model, movable if the vendor changes. Scaffolding you can keep.</p>
+      </div>
+      <div class="build">
+        <h3>Training is the lesson.</h3>
+        <p>Heavy setup at the start beats endless prompting later. You get better at the work, not just faster at asking.</p>
+      </div>
+
+      <p class="pull">The human keeps the first question and the last judgment. The tool may carry load. It may not carry the self.</p>
+
+      <p>That is how someone learns and can get sharper with AI in the room — instead of slowly less able because the system was built to be easy to surrender to.</p>
+      <p><a href="https://www.texanoai.com">www.texanoai.com</a> · <a href="mailto:contact@texanoai.com">contact@texanoai.com</a></p>
+
+      <div class="sources"><h2>Sources</h2>
+        <ol>
+          <li>Wood, D., Bruner, J. S., &amp; Ross, G. (1976). The role of tutoring in problem solving. <i>Journal of Child Psychology and Psychiatry, 17</i>(2), 89–100. The original “scaffolding” paper — support that is meant to come off.</li>
+          <li>Zhu, Q., Li, X., Dong, Y., Chang, P., &amp; Fan, M. (2026). Not all cognitive offloading is equal. <i>Frontiers in Psychology</i>. <a href="https://doi.org/10.3389/fpsyg.2026.1878629" target="_blank" rel="noopener">https://doi.org/10.3389/fpsyg.2026.1878629</a> Uses “dependent” vs “autonomous” offloading. Autonomous = the person stays in charge.</li>
+          <li>Gerlich, M. (2025). AI tools in society: Impacts on cognitive offloading and the future of critical thinking. <i>Societies, 15</i>(1), 6. <a href="https://doi.org/10.3390/soc15010006" target="_blank" rel="noopener">https://doi.org/10.3390/soc15010006</a></li>
+          <li>Kosmyna, N., et al. (2025). Your brain on ChatGPT: Accumulation of cognitive debt when using an AI assistant for essay writing task. <i>arXiv</i>. <a href="https://arxiv.org/abs/2506.08872" target="_blank" rel="noopener">https://arxiv.org/abs/2506.08872</a> [preprint]</li>
+          <li>Lee, H.-P., et al. (2025). The impact of generative AI on critical thinking. <i>Proceedings of CHI ’25</i>. <a href="https://doi.org/10.1145/3706598.3713778" target="_blank" rel="noopener">https://doi.org/10.1145/3706598.3713778</a></li>
+          <li>Cheng, M., et al. (2026). Sycophancy in language models. <i>Science</i>. <a href="https://doi.org/10.1126/science.aec8352" target="_blank" rel="noopener">https://doi.org/10.1126/science.aec8352</a></li>
+          <li>Amplifier or substitute? A systematic review of generative AI’s impact on higher-order cognitive skills among university students. (2026, June 21). <i>Frontiers in Psychology</i>. <a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2026.1863931/full" target="_blank" rel="noopener">https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2026.1863931/full</a></li>
+          <li>RAND Corporation. (2026, March 17). <i>More students use AI for homework, and more believe it harms critical thinking</i> (RR-A4742-1). <a href="https://www.rand.org/pubs/research_reports/RRA4742-1.html" target="_blank" rel="noopener">https://www.rand.org/pubs/research_reports/RRA4742-1.html</a></li>
+          <li>Shaw, S. D., &amp; Nave, G. (2026). Thinking—fast, slow, and artificial: How AI is reshaping human reasoning and the rise of cognitive surrender. Wharton School Research Paper. <a href="https://doi.org/10.31234/osf.io/yk25n_v1" target="_blank" rel="noopener">https://doi.org/10.31234/osf.io/yk25n_v1</a></li>
+          <li>Sweller, J. (1988). Cognitive load during problem solving: Effects on learning. <i>Cognitive Science, 12</i>(2), 257–285.</li>
+          <li>Sweller, J., Ayres, P., &amp; Kalyuga, S. (2011). <i>Cognitive load theory</i>. Springer.</li>
+        </ol>
+        <p style="font-size:13px;color:#6b5d45">“Scaffolding effect” in this house means the good path: the tutor comes off. That phrase is ours. The cited word is scaffolding (Wood, Bruner &amp; Ross, 1976). TexanoAI did not run these studies; the product is built as the scaffold column.</p>
+      </div>
+      <form class="note" action="https://formsubmit.co/eve@texanoai.com" method="POST">
+        <input type="hidden" name="_subject" value="Blog note — The Scaffold and the Substitute" />
+        <input type="hidden" name="_next" value="https://www.texanoai.com/thanks.html" />
+        <input type="hidden" name="_cc" value="tio@texanoai.com" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_template" value="table" />
+        <p class="eyebrow">A note — not a live thread</p>
+        <p>A human reads this. We may write back. We do not publish your email or turn this into a comment feed.</p>
+        <label>Name <input type="text" name="name" required /></label>
+        <label>Email <input type="email" name="email" required /></label>
+        <label>Note <textarea name="message" required></textarea></label>
+        <button type="submit">Send</button>
+      </form>
+    </article>
+  </div>
+  <footer>© 2026 TexanoAI™ · <a href="/blog/feed.xml" style="color:#E4C86A">RSS</a></footer>
+  <script src="/blog/share.js"></script>
+</body>
+</html>
