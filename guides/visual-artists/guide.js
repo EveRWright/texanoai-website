@@ -8,7 +8,6 @@
   var bar = document.querySelector(".progress > span");
   var progress = document.querySelector(".progress");
   var pager = document.getElementById("pager");
-  var crumb = document.getElementById("crumb");
   var back = document.getElementById("btn-back");
   var next = document.getElementById("btn-next");
   var tocList = document.getElementById("toc-list");
@@ -43,7 +42,6 @@
     progress.setAttribute("aria-valuenow", String(i + 1));
     progress.setAttribute("aria-valuetext", "Step " + (i + 1) + " of " + N);
     pager.textContent = (i + 1) + " of " + N;
-    crumb.textContent = steps[i].getAttribute("data-nav");
     back.disabled = i === 0;
     if (i === N - 1) { next.dataset.mode = "restart"; next.innerHTML = "Back to start"; }
     else { next.dataset.mode = "next"; next.innerHTML = 'Next <span class="arrow" aria-hidden="true">›</span>'; }
