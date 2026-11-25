@@ -11,6 +11,7 @@
   --nav-h:72px; --progress-h:6px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
+html{overflow-anchor:none}
 html,body{background:var(--navy);color:var(--white);font-family:var(--sans);overflow-x:hidden;max-width:100%}
 img{display:block;max-width:100%}
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}

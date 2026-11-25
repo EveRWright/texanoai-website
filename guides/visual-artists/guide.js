@@ -52,6 +52,8 @@
     if (id === "style-lock") renderLock();
     if (!fromHash && location.hash !== "#" + id) history.pushState(null, "", "#" + id);
     window.scrollTo(0, 0);
+    // a hash jump makes the browser scroll to the section after we reset; undo it so the band is not hidden under the header
+    if (fromHash) { window.setTimeout(function () { window.scrollTo(0, 0); }, 0); window.requestAnimationFrame(function () { window.requestAnimationFrame(function () { window.scrollTo(0, 0); }); }); }
     steps[i].setAttribute("tabindex", "-1");
     try { steps[i].focus({ preventScroll: true }); } catch (e) {}
   }
@@ -65,6 +67,8 @@
   var begin = document.getElementById("btn-begin");
   if (begin) begin.addEventListener("click", function () { go(1); });
   window.addEventListener("popstate", fromHash);
+  window.addEventListener("hashchange", function () { if (indexOfId(location.hash.replace(/^#/, "")) !== current) fromHash(); else window.scrollTo(0, 0); });
+  if ("scrollRestoration" in history) history.scrollRestoration = "manual";
 
   var toc = document.getElementById("toc");
   function openToc(open) {
