@@ -223,3 +223,4 @@ main{padding-top:calc(var(--progress-h) + 61px)}
   .nav-btn{min-width:84px;padding:0 12px;letter-spacing:.08em}
   .home{width:80px}
 }
+@media (max-width:520px){.sw,.sw i{width:96px}.sw i{height:48px}}
