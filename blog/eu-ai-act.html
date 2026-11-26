@@ -23,12 +23,20 @@
   <script src="/assets/nav-guides.js?v=20261125" defer></script>
 </head>
 <body>
+  <div class="nav-backdrop" data-nav-close hidden></div>
   <div class="wrap">
     <header>
       <a class="logo" href="/" aria-label="TexanoAI home">
         <img class="logo-img" src="../assets/logo-texanoai-blackline.png?v=20261023" alt="TexanoAI™" width="226" height="72" />
       </a>
-      <nav class="site-nav" aria-label="Primary">
+      <div class="header-right">
+        <span class="stars header-stars-desktop" aria-hidden="true">
+          <span class="s">★</span><span class="s lg">★</span><span class="s">★</span>
+        </span>
+        <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu">
+          <span class="nav-toggle-bars" aria-hidden="true"></span>
+        </button>
+        <nav id="site-nav" class="site-nav" aria-label="Primary">
         <a href="/">Home</a>
         <a href="/blog/">Blog</a>
         <a href="/mmx-ethics.html">Ethics</a>
@@ -43,6 +51,7 @@
         </details>
         <a class="gold" href="/intake.html">Get started</a>
       </nav>
+      </div>
     </header>
 
     <section class="page-hero">
@@ -106,5 +115,31 @@
       </span>
     </footer>
   </div>
+
+  <script>
+    (function () {
+      var toggle = document.querySelector(".nav-toggle");
+      var backdrop = document.querySelector(".nav-backdrop");
+      var nav = document.getElementById("site-nav");
+      if (!toggle || !nav) return;
+      function setOpen(open) {
+        document.body.classList.toggle("nav-open", open);
+        toggle.setAttribute("aria-expanded", open ? "true" : "false");
+        toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+        if (backdrop) backdrop.hidden = !open;
+      }
+      toggle.addEventListener("click", function () {
+        setOpen(!document.body.classList.contains("nav-open"));
+      });
+      if (backdrop) backdrop.addEventListener("click", function () { setOpen(false); });
+      nav.addEventListener("click", function (e) { e.stopPropagation(); });
+      nav.querySelectorAll("a").forEach(function (a) {
+        a.addEventListener("click", function () { setOpen(false); });
+      });
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") setOpen(false);
+      });
+    })();
+  </script>
 </body>
 </html>
