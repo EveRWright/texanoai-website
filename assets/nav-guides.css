@@ -1,0 +1,66 @@
+/* Guides dropdown for the primary nav (preview 2026-11-25).
+   Native <details>/<summary>: opens on click/tap, Enter or Space; no hover-only menus.
+   Solid colors only. Works inside nav.site-nav (site.css pages) and .bar nav (blog pages). */
+.nav-drop { position: relative; display: inline-block; }
+/* One more item in the bar: keep labels like "Get started" on one line. */
+nav.site-nav > a, nav.site-nav .nav-drop > summary { white-space: nowrap; }
+.nav-drop > summary {
+  list-style: none; cursor: pointer;
+  display: inline-flex; align-items: center; gap: 6px;
+  font: inherit; color: #E6E0D4; font-weight: 600;
+  -webkit-user-select: none; user-select: none;
+}
+.nav-drop > summary::-webkit-details-marker { display: none; }
+.nav-drop > summary::marker { content: ""; }
+.nav-drop > summary::after {
+  content: ""; width: 7px; height: 7px; margin-top: -4px;
+  border-right: 2px solid currentColor; border-bottom: 2px solid currentColor;
+  transform: rotate(45deg); transition: transform .15s ease;
+}
+.nav-drop[open] > summary::after { transform: rotate(-135deg); margin-top: 3px; }
+.nav-drop > summary:hover,
+.nav-drop[open] > summary,
+.nav-drop.is-current > summary { color: #E4C86A; }
+.nav-drop > summary:focus-visible { outline: 2px solid #E4C86A; outline-offset: 3px; }
+.nav-drop-menu {
+  position: absolute; top: calc(100% + 12px); left: -14px; z-index: 80;
+  min-width: 220px; padding: 6px 0;
+  display: flex; flex-direction: column;
+  background: #0E1628; border: 1px solid #D4AF37; border-radius: 3px;
+  box-shadow: 0 12px 28px rgba(0,0,0,.45);
+}
+.nav-drop-menu a,
+.nav-drop-menu a:link,
+.nav-drop-menu a:visited {
+  display: block; padding: 11px 16px; white-space: nowrap;
+  color: #E6E0D4; font-size: 16px; font-weight: 600; text-decoration: none;
+  border-bottom: 0;
+}
+.nav-drop-menu a:hover,
+.nav-drop-menu a:focus-visible,
+.nav-drop-menu a[aria-current="page"] { color: #E4C86A; background: #162038; }
+.nav-drop-menu .nav-drop-all { border-top: 1px solid rgba(212,175,55,.35); margin-top: 4px; font-size: 14px; }
+
+/* Blog bar: the nav wraps on phones, so anchor the panel to the right edge of the item. */
+.bar nav .nav-drop-menu { left: auto; right: -8px; }
+
+/* site.css pages: below 1180px the nav becomes the slide-out panel, so the menu sits inline. */
+@media (max-width: 1180px) {
+  nav.site-nav .nav-drop { display: block; }
+  nav.site-nav .nav-drop > summary {
+    display: flex; justify-content: space-between; width: 100%;
+    padding: 16px 4px; font-size: 19px;
+    border-bottom: 1px solid rgba(228,200,106,0.28);
+  }
+  nav.site-nav .nav-drop-menu {
+    position: static; min-width: 0; padding: 0; box-shadow: none;
+    border: 0; border-radius: 0; background: transparent;
+  }
+  nav.site-nav .nav-drop-menu a,
+  nav.site-nav .nav-drop-menu a:link,
+  nav.site-nav .nav-drop-menu a:visited {
+    padding: 14px 4px 14px 20px; font-size: 17px; white-space: normal;
+    border-bottom: 1px solid rgba(228,200,106,0.18);
+  }
+  nav.site-nav .nav-drop-menu .nav-drop-all { border-top: 0; margin-top: 0; font-size: 15px; }
+}
